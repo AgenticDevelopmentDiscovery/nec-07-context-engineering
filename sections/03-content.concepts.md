@@ -69,6 +69,8 @@ loading, pitfalls. Seven slides.
   about `CLAUDE.md` is within the agent's reach in arm A.
 - Remove by moving the file. Rejected: `--bare`, which also drops skills, hooks
   and memory. `[DOCS: cli-reference page — check]`
+- Heading stays. This unit compares A with B, so "two windows" is true of it; C
+  is reported on the index slide. Rejected: renaming to three windows.
 
 ### Open questions
 
@@ -79,7 +81,6 @@ loading, pitfalls. Seven slides.
   skill description. Disclose or strip?
 - Live rerun: which arm, and what is said if it disagrees with the recorded
   counts?
-- Heading says two windows; protocol has three arms. Keep the heading?
 - Symbolic-regression repository, if released before the talk. Same protocol;
   observables rewritten.
 
@@ -143,14 +144,16 @@ loading, pitfalls. Seven slides.
 - Argued from cost per session, not from authority.
 - Formal framing kept to one sentence here. Rejected: a slide, and a boxed
   aside.
+- Arm C index is pre-registered: written before any run, from `CLAUDE.md`
+  alone, by the stated rule (commands, conventions not inferable from the
+  files, pointers), committed before the first run. Rejected: writing it after
+  seeing arms A and B — tunes it to the prompt.
+- "Sufficient statistic" glossed in one clause. Audience is mixed-discipline;
+  the analogy holds for choosing what to load, not for the contents. Rejected:
+  the term bare.
 
 ### Open questions
 
-- Who writes the ~30-line index, and by what rule? Written after seeing arms A
-  and B, it is tuned to the prompt.
-- "Sufficient statistic": known to the whole mixed-discipline audience, or
-  glossed in one clause? The analogy holds for choosing what to load, not for
-  the contents.
 - Any study of adherence against instruction-file length? The docs assert it.
   None found.
 - Seven claims under one heading. Overflow candidate.
