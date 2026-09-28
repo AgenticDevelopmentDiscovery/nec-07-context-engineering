@@ -1,0 +1,1 @@
+Add a section called "Examples" between the content section and the conclusion, following this project's conventions. Make sure the project still builds. Do not ask me questions; make reasonable choices and state them at the end.
