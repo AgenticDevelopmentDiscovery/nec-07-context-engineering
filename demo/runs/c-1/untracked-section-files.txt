@@ -1,0 +1,84 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the HOW in use: whole cases, end to end, so the reader sees the steps from
+§ Content assembled and can transfer them to a case of their own.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples would carry the same claim, one of them is redundant.
+
+- (claim)
+
+## Decisions
+
+> Which examples you chose, what each was chosen over, and why they sit here
+> rather than in `03-content`. Record the split, or the two sections will drift
+> into each other.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     One example per `##`. Add a heading for each further example rather than
+     packing two into one — an example that overflows its slide is usually two
+     examples, or one example plus the explanation that belongs in § Content. -->
+
+## A complete example
+
+> One realistic task, start to finish: the situation, what was done, and what
+> came out. Show the actual input and the actual result — not a description of
+> them.
+>
+> § Content walked through the steps one at a time. This is where the reader
+> sees them assembled, on a case they could meet in their own work.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second case chosen because it differs from the first in a way that matters —
+> a different setting, scale, or constraint. Say what changed and what the tool
+> did differently because of it.
+>
+> One example teaches the example; two that differ teach the tool. If the second
+> only repeats the first, cut it.
+
+Replace this paragraph.
+
+## An example that goes wrong
+
+> A case where one of the § Pitfalls actually happens: what the reader would
+> see, how to recognise it, and the repair. Show the failing output, then the
+> fixed one.
+>
+> Pitfalls described in the abstract are easy to nod along to. One watched end
+> to end is the one the reader remembers when it happens to them.
+
+Replace this paragraph.
+
+## What the examples show
+
+> The pattern across the cases, stated once: what stayed the same, what varied,
+> and what that tells the reader about a case this tutorial did not show.
+>
+> Keep it short. This is the bridge to § Conclusion, not a second conclusion.
+
+Replace this paragraph.
+

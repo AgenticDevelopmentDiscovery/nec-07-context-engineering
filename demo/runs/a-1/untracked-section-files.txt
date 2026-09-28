@@ -1,0 +1,75 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+SHOW the tool at work in whole, realistic cases, so the reader can recognise
+their own situation in one of them.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples would carry the same claim, one of them is not earning its place.
+
+- (claim)
+
+## Decisions
+
+> Which cases you chose to show and which you rejected, and the axis they differ
+> along. Also where the line with § Content falls: what is taught there as a
+> walkthrough and what is only shown here.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the tool through walkthroughs; this section shows it at
+     work in whole cases. Add a `##` unit per example — each new heading is a
+     new slide, and an example that will not fit one is two examples. -->
+
+## A complete example
+
+> One realistic case, start to finish: the situation, what was done, and what
+> came out. Show the actual commands, code, or configuration and the actual
+> result — not a description of them.
+>
+> This is not a third walkthrough. § Content explained each step as it went;
+> here the reader should be able to follow with what they already have. If you
+> find yourself teaching something new, it belongs in § Content.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second case chosen because it differs from the first in a way that matters
+> — another setting, another scale, another constraint. Say what changed and
+> what the tool did differently because of it.
+>
+> Two examples that vary along one axis teach the axis. Two that are
+> interchangeable teach nothing the first did not, so cut one.
+
+Replace this paragraph.
+
+## What the examples share
+
+> The pattern, stated once the reader has seen it twice. What stayed the same
+> across the cases, and what that tells the reader about a case of their own.
+>
+> Keep it to what the examples actually showed. This is the bridge to
+> § What you can do now — a capability claimed there should be visible here.
+
+Replace this paragraph.
+
