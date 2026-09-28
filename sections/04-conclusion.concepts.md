@@ -1,28 +1,61 @@
 # Conclusion — spine
 
-> Note form only; never rendered. See `01-context.concepts.md` for what each
-> heading is for.
+> Note form only; never rendered. Every `##` below is one `##` of the prose, so
+> one slide. Tags and the writing constraint are defined in
+> `01-context.concepts.md`.
 
-## Purpose
+**Purpose.** WHAT ELSE. Capability delivered, and what is open. Two slides.
 
-Say what the reader can now do, point at what comes next, and name what is still
-open.
+## What you can do now
 
-## Claims
+### Claims
 
-- (claim)
+- Same four capabilities as § What this tutorial covers, word for word.
+- Each maps to the unit that delivered it: read the window → § The window is a
+  budget you can read; index and test → § The demo, § What changed, § CLAUDE.md
+  as an index; place an instruction → § Layers; front-load or on demand → § On
+  demand.
+- A capability without a unit is removed from both lists.
 
-## Decisions
+### Decisions
 
-- (decision — and what it was chosen over)
+- Capability form. No recap of topics.
+- Test capability claimed only as far as the demo went. If arm C was not run,
+  the index-against-manual half is not claimed.
 
-## Open questions
+### Open questions
 
-> Overlaps with § Open edges in the prose — but this list is for the team, and
-> that section is for the reader. Not everything here is ready to ship there.
+- Diagnosis (`metadata.yaml` `audience`) rests on § Two ways a window fails and
+  § Pitfalls. Enough for the reader to do it in their own session?
 
-- (question)
+### Not doing
 
-## Not doing
+- Restating the demo.
 
-- (excluded, and why)
+## Open edges, and where they lead
+
+### Claims
+
+- Evidence on length and position comes from retrieval-style benchmarks.
+  Agentic coding sessions are untested in the sources found.
+- Conflict resolution between instruction files is undocumented behaviour.
+- Tool behaviour is as of the documentation on its access date. `[DOCS]`
+- Edges map to later tutorials: compaction T08, retrieval T09, persistent
+  memory T16.
+
+### Decisions
+
+- "Where to go next" merged in. The out-of-scope items are the pointers.
+  Rejected: a separate slide.
+- Ends on the opening, per the template.
+
+### Open questions
+
+- Subagents as context isolation: name as an edge, or stay silent?
+- Team list, not for the reader: document length; the symbolic-regression
+  substrate; which confounds were disclosed.
+
+### Not doing
+
+- Predictions about window sizes.
+- A reading list longer than three.

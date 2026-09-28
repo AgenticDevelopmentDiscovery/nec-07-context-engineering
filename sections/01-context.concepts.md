@@ -1,43 +1,107 @@
 # Context — spine
 
-> The register that does not ship. This file is never rendered into the document,
-> the slides, or the site — but the reviewers read it, and they judge whether what
-> it promises is turning into prose.
->
-> Keep it in note form. Prose here is a sign you wrote in the wrong file.
+> Note form only; never rendered. Every `##` below is one `##` of the prose, so
+> one slide. Claims, decisions, open questions and not-doing sit under the
+> heading they belong to.
 
-## Purpose
+**Purpose.** WHAT. Define the thing, state the promise. Two slides.
 
-Say WHAT the topic is and where it came from, so the reader can hold it in mind
-before being told why it matters or how to use it.
+**Tags, used in all four spines.**
 
-## Claims
+- `[CITE]` — needs a primary source. Candidate named only where one was found.
+  None is in `references.bib` yet.
+- `[DOCS]` — rests on Claude Code documentation. Cite with access date; changes
+  by version.
+- `[RUN]` — must come from a run on this repository. Not written as a result
+  before the run.
+- Quotations were reached through a summarising fetch on 2026-09-28. Re-read at
+  source before use.
 
-> The load-bearing assertions of this section, one line each. In a tutorial these
-> are usually definitional: what the thing is, what it is not, what it replaced.
-> If a claim is not here, the reviewers will treat its appearance in the prose as
-> unplanned.
+**Writing constraint, all four prose files.**
 
-- (claim)
-- (claim)
+- Nothing between the `#` heading and the first `##`. Pandoc makes a slide of
+  anything there.
+- `section-titles: false` is set. Metropolis's own section page remains: one
+  divider per section, not two.
 
-## Decisions
+## What context engineering is
 
-> Why the section reads the way it does. The definition you chose and the one you
-> rejected, how much history you kept and why. This is what stops the team
-> relitigating the same choice every round.
+### Claims
 
-- (decision — and what it was chosen over)
+- Two stores. Weights: what the model was trained on. Window: everything else
+  it can use now.
+- Window = bounded token budget. What the model knows about this session and
+  this repository is what is in it. `[DOCS: context-window page]`
+- In a Claude Code session the window holds: system prompt, tool definitions,
+  instruction files, skill descriptions, memory index, conversation, tool
+  output, file reads. `[DOCS]` `[RUN: confirm categories with /context here]`
+- Context engineering = deciding what occupies the window at each step: what,
+  when, at what level of detail.
+- Acts on what the model can see, not on the wording of the request.
+- Reader controls selection and timing. Harness controls most of the ordering.
+- Candidate definition to quote: "the set of strategies for curating and
+  maintaining the optimal set of tokens (information) during LLM inference".
+  `[CITE: Anthropic Applied AI team, "Effective context engineering for AI
+  agents", 29 Sep 2025]`
 
-## Open questions
+### Decisions
 
-> What you do not know yet. Naming it here is cheap; discovering it in review is not.
+- Subtitle keeps the course brief's phrasing ("The model only knows what is in
+  the window"). The precise claim, weights versus window, is made here on the
+  first slide. Rejected: rewording the subtitle.
+- Defined by what it does, not by a list of instruments. Instruments arrive in
+  03.
+- No origin slide. One line of origin sits on the first motivation slide.
+  Rejected: the template's "Where it came from" unit — 1 of 13 for history that
+  explains no later choice.
+- One lever taught: selection and timing. Ordering named as the harness's, in
+  one clause.
 
-- (question)
+### Open questions
 
-## Not doing
+- Does the subtitle's unqualified form survive Q&A once slide one has qualified
+  it?
+- Quote the Anthropic definition, or state our own and cite theirs as agreeing?
 
-> Scope you have deliberately excluded, so a reviewer does not report it as missing
-> and you do not drift back into it.
+### Not doing
 
-- (excluded, and why)
+- Tokenisation and attention mechanics. Audience knows tokens and a finite
+  budget (`metadata.yaml`).
+- Window sizes and pricing. Percentages only.
+
+## What this tutorial covers
+
+### Claims
+
+- Four capabilities, same words as § What you can do now:
+  1. Read the window with `/context`; say what each part costs.
+  2. Write a `CLAUDE.md` that works as an index; test on a fixed prompt, over
+     repeated runs, whether it changed the agent's behaviour.
+  3. Place an instruction in the right layer by stability and audience; know
+     the load order; remove a conflict rather than rely on precedence.
+  4. Decide, for a given file, front-load or on demand; know which mechanisms
+     do which.
+- Roadmap: readable budget → demo → what changed → index → layers → on demand →
+  pitfalls.
+- Out of scope, each with its home: wording T06; compaction internals T08;
+  embeddings and RAG T09; persistent memory T16.
+- Also out: provenance labelling; window sizes and pricing.
+- Demo substrate named: this repository.
+
+### Decisions
+
+- Capability list taken from `topic.md` as revised. Four, not five.
+- Diagnosis (the outcome in `metadata.yaml` `audience`) is not a fifth
+  capability. It is the four applied, delivered in § Pitfalls.
+
+### Open questions
+
+- Document length. Thirteen slide-sized units ≈ a thousand words. Choice is
+  between `::: notes` blocks (document only; a departure to record under House
+  conventions) and a lean document. Deferred until prose exists. Not decided.
+- Four capabilities, a seven-step roadmap and the scope line on one slide.
+  Overflow candidate.
+
+### Not doing
+
+- Section-by-section abstract.
