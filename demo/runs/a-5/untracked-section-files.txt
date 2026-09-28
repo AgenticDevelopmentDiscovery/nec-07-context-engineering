@@ -1,0 +1,75 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool in use on whole cases, end to end — so the reader sees the parts
+from § Content working together and can adapt the pattern to a case of their own.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples have the same line, one of them is not earning its place.
+
+- (claim)
+
+## Decisions
+
+> Which examples you chose and what you rejected, and how they differ from the
+> walkthroughs in § Content. Write down why each case is here rather than there.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the parts one at a time. This section shows the whole
+     thing in use, start to finish, without stopping to explain each step.
+     Add a `##` unit per example — one example per slide. -->
+
+## A complete example
+
+> One realistic case, end to end: the starting state, what you ran or wrote, and
+> the result. Show the actual commands, code, or configuration, and the output
+> the reader can check their own against.
+>
+> Do not re-teach the mechanics here — point back to § Content instead. If the
+> example needs a step § Content never covered, that is a gap in § Content, not
+> something to patch in passing.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second case chosen because it differs from the first in a way that changes
+> what you do. Say what is different about the situation and which decision it
+> changes.
+>
+> Two examples that differ only in their details teach the same thing twice. If
+> you cannot name what the contrast shows, keep one example and cut the other.
+
+Replace this paragraph.
+
+## What the examples have in common
+
+> The pattern the reader should carry to their own case: what stayed the same
+> across the examples, and what varied with the situation.
+>
+> This is what makes the examples transfer. Without it the reader has two
+> recipes; with it they can tell which parts to keep and which to adapt — the
+> capability § What you can do now is about to claim.
+
+Replace this paragraph.
+

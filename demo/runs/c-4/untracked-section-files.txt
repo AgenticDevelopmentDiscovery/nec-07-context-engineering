@@ -1,0 +1,76 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+SHOW the HOW applied: whole cases, end to end, so the reader sees the pieces
+from § Content working together and can check their own understanding.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If an
+> example has no claim, it is decoration.
+
+- (claim)
+
+## Decisions
+
+> Which examples made the cut and which were rejected, and how these differ
+> from the walkthroughs in `03-content` — the boundary between the two sections
+> is the choice most likely to be relitigated.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     One example per `##`. Add more units rather than packing two examples
+     into one — an example that overflows its slide is usually two examples. -->
+
+## A complete example
+
+> One realistic case, carried from start to finish. The walkthroughs in
+> § Content each isolate one mechanism; this is where the reader sees them
+> working together, in the order they would actually be used.
+>
+> Show the real artifacts — the commands, the code, the output — not a
+> description of them. State the starting situation and the result, so the
+> reader can tell what the example achieved.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second case that differs from the first in a way that matters: another
+> setting, another scale, another constraint. Say what changed and what stayed
+> the same.
+>
+> One example teaches the example; two teach the pattern. The contrast is how
+> the reader learns which parts are essential and which were incidental to the
+> first case.
+
+Replace this paragraph.
+
+## Try it yourself
+
+> An exercise the reader can do with what the tutorial has given them. State
+> the task and what a correct result looks like, so they can check their own
+> work.
+>
+> Keep it close to the examples above but not identical — one step the reader
+> has to work out alone. It should need nothing the tutorial did not teach.
+
+Replace this paragraph.
+

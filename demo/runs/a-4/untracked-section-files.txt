@@ -1,0 +1,73 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool in use on complete, realistic cases — so the reader can recognise
+their own situation in one of them and see what a finished result looks like.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples would get the same line, one of them is not earning its place.
+
+- (claim)
+
+## Decisions
+
+> Which examples you chose, what each was chosen over, and how they differ from
+> the walkthroughs in `03-content`. Those teach the steps; these show the whole.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content walks through cases to teach the mechanics. This section shows
+     the tool whole, in use, with the teaching scaffolding taken away. Add a
+     `##` per example — one example per slide. -->
+
+## A complete example
+
+> One case, start to finish, as it would actually be done. Show the real input,
+> the real commands or code, and the real result — not a description of them.
+>
+> Do not re-teach the steps; § Content already did. Say only what a reader could
+> not work out from there: why this case, and what to look at in the result.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second case chosen because it differs from the first in a way that matters —
+> a different setting, scale, or constraint. Name the difference up front, so
+> the reader knows what to compare.
+>
+> Two examples that differ only in surface detail teach one example. If you
+> cannot say what the contrast is in a sentence, pick a different case.
+
+Replace this paragraph.
+
+## What the examples show
+
+> What carries over. The pattern common to the cases above, stated so the reader
+> can recognise their own situation in it — and where the examples stop being a
+> guide.
+>
+> Keep it to what the examples actually demonstrated. A generalisation no
+> example supports is a claim, and it belongs in § Content with the rest of them.
+
+Replace this paragraph.
+

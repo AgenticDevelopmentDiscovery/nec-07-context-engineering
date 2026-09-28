@@ -1,0 +1,78 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the HOW in practice: whole cases the reader can recognize as their own
+situation, and the pattern that carries from them to a case not shown.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples would share a line, one of them is not earning its slide.
+
+- (claim)
+
+## Decisions
+
+> Which examples made the cut, what each was chosen over, and how they differ
+> from the walkthroughs in `03-content`. Without that last one written down, the
+> two sections drift into each other.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     One example per `##`. Add more as `## Example: ...` units — but each one
+     has to show something the others do not, or it is the same slide twice.
+     An example that will not fit its slide is usually carrying its setup: cut
+     to the part that teaches, or split it at the joint. -->
+
+## Example: the common case
+
+> The situation most of your readers are already in, shown whole: where it
+> started, what was actually run or written, and a result they can check their
+> own against.
+>
+> This is not a third walkthrough. § Using it: the basic case picked the
+> smallest real case in order to teach the mechanism; this one is picked because
+> the reader will recognize it as theirs. If the two would read the same, cut
+> one.
+
+Replace this paragraph.
+
+## Example: a contrasting case
+
+> A second situation, chosen to differ from the first in a way that changes what
+> the reader does. Say what changed and what stayed the same — the difference is
+> the lesson, and an example that differs only in its nouns teaches nothing new.
+>
+> The most useful contrast is often a case near the edge of § When to reach for
+> it, where the tool had to be adapted or very nearly did not fit.
+
+Replace this paragraph.
+
+## What carries over
+
+> The pattern across the examples, stated once: what the reader should look for
+> in their own situation to tell which example it resembles.
+>
+> Examples teach by transfer, and transfer does not happen by itself. A reader
+> left to work out what the cases had in common will usually pick a surface
+> feature.
+
+Replace this paragraph.
+

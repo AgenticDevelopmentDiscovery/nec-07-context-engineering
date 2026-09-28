@@ -1,0 +1,83 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool used whole on complete cases, including one where it does not fit,
+so the reader can recognise their own situation in a worked one.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples support the same claim, one of them is not earning its place.
+
+- (claim)
+
+## Decisions
+
+> Which examples you chose and what you rejected, and how they differ from the
+> walkthroughs in `03-content`. Write down the dimension each example varies.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the mechanics one step at a time. This section shows the
+     tool used whole, on cases the reader did not watch being built. Add a `##`
+     per example rather than packing two into one. -->
+
+## A complete example
+
+> One case from start to finish, with nothing skipped: the starting state, what
+> was done, and what came out. Show the actual commands, code, or configuration
+> and the actual result — not a description of them.
+>
+> Pick a case the reader could plausibly meet next week. It should use only what
+> § Content taught; if it needs something new, that belongs in § Content first.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second case chosen because it differs from the first in a way that matters —
+> a different scale, a different constraint, a different starting point. Say what
+> the difference is before showing it.
+>
+> Two examples that vary along one dimension teach the dimension. Two that are
+> alike teach the first one twice.
+
+Replace this paragraph.
+
+## When it does not fit
+
+> A case where the tool was the wrong choice, or had to be bent to work. Lead
+> with what the reader would see going wrong, then what was done instead.
+>
+> This is § When to reach for it made concrete. A reader who has seen the
+> boundary in a real case will recognise it in their own.
+
+Replace this paragraph.
+
+## What the examples share
+
+> The pattern across the cases above, stated once: what stayed the same each
+> time, and what the reader should carry to a case this tutorial never showed.
+>
+> Keep it to what the examples actually demonstrated. If the pattern needs a case
+> you did not show, add the case rather than asserting the pattern.
+
+Replace this paragraph.
+

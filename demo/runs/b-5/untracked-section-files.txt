@@ -1,0 +1,81 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool applied WHERE it is used: whole cases, end to end — so the reader
+sees the parts from § Content working together and can recognise their own
+case.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If you
+> cannot say what a case shows that the others do not, it is not earning its
+> place.
+
+- (claim)
+
+## Decisions
+
+> Which cases you chose and what you rejected, and what contrast the second one
+> was picked for. Record the boundary with `03-content` here too, because it is
+> the line this section drifts across.
+
+- Separate section, not more `##` units in `03-content` — walkthroughs there
+  isolate one mechanism; cases here run whole. Chosen over folding examples
+  into § Content.
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- New mechanisms — anything an example needs that § Content did not teach goes
+  back to § Content.
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     A whole case rarely fits one slide. Split it into several `##` units —
+     the setup, the run, the result — rather than shrinking it to fit. -->
+
+## A complete example
+
+> One realistic case, start to finish: the situation you began with, what you
+> did, and what came out. Show the real artifacts — the commands, the code, the
+> output — not a description of them.
+>
+> This is not another walkthrough. § Content took the tool apart to teach one
+> mechanism at a time; here the parts run together, on a case the reader could
+> meet in their own work.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second case that differs from the first in a way that matters — another
+> setting, another scale, another constraint. Say what changed and what it
+> forced you to do differently.
+>
+> One example teaches the example; two teach the pattern. Choose the second for
+> the contrast it offers, not because it was the next one to hand.
+
+Replace this paragraph.
+
+## What the examples share
+
+> What stayed fixed across the cases and what varied. This is what the reader
+> carries to a case you never showed them.
+>
+> Keep it to what the examples above actually demonstrate. A lesson no example
+> supports belongs in § Content, or nowhere.
+
+Replace this paragraph.
+

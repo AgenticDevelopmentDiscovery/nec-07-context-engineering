@@ -1,0 +1,81 @@
+diff --git a/CLAUDE.md b/CLAUDE.md
+index 5db8dc1..0b7007c 100644
+--- a/CLAUDE.md
++++ b/CLAUDE.md
+@@ -106,14 +106,15 @@ will hold the document to it.
+ 
+ ### The shipped arc
+ 
+-The template ships four sections, in the order a tutorial teaches:
++The template ships five sections, in the order a tutorial teaches:
+ 
+ | Section | Answers | Holds |
+ | --- | --- | --- |
+ | `01-context` | WHAT | what the topic is, and where it came from |
+ | `02-motivation` | WHY | why it matters for agentic development, and when it does not |
+ | `03-content` | HOW | the mental model, worked use, and the pitfalls |
+-| `04-conclusion` | WHAT ELSE | what the reader can now do, and what is still open |
++| `04-examples` | IN PRACTICE | whole cases the reader will recognize, and what carries over |
++| `05-conclusion` | WHAT ELSE | what the reader can now do, and what is still open |
+ 
+ WHAT before WHY is deliberate. A reader who does not yet know what the thing is
+ cannot judge an argument for why it matters, so a tutorial that opens with the
+@@ -124,6 +125,11 @@ cannot picture.
+ with four `##` units and will usually need more — each new heading is another
+ slide, and splitting is how you find the joints in your own explanation.
+ 
++`04-examples` is not a second `03-content`. The walkthroughs there pick the
++smallest real case in order to teach the mechanism; the examples are picked
++because the reader will recognize them as their own situation. One example per
++`##`, and each has to show something the others do not.
++
+ The arc is a default, not a guardrail. Change it if your subject wants a
+ different shape; the build is a glob, so renaming and renumbering the pairs is
+ the whole operation.
+diff --git a/personas/clarity.md b/personas/clarity.md
+index 1f86f11..ae20a05 100644
+--- a/personas/clarity.md
++++ b/personas/clarity.md
+@@ -12,7 +12,7 @@ actually reached you.
+ 
+ ## What you judge
+ 
+-- **Narrative.** Is there a clear through-line: what -> why -> how -> what else?
++- **Narrative.** Is there a clear through-line: what -> why -> how -> in practice -> what else?
+   Does each section earn its place and connect to the next? A tutorial earns its
+   order by teaching each thing at the point the reader can use it.
+ - **Clarity.** Are sentences precise and unambiguous? Is jargon introduced before it is used?
+diff --git a/sections/04-conclusion.concepts.md b/sections/05-conclusion.concepts.md
+similarity index 100%
+rename from sections/04-conclusion.concepts.md
+rename to sections/05-conclusion.concepts.md
+diff --git a/sections/04-conclusion.prose.md b/sections/05-conclusion.prose.md
+similarity index 100%
+rename from sections/04-conclusion.prose.md
+rename to sections/05-conclusion.prose.md
+diff --git a/topic.md b/topic.md
+index a59d37a..7479417 100644
+--- a/topic.md
++++ b/topic.md
+@@ -43,7 +43,7 @@ Replace this paragraph.
+ > take afterwards that they could not take before. Not topics covered — things
+ > done.
+ >
+-> This is the promise `04-conclusion` has to keep, and the standard the panel
++> This is the promise `05-conclusion` has to keep, and the standard the panel
+ > holds the whole tutorial to. Vague entries here buy vague review, the same way
+ > a vague `audience` does.
+ 
+@@ -67,9 +67,9 @@ Replace this paragraph.
+ 
+ ## Shape
+ 
+-> How the four sections divide the material, if you already know. Which one
+-> carries the weight, what the worked example in `03-content` will be, whether
+-> the arc needs changing for this subject.
++> How the five sections divide the material, if you already know. Which one
++> carries the weight, what the worked example in `03-content` will be, which
++> cases `04-examples` will show, whether the arc needs changing for this subject.
+ >
+ > Leave it thin on the first pass. It is here so the reason for a structural
+ > choice is written down before the rounds start arguing about it.

@@ -1,0 +1,48 @@
+diff --git a/CLAUDE.md b/CLAUDE.md
+index 58a874e..6012480 100644
+--- a/CLAUDE.md
++++ b/CLAUDE.md
+@@ -23,7 +23,8 @@ at a time. Toolchain and setup: README.md.
+ - Every `##` in prose is one slide (`--slide-level=2`). One idea per `##`;
+   split rather than shrink.
+ - Default arc: 01-context (WHAT), 02-motivation (WHY), 03-content (HOW,
+-  longest), 04-conclusion (WHAT ELSE). Renumber the pairs to change it.
++  longest), 04-examples (IN USE), 05-conclusion (WHAT ELSE). Renumber the pairs
++  to change it.
+ 
+ ## Rules
+ 
+diff --git a/sections/04-conclusion.concepts.md b/sections/05-conclusion.concepts.md
+similarity index 100%
+rename from sections/04-conclusion.concepts.md
+rename to sections/05-conclusion.concepts.md
+diff --git a/sections/04-conclusion.prose.md b/sections/05-conclusion.prose.md
+similarity index 100%
+rename from sections/04-conclusion.prose.md
+rename to sections/05-conclusion.prose.md
+diff --git a/topic.md b/topic.md
+index a59d37a..7479417 100644
+--- a/topic.md
++++ b/topic.md
+@@ -43,7 +43,7 @@ Replace this paragraph.
+ > take afterwards that they could not take before. Not topics covered — things
+ > done.
+ >
+-> This is the promise `04-conclusion` has to keep, and the standard the panel
++> This is the promise `05-conclusion` has to keep, and the standard the panel
+ > holds the whole tutorial to. Vague entries here buy vague review, the same way
+ > a vague `audience` does.
+ 
+@@ -67,9 +67,9 @@ Replace this paragraph.
+ 
+ ## Shape
+ 
+-> How the four sections divide the material, if you already know. Which one
+-> carries the weight, what the worked example in `03-content` will be, whether
+-> the arc needs changing for this subject.
++> How the five sections divide the material, if you already know. Which one
++> carries the weight, what the worked example in `03-content` will be, which
++> cases `04-examples` will show, whether the arc needs changing for this subject.
+ >
+ > Leave it thin on the first pass. It is here so the reason for a structural
+ > choice is written down before the rounds start arguing about it.
