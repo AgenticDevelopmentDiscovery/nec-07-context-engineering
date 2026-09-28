@@ -82,4 +82,17 @@ more runs are added to every arm, once. No other additions.
 
 ## Amendments
 
-(none)
+- 2026-09-28, after a headless dry run on arm B (`runs/dryrun-b.jsonl`,
+  disclosed as tooling validation, not evidence):
+  1. Auto memory is shared across worktrees of the same repository, not keyed
+     by launch directory. A memory saved during the spine session
+     (`runs/dryrun-b.memory-loaded.md`) was loaded and acted on. The
+     repository's memory folder is moved aside for the duration of the demo
+     and restored afterwards; every run starts with none. The confound line
+     above ("the worktree starts with none") was wrong.
+  2. Model pinned: `--model claude-fable-5-1`, the default the dry run used.
+     Claude Code 2.1.281.
+  3. Reset between runs is `git reset -q --hard && git clean -fdxq &&
+     git checkout -q <arm>`, because a run can leave staged renames that
+     `git clean` does not undo.
+  4. Observable 6 remains a control only because memory is stripped; noted.
