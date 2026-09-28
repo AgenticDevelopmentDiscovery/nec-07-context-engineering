@@ -35,7 +35,7 @@ Headless, logged, same model every run:
     claude -p "<prompt>" --output-format stream-json --max-turns 25 \
       --allowedTools "Read" "Edit" "Write" "Glob" "Grep" "Bash(just *)" \
       "Bash(ls *)" "Bash(git status)" "Bash(git add *)" "Bash(git commit *)" \
-      > ../runs/<arm>-<n>.jsonl
+      > ~/Sandbox/nec-07-context-engineering/demo/runs/<arm>-<n>.jsonl
 
 Git commands are allowed deliberately: the worktree is disposable, and
 observable 5 is meaningless if committing is impossible. `claude --version` and
