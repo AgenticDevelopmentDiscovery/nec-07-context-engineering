@@ -1,0 +1,77 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool in finished, realistic cases — FOR INSTANCE — so the reader can
+test the model from `03-content` against cases they did not watch being built.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples support the same claim, one of them is a candidate to cut.
+
+- (claim)
+
+## Decisions
+
+> Which examples earned a place and which were rejected, and where the line with
+> `03-content` falls: the walkthroughs there teach a procedure step by step, the
+> cases here are shown whole. An example that needs new mechanics explained
+> belongs in `03-content`.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> Not a gallery. Examples that show nothing the others do not are excluded,
+> however good they are.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content walks the reader through the tool a step at a time. This section
+     shows finished cases whole, so the reader can check the model they built
+     there against something they did not watch being assembled. -->
+
+## A complete example
+
+> One realistic case, shown end to end: the situation, what was written or run,
+> and what came out. Show the actual artifact — not a description of it.
+>
+> State the problem before the solution. A reader who has tried to predict the
+> answer learns from the difference; one who is handed it only recognises it.
+
+Replace this paragraph.
+
+## A variation
+
+> The same case with one constraint changed, and what had to change in response.
+> Name the constraint and point at the difference — do not re-present the whole
+> example.
+>
+> This is what turns an example into a pattern. One case shows that the tool
+> works; two that differ in one respect show which part was doing the work.
+
+Replace this paragraph.
+
+## A case that does not fit
+
+> An example where the tool is the wrong choice, shown as concretely as the ones
+> where it is right. What was tried, how it went badly, and what to use instead.
+>
+> This must agree with § When to reach for it. That section states the bounds;
+> this one shows a reader what crossing them looks like.
+
+Replace this paragraph.
+

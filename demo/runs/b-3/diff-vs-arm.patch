@@ -1,0 +1,121 @@
+diff --git a/CLAUDE.md b/CLAUDE.md
+index 5db8dc1..4cf69b2 100644
+--- a/CLAUDE.md
++++ b/CLAUDE.md
+@@ -106,14 +106,15 @@ will hold the document to it.
+ 
+ ### The shipped arc
+ 
+-The template ships four sections, in the order a tutorial teaches:
++The template ships five sections, in the order a tutorial teaches:
+ 
+ | Section | Answers | Holds |
+ | --- | --- | --- |
+ | `01-context` | WHAT | what the topic is, and where it came from |
+ | `02-motivation` | WHY | why it matters for agentic development, and when it does not |
+ | `03-content` | HOW | the mental model, worked use, and the pitfalls |
+-| `04-conclusion` | WHAT ELSE | what the reader can now do, and what is still open |
++| `04-examples` | FOR EXAMPLE | whole cases, start to finish, and what carries across them |
++| `05-conclusion` | WHAT ELSE | what the reader can now do, and what is still open |
+ 
+ WHAT before WHY is deliberate. A reader who does not yet know what the thing is
+ cannot judge an argument for why it matters, so a tutorial that opens with the
+diff --git a/sections/04-conclusion.concepts.md b/sections/04-conclusion.concepts.md
+deleted file mode 100644
+index cfbc33d..0000000
+--- a/sections/04-conclusion.concepts.md
++++ /dev/null
+@@ -1,28 +0,0 @@
+-# Conclusion — spine
+-
+-> Note form only; never rendered. See `01-context.concepts.md` for what each
+-> heading is for.
+-
+-## Purpose
+-
+-Say what the reader can now do, point at what comes next, and name what is still
+-open.
+-
+-## Claims
+-
+-- (claim)
+-
+-## Decisions
+-
+-- (decision — and what it was chosen over)
+-
+-## Open questions
+-
+-> Overlaps with § Open edges in the prose — but this list is for the team, and
+-> that section is for the reader. Not everything here is ready to ship there.
+-
+-- (question)
+-
+-## Not doing
+-
+-- (excluded, and why)
+diff --git a/sections/04-conclusion.prose.md b/sections/04-conclusion.prose.md
+deleted file mode 100644
+index 440b58e..0000000
+--- a/sections/04-conclusion.prose.md
++++ /dev/null
+@@ -1,33 +0,0 @@
+-# Conclusion
+-
+-<!-- Every `##` becomes one slide. One idea each. -->
+-
+-## What you can do now
+-
+-> The recap, stated as capability rather than as summary. Not "we covered X" —
+-> rather, what the reader can now do that they could not before.
+->
+-> Keep it to what the tutorial actually delivered. This paragraph and
+-> § What this tutorial covers must agree exactly; the panel will check.
+-
+-Replace this paragraph.
+-
+-## Where to go next
+-
+-> The next thing to learn, and why it is the next one. Name the specific
+-> resource, tool, or topic and say what it adds.
+->
+-> Order matters more than length. Three pointers in a sensible sequence beat a
+-> list of ten a reader has to triage themselves.
+-
+-Replace this paragraph.
+-
+-## Open edges
+-
+-> What is still unsettled — where the tool is changing, where practice has not
+-> converged, where you would not yet give firm advice.
+->
+-> End on the opening you leave, not on a restatement. A tutorial that admits its
+-> edges is more trustworthy than one that implies the topic is finished.
+-
+-Replace this paragraph.
+diff --git a/topic.md b/topic.md
+index a59d37a..7479417 100644
+--- a/topic.md
++++ b/topic.md
+@@ -43,7 +43,7 @@ Replace this paragraph.
+ > take afterwards that they could not take before. Not topics covered — things
+ > done.
+ >
+-> This is the promise `04-conclusion` has to keep, and the standard the panel
++> This is the promise `05-conclusion` has to keep, and the standard the panel
+ > holds the whole tutorial to. Vague entries here buy vague review, the same way
+ > a vague `audience` does.
+ 
+@@ -67,9 +67,9 @@ Replace this paragraph.
+ 
+ ## Shape
+ 
+-> How the four sections divide the material, if you already know. Which one
+-> carries the weight, what the worked example in `03-content` will be, whether
+-> the arc needs changing for this subject.
++> How the five sections divide the material, if you already know. Which one
++> carries the weight, what the worked example in `03-content` will be, which
++> cases `04-examples` will show, whether the arc needs changing for this subject.
+ >
+ > Leave it thin on the first pass. It is here so the reason for a structural
+ > choice is written down before the rounds start arguing about it.

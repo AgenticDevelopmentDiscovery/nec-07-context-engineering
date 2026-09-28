@@ -1,0 +1,142 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool applied to whole, realistic cases, so the reader can recognise
+their own situation in one of them and check they can do it unaided.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples would get the same line, one of them is not earning its place.
+
+- (claim)
+
+## Decisions
+
+> Which examples you chose and what you rejected, and why these belong here
+> rather than as walkthroughs in `03-content`. Record the contrast each pair is
+> meant to draw.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the tool through walkthroughs cut down to show one thing
+     at a time. These are whole cases, left at their real size. Add a `##` unit
+     per example — if one does not fit a slide, split it at its joints rather
+     than trimming it until it stops being real. -->
+
+## A complete example
+
+> One realistic task, start to finish: the situation, what you ran or wrote, and
+> what came back. Show the actual input and the actual output — not a
+> description of them.
+>
+> Nothing here should be new. Every step must trace back to something § Content
+> already taught; an example that needs a fresh explanation is a sign that
+> explanation belongs there, not here.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second case that differs from the first in the one way that matters — a
+> different scale, a different constraint, a different kind of input. Say what
+> changed and what you did differently because of it.
+>
+> Two examples that differ only in their details teach the same thing twice. The
+> contrast is what lets a reader place their own situation between the two.
+
+Replace this paragraph.
+
+## Try it yourself
+
+> A task for the reader, stated precisely enough to start on, with what a good
+> result looks like so they can check their own work without you.
+>
+> Size it to what the tutorial delivered. This is the first test of the promise
+> § What you can do now is about to make — if the reader cannot do it, that
+> paragraph is not yet true.
+
+Replace this paragraph.
+
+=== sections/05-conclusion.concepts.md
+# Conclusion — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Say what the reader can now do, point at what comes next, and name what is still
+open.
+
+## Claims
+
+- (claim)
+
+## Decisions
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+> Overlaps with § Open edges in the prose — but this list is for the team, and
+> that section is for the reader. Not everything here is ready to ship there.
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/05-conclusion.prose.md
+# Conclusion
+
+<!-- Every `##` becomes one slide. One idea each. -->
+
+## What you can do now
+
+> The recap, stated as capability rather than as summary. Not "we covered X" —
+> rather, what the reader can now do that they could not before.
+>
+> Keep it to what the tutorial actually delivered. This paragraph and
+> § What this tutorial covers must agree exactly; the panel will check.
+
+Replace this paragraph.
+
+## Where to go next
+
+> The next thing to learn, and why it is the next one. Name the specific
+> resource, tool, or topic and say what it adds.
+>
+> Order matters more than length. Three pointers in a sensible sequence beat a
+> list of ten a reader has to triage themselves.
+
+Replace this paragraph.
+
+## Open edges
+
+> What is still unsettled — where the tool is changing, where practice has not
+> converged, where you would not yet give firm advice.
+>
+> End on the opening you leave, not on a restatement. A tutorial that admits its
+> edges is more trustworthy than one that implies the topic is finished.
+
+Replace this paragraph.
+

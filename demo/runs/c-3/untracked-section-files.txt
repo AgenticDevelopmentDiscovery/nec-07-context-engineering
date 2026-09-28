@@ -1,0 +1,77 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+SHOW the tool used whole: complete cases, end to end, so the reader can see the
+parts from § Content working together and adapt them to a case of their own.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples would share a line, one of them is not earning its place.
+
+- (claim)
+
+## Decisions
+
+> Which examples you chose and what you rejected, and how they differ from the
+> walkthroughs in `03-content` — the boundary between the two sections is the
+> choice a team relitigates most often here.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content teaches with cases cut down to show one thing at a time. The
+     examples here are whole: nothing trimmed, so the reader sees the parts
+     working together. Add a `##` per example if you have more than two. -->
+
+## A complete example
+
+> One realistic task, start to finish, with nothing skipped. Show the actual
+> input, the actual commands or configuration, and the actual result — the
+> reader should be able to reproduce it from this unit alone.
+>
+> Do not re-teach the mechanics; point back to § How it works instead. If the
+> example does not fit one slide, split it at its natural stages rather than
+> trimming it — a trimmed example is a walkthrough, and § Content has those.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second whole case, chosen to differ from the first in the way that matters
+> most — a different scale, setting, or constraint. Say what changed and what
+> stayed the same.
+>
+> One example reads as a recipe; two let the reader see which parts belong to
+> the tool and which belonged to the case. Pick the contrast deliberately: a
+> second example that varies nothing important teaches nothing new.
+
+Replace this paragraph.
+
+## Adapting the examples
+
+> What the reader changes to fit their own situation, and what they must leave
+> alone. Name the parts that are load-bearing and the parts that were
+> incidental to the cases above.
+>
+> This is the bridge from the tutorial's cases to the reader's. Without it the
+> examples get copied whole, incidental choices included.
+
+Replace this paragraph.
+

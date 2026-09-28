@@ -1,0 +1,75 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+SHOW the tool in use: whole, realistic cases the reader can reproduce and
+measure their own situation against.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples share a line, one of them is redundant.
+
+- (claim)
+
+## Decisions
+
+> Which examples made the cut and what each was chosen over. Record how they
+> differ from the walkthroughs in `03-content` too — that is the boundary most
+> likely to blur, and the one a reviewer will report as repetition.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     One `##` per example. The units below are a starting shape, not a quota —
+     add one for each example that teaches something the others do not, and
+     split any example that does not fit one slide at its steps. -->
+
+## A complete example
+
+> One realistic task, start to finish: the starting state, what you ran or
+> wrote, and what came out. Show the actual input and the actual output — a
+> reader should be able to reproduce it and check their result against yours.
+>
+> § Content took the tool apart to explain it. This puts it back together: every
+> step is one the reader has already met, and the new thing is seeing them work
+> as a whole.
+
+Replace this paragraph.
+
+## A contrasting example
+
+> A second task, chosen because it differs from the first in a way that matters
+> — a different scale, a different constraint, a different outcome. Say what the
+> difference is before you show it.
+>
+> Two examples that vary one thing teach the reader what that thing does. Two
+> that vary nothing teach the same lesson twice; cut one.
+
+Replace this paragraph.
+
+## What the examples show
+
+> The pattern across the cases, stated once: what stayed the same, what changed,
+> and how a reader can tell which case their own situation resembles.
+>
+> Keep it to what the examples above actually demonstrated. A generalization the
+> cases do not support belongs in § Open edges, not here.
+
+Replace this paragraph.
+

@@ -1,0 +1,79 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+SHOW the tool applied to whole tasks, end to end, so the reader sees the parts
+from § Content working together and can check they are able to do the same.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples would get the same line, one of them is not earning its place.
+
+- (claim)
+
+## Decisions
+
+> Which tasks you chose as examples and what you rejected, and why these belong
+> here rather than in the § Content walkthroughs. Record the contrast between
+> the examples: what differs, and what is meant to stay the same.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> No new mechanism is introduced here; anything an example needs is taught in
+> § Content first.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the tool one part at a time. This section adds no new
+     mechanism: it shows the whole tool at work on whole tasks. Add one `##`
+     per example rather than packing two into a slide. -->
+
+## A complete example
+
+> One realistic task, start to finish, using everything § Content taught and
+> nothing it did not. Show the actual input, the actual commands or code, and
+> the actual output — not a description of them.
+>
+> State the task before the solution, so the reader can try to predict the next
+> step. If the example needs a concept § Content never introduced, the gap is in
+> § Content; fix it there rather than explaining it here.
+
+Replace this paragraph.
+
+## The same tool, a different setting
+
+> A second task that looks different on the surface and is solved the same way.
+> Say what changed from the first example and what stayed the same — the part
+> that stayed the same is what the reader should carry away.
+>
+> Choose the contrast deliberately. Two examples that differ only in their data
+> teach one example twice; two that differ in setting teach the tool.
+
+Replace this paragraph.
+
+## Try it yourself
+
+> A task for the reader, sized to finish in one sitting, with the expected
+> result stated so they can check their own work.
+>
+> Make it a variation on the examples above, not a repeat of them. The point is
+> to find out whether the reader can use the tool on a case you did not solve
+> for them — which is the promise § What this tutorial covers made.
+
+Replace this paragraph.
+
