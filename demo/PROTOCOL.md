@@ -96,3 +96,17 @@ more runs are added to every arm, once. No other additions.
      git checkout -q <arm>`, because a run can leave staged renames that
      `git clean` does not undo.
   4. Observable 6 remains a control only because memory is stripped; noted.
+
+- 2026-09-28, after run A1 (`runs/superseded-a-1-history-leak`, void as an
+  arm-A measurement, kept as record):
+  5. The agent recovered the removed `CLAUDE.md` from git history
+     (`git show HEAD~1:CLAUDE.md`). Arm A on a branch never ran without the
+     manual. Substrate rebuilt as three independent single-commit
+     repositories, `~/Sandbox/nec07-demo-{a,b,c}`, from `b9f2176` via
+     `git archive`; no shared `.git`, no history. Run numbering restarts.
+  6. `--allowedTools` does not gate bash under `autoAllowBashIfSandboxed:
+     true`: sandboxed commands run unprompted, and only the `ask`/`deny`
+     lists apply (`rm` was refused). Equal across arms; recorded as the
+     actual permission set.
+  7. Auto memory is now per arm directory; any memory a run writes is moved
+     into that run's record before the next run.

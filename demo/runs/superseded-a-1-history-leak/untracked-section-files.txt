@@ -1,0 +1,75 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+SHOW the tool whole: complete cases the reader can adapt, after Content has
+taught the parts.
+
+## Claims
+
+> Here these are what each example demonstrates, one line per example. If two
+> examples carry the same claim, one of them is not earning its slide.
+
+- (claim)
+
+## Decisions
+
+> Which examples you chose and what you rejected, and why they sit here rather
+> than in `03-content`. The line between a walkthrough and an example is the
+> one this section relitigates most often.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     One `##` per example. Add units freely — a second example of the same kind
+     is a new heading, not a longer slide. -->
+
+## A complete example
+
+> One case, start to finish, that a reader could lift and run. Show the actual
+> commands, code, or configuration and the result they produce — not a
+> description of them.
+>
+> Content taught the tool one step at a time. This shows the whole of it in one
+> place, with the steps already understood. If it needs explaining again, the
+> gap is in Content, not here.
+
+Replace this paragraph.
+
+## A variation
+
+> The same tool under a different constraint — another input, another scale,
+> another setting. Say what changed from the previous example and what that
+> change forced.
+>
+> Choose the variation a reader is most likely to meet. The difference between
+> two examples teaches more than either one alone.
+
+Replace this paragraph.
+
+## What the examples share
+
+> The pattern, named after the reader has seen it twice. What stayed the same
+> across the cases, and what was free to vary?
+>
+> This is what lets a reader adapt an example rather than copy it. Keep it to
+> what the examples above actually showed; a pattern they did not demonstrate
+> belongs in Content.
+
+Replace this paragraph.
+
