@@ -110,3 +110,8 @@ more runs are added to every arm, once. No other additions.
      actual permission set.
   7. Auto memory is now per arm directory; any memory a run writes is moved
      into that run's record before the next run.
+
+- 2026-09-28, after runs 1–3: every observable differed between A and B by
+  zero, which satisfies "at most one run". The stopping rule was applied as
+  written: two runs added to every arm (A4 B4 C4 A5 B5 C5). No further runs.
+  Main-repository auto memory restored after C5.
