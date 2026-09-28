@@ -9,11 +9,10 @@
 #
 # EDIT ALL OF THIS. Every value below is a placeholder.
 
-title: "Your Project Title"
-subtitle: "A one-line statement of what it is"
+title: "Context Engineering & the Context Window"
+subtitle: "The model only knows what is in the window — deciding what that is, and when"
 author:
-  - Team Member One
-  - Team Member Two
+  - Abhishek Jaiswal
 date: \today
 
 # Where `--citeproc` puts the reference list. Without this the bibliography is
@@ -31,8 +30,13 @@ reference-section-title: References
 # but have never written code" is useful. "Technical readers" is not.
 
 audience: >-
-  Describe your intended reader in one or two sentences: their background, what
-  they already know, and what they should be able to do after reading.
+  Graduate students in engineering and science, from mixed disciplines, a month
+  into a course on agentic development: they have installed Claude Code, run it
+  inside a git repository under a permission model, and edited a CLAUDE.md at
+  least once, but have not yet treated the context window as a resource to be
+  managed. After reading they should be able to diagnose a context failure in
+  their own session and fix it by changing what the agent sees rather than by
+  rewording the prompt.
 
 # --- Presentation only -------------------------------------------------------
 # Any beamer theme in TeX Live. Metropolis is clean and projects well.
