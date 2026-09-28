@@ -7,7 +7,6 @@
 # obvious which is which. Anything that must DIFFER between outputs — page
 # geometry, document class — belongs in the `justfile` instead, not here.
 #
-# EDIT ALL OF THIS. Every value below is a placeholder.
 
 title: "Context Engineering & the Context Window"
 subtitle: "The model only knows what is in the window — deciding what that is, and when"
@@ -28,20 +27,23 @@ reference-section-title: References
 #
 # Be specific. "Second-year undergraduates who have had one statistics course
 # but have never written code" is useful. "Technical readers" is not.
-
 audience: >-
   Graduate students in engineering and science, from mixed disciplines, a month
-  into a course on agentic development: they have installed Claude Code, run it
+  into a course on agentic development. They have installed Claude Code, run it
   inside a git repository under a permission model, and edited a CLAUDE.md at
-  least once, but have not yet treated the context window as a resource to be
-  managed. After reading they should be able to diagnose a context failure in
-  their own session and fix it by changing what the agent sees rather than by
-  rewording the prompt.
+  least once. They know that a model reads text as tokens and that a session
+  has a finite budget of them; they need not know how attention works. After
+  reading they should be able to diagnose a context failure in their own
+  session and fix it by changing what the agent sees or when — reading the
+  window, indexing the repository, placing an instruction in the right layer,
+  or deferring a file to on-demand loading — rather than by rewording the
+  prompt.
 
 # --- Presentation only -------------------------------------------------------
 # Any beamer theme in TeX Live. Metropolis is clean and projects well.
 theme: metropolis
 aspectratio: 169
+section-titles: false
 
 # --- PDF outputs only --------------------------------------------------------
 # Link colouring. The website takes its link colours from `site/style.css`.

@@ -3,58 +3,58 @@
 ## In one sentence
 
 Context engineering is deciding what occupies a model's finite context window at
-each step — what goes in, in what order, at what detail, and when — because at
-any moment the model knows only what is in the window.
+each step — what goes in, when, and at what level of detail — because what the
+model knows about this session and this repository is what is in the window.
 
 ## What it is
 
-A language model has no memory beyond its context window: a bounded token budget
-holding the system prompt, standing instructions, retrieved files, prior turns,
-tool outputs, and the current message. Context engineering is the practice of
-curating that budget. It operates on the environment an instruction runs inside,
-not on the wording of the instruction, and it has two levers: what enters the
-window (selection and timing) and how it is arranged (ordering, precedence, and
-labelling of origin). In Claude Code the concrete instruments are `CLAUDE.md` and
-its layers, on-demand file reads, `@file` and `--add-dir`, `/context`, and
-`/compact`.
+A language model carries what it was trained on in its weights; everything else
+it can use right now — the system prompt, standing instructions, files it has
+read, prior turns, tool outputs, the current message — sits in a bounded token
+budget called the context window. Context engineering is the practice of
+curating that budget. It acts on what the model can see, not on the wording of
+the request. The reader controls selection and timing; the harness controls most
+of the ordering. In Claude Code the concrete instruments are `CLAUDE.md` and its
+layers, on-demand file reads, `@file` typed in a prompt, `--add-dir`, `/context`,
+and `/compact`.
 
 ## Why it belongs in this course
 
-An agent's competence at each step is largely a function of its window contents;
-repositories are large and windows are not. Two failure modes bound the problem:
-with too little context the agent guesses at conventions, re-derives known
-results, or hallucinates; with too much, the relevant signal is buried, cost
-rises, and attention degrades with position — the "lost in the middle" effect.
-Prompting (Tutorial 06) cannot fix either, because the fault is in what the model
-can see, not in what it was told. This is the center of Spine 2: retrieval,
-memory, and automated context management are all answers to the question of what
-goes in the window.
+In an agentic loop the window fills from tool calls and file reads, not only
+from what the person types; repositories exceed windows, so something always
+decides what is left out. Two failure modes bound the problem: with too little
+context the agent guesses at conventions, re-derives what the repository already
+records, or invents; with too much, performance degrades as input grows, and
+older models retrieved mid-context information worse than information at the
+edges. Rewording the request cannot fix either, because the fault is in what the
+model can see. This is the center of the course's second thread (context
+engineering): retrieval, memory, and automated context management are all
+answers to the question of what goes in the window.
 
 ## What the reader will be able to do
 
-- Enumerate what is in the window at a given moment of a Claude Code session,
-  and read `/context` to see what it costs.
-- Write a `CLAUDE.md` that works as an index — pointers, conventions, commands —
-  rather than a manual, and verify on a fixed prompt that it changed the agent's
-  behavior.
-- Layer instructions by stability and precedence (global → project → local →
-  task) and predict which layer wins when they conflict.
-- Decide, for a given file, whether to front-load it or pull it in just-in-time,
-  and know the mechanism for each.
-- Recognize the two failure modes from their symptoms and name the structural
-  fix rather than a rewording.
+- Read what is in the window at a given moment of a Claude Code session with
+  `/context`, and say what each part costs.
+- Write a `CLAUDE.md` that works as an index — commands, conventions that cannot
+  be inferred from the files, pointers — and test on a fixed prompt, over
+  repeated runs, whether it changed the agent's behavior.
+- Place an instruction in the right layer (user, project, local, or the
+  conversation) by stability and audience, know the order in which the layers
+  load, and remove a conflict rather than rely on precedence.
+- Decide, for a given file, whether to front-load it or let it be pulled in on
+  demand, and know which mechanisms do which.
 
 ## Scope
 
 **In scope**
 
-- Window anatomy and the token budget
-- Position effects on attention
-- Instruction layers and precedence
-- `CLAUDE.md` as an index
-- Just-in-time loading (`@file`, `--add-dir`, subdirectory `CLAUDE.md`)
-- Provenance labelling
-- Compaction as the boundary of the budget
+- Window anatomy and the token budget, read with `/context`
+- Degradation with input length; position effects, dated and hedged
+- Instruction layers: load order, placement by stability, conflict removal
+- `CLAUDE.md` as an index rather than a manual
+- Front-loaded versus on-demand: `@path` imports and `--add-dir` versus typed
+  `@file`, subdirectory `CLAUDE.md`, path-scoped rules, and skill bodies
+- Compaction as the boundary of the budget, named but not explained
 
 **Out of scope**
 
@@ -63,28 +63,43 @@ goes in the window.
 - Embeddings and RAG — Tutorial 09; retrieval is context engineering at scale,
   named here but not taught
 - Persistent agent memory — Tutorial 16
+- Provenance labelling — no capability above depends on it
 - Model-specific window sizes and pricing — change too often to be tutorial
-  content
+  content; the tutorial uses percentages, not token counts
 
 ## Shape
 
-- Default four-section arc kept.
-- `03-content` carries the weight: mental model (the window as a
-  position-weighted budget) → basic case (the `CLAUDE.md` contrast demo) →
-  going further (layers and just-in-time loading) → pitfalls.
-- Talk is 10 minutes, 15 max, so the deck stays near 13 content slides; the
-  document may run fuller.
+- Default four-section arc kept, rebalanced: 01-context 2 units, 02-motivation
+  2, 03-content 7, 04-conclusion 2, for 13 content slides in a 10-minute talk
+  (15 max). Origin history and "when to reach for it" fold into motivation
+  rather than taking slides of their own.
+- `03-content`: the window as a readable budget → the demo (one prompt, two
+  windows) → what changed and what did not → `CLAUDE.md` as index → layers →
+  on-demand loading → pitfalls.
+- The demo runs in a throwaway git worktree at the template commit `b9f2176`,
+  with the project `CLAUDE.md` moved out for the without-arm, several runs per
+  arm, and observables fixed before any run. A third arm with a ~30-line index
+  is the one that tests the index-versus-manual claim. Results are presented as
+  a recorded diff with counts; a short live rerun of one arm is optional. A null
+  result is reported as a null result.
+- The formal framing (an index as a sufficient statistic for the repository)
+  gets one sentence on the index slide, not a slide.
+- The subtitle keeps the course brief's phrasing; the precise claim (weights
+  versus window) is made on the first slide.
 
 ## Open questions
 
-- Demo substrate. Default: this repository itself — remove `CLAUDE.md`, ask the
-  agent to add a section, restore it, repeat. Switch to the course
-  symbolic-regression repo (as the topic brief prescribes) if it is available
-  before the talk; the demo shape is identical either way.
-- Whether one `##` unit of formal framing (`CLAUDE.md` as a compressed index,
-  demand paging, the closed-loop view) earns its place in the prose or belongs
-  as a boxed aside — risk of losing the cross-disciplinary reader.
-- Whether the "lost in the middle" claim can be cited from the primary study
-  (Liu et al., 2023) — to be verified in `references.bib` before it appears in
-  prose.
-- Whether to add a skeptic persona to the panel for Q&A preparation.
+- Document length. Thirteen slide-sized units is about a thousand words. After
+  the prose exists, decide between `::: notes` blocks that render in the
+  document only (a departure to record under House conventions) and accepting a
+  lean document.
+- Resolved: `section-titles: false` removes pandoc's section frame; Metropolis's
+  own section page remains. Empty extra frames come from content placed between
+  a `#` heading and its first `##` (the placeholder comments); write nothing
+  there.
+- The exact demo prompt and the number of runs per arm.
+- What else is loaded in both arms (user-level `CLAUDE.md`, auto memory, the
+  `/round` skill description): disclose or strip.
+- Whether the course symbolic-regression repository, if released before the
+  talk, replaces this one as the demo substrate; observables would have to be
+  rewritten for it.
