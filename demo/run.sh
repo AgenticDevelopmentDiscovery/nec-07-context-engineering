@@ -8,8 +8,8 @@ MEM=~/.claude/projects/-Users-abhishek-jai-Sandbox-nec07-demo-$ARM/memory
 MAINMEM=~/.claude/projects/-Users-abhishek-jai-Sandbox-nec-07-context-engineering/memory
 OUT="$REPO/demo/runs/$ARM-$N"
 
-[ -d "$MEM" ] && { echo "ABORT: auto memory present at $MEM"; exit 1; }
-[ -d "$MAINMEM" ] && { echo "ABORT: main-repo memory restored at $MAINMEM"; exit 1; }
+[ -n "$(ls -A "$MEM" 2>/dev/null)" ] && { echo "ABORT: auto memory present at $MEM"; exit 1; }
+[ -n "$(ls -A "$MAINMEM" 2>/dev/null)" ] && { echo "ABORT: main-repo memory restored at $MAINMEM"; exit 1; }
 [ -e "$OUT" ] && { echo "ABORT: $OUT already exists"; exit 1; }
 mkdir -p "$OUT"
 
@@ -35,5 +35,5 @@ for f in sections/*.md; do
   git ls-files --error-unmatch "$f" >/dev/null 2>&1 || { echo "=== $f"; cat "$f"; echo; }
 done > "$OUT/untracked-section-files.txt"
 ( just build > "$OUT/postrun-build.log" 2>&1 && echo PASS || echo FAIL ) > "$OUT/postrun-build.txt"
-[ -d "$MEM" ] && mv "$MEM" "$OUT/memory-written-by-this-run" && echo "memory written; moved into record" >> "$OUT/notes.txt"
+if [ -n "$(ls -A "$MEM" 2>/dev/null)" ]; then mv "$MEM" "$OUT/memory-written-by-this-run"; echo "memory written; moved into record" >> "$OUT/notes.txt"; else rm -rf "$MEM"; fi
 echo "recorded: $OUT"
