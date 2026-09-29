@@ -26,7 +26,7 @@
 
 ### Open questions
 
-- Diagnosis (`metadata.yaml` `audience`) rests on § Two ways a window fails and
+- Diagnosis (`metadata.yaml` `audience`) rests on § How a window fails and
   § Pitfalls. Enough for the reader to do it in their own session?
 
 ### Not doing
@@ -56,8 +56,8 @@
 ### Open questions
 
 - Subagents as context isolation: name as an edge, or stay silent?
-- Team list, not for the reader: document length; the symbolic-regression
-  substrate.
+- Team list, not for the reader: the symbolic-regression substrate. Document
+  length is decided (`topic.md` § Open questions).
 
 ### Not doing
 

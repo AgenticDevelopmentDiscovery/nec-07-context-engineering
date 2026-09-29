@@ -99,4 +99,5 @@ If the spine carries no tags, write `- none` under **Tag audit**. Do not omit th
 Lead `Weaknesses` with contradicted claims in the prose, then unsupported ones, then
 outdated ones. A contradicted claim in shipped prose rules out `ready as-is` and
 `minor polish`.
-Rank `Actionable` by how wrong a reader would be left, hardest-hitting first.
+Rank `Actionable` by how wrong a reader would be left, hardest-hitting first. Seven items
+at most.

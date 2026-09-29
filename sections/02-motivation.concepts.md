@@ -43,9 +43,9 @@
 ### Not doing
 
 - History of prompt engineering.
-- Cost in currency. Cost in tokens or percentages only.
+- Cost in currency. Cost in tokens only.
 
-## Two ways a window fails
+## How a window fails
 
 ### Claims
 

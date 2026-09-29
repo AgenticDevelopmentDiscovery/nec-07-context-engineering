@@ -35,8 +35,8 @@
 - In a Claude Code session the window holds: system prompt, tool definitions,
   instruction files, skill descriptions, memory index, conversation, tool
   output, file reads. `[DOCS]`
-  - Not run: no `/context` reading is recorded in `demo/`. Categories rest on
-    the documentation alone.
+  - Run: `/context` reading of this repository at launch,
+    `demo/runs/context-at-launch-full.png`.
 - Context engineering = deciding what occupies the window at each step: what,
   when, at what level of detail.
 - Acts on what the model can see, not on the wording of the request.
@@ -69,7 +69,7 @@
 
 - Tokenisation and attention mechanics. Audience knows tokens and a finite
   budget (`metadata.yaml`).
-- Window sizes and pricing. Percentages only.
+- Window sizes and pricing. Token counts only.
 
 ## What this tutorial covers
 
@@ -95,12 +95,12 @@
 - Capability list taken from `topic.md` as revised. Four, not five.
 - Diagnosis (the outcome in `metadata.yaml` `audience`) is not a fifth
   capability. It is the four applied, delivered in § Pitfalls.
+- Document length: `::: notes` blocks. Teaching detail prints in the document
+  and the site, stays off the slides (`CLAUDE.md` § House conventions).
+  Rejected: a lean document.
 
 ### Open questions
 
-- Document length. Thirteen slide-sized units ≈ a thousand words. Choice is
-  between `::: notes` blocks (document only; a departure to record under House
-  conventions) and a lean document. Deferred until prose exists. Not decided.
 - Four capabilities, a seven-step roadmap and the scope line on one slide.
   Overflow candidate.
 

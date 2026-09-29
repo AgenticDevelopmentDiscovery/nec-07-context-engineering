@@ -49,9 +49,10 @@ slides:
         -o {{outdir}}/slides.pdf
 
 # Overflowing slides are not a build problem to work around. They are the
-# clearest signal you have that a `##` unit is carrying more than one idea, and
-# the `visual` reviewer is briefed to report them as writing findings. Fix the
-# prose, not the font size.
+# clearest signal you have that a `##` unit is carrying more than one idea. The
+# `visual` reviewer reads output/slides.pdf and reports them as writing
+# findings, each confirmed against the rendered page. Fix the prose, not the
+# font size.
 #
 # Nothing here checks for you: pandoc hides the TeX log unless the build fails.
 # Look at the deck, or ask the agent to.

@@ -53,8 +53,9 @@ padded. Split it or cut it. Shrinking the font hides the signal.
 Nothing in the build checks this for you — pandoc hides the TeX log unless the
 render fails, so an overfull frame is silent. That is deliberate. Overflow is a
 judgement about whether a slide reads, not a threshold to pass: look at the deck,
-or ask the agent to look at it with you. The `visual` reviewer names the `##`
-units it believes are carrying too much, and you confirm against the page.
+or ask the agent to look at it with you. The `visual` reviewer reads
+`output/slides.pdf` and confirms every overflow finding against the rendered
+page, giving the page number.
 
 This is the whole reason the presentation shares a source with the document
 rather than being written separately: it is a standing check on whether the prose
@@ -229,9 +230,12 @@ hole.
   makes a slide of whatever does. `section-titles: false` is set in
   `metadata.yaml`; Metropolis still adds its own section page, so one divider
   per section is expected and a second one means content in that position.
-- **Slide budget: 13 content slides** for a 10-minute talk, 15 at most. The
-  split is 2, 2, 7, 2 across the four sections. A new `##` is paid for by
-  merging or cutting another.
+- **Slide budget: 13 content slides planned, 14 built, 15 the cap**, for a
+  10-minute talk. The split is 2, 2, 8, 2 across the four sections. A new `##`
+  is paid for by merging or cutting another.
+- **`::: notes` blocks carry teaching detail.** They print in the document and
+  the site and stay off the slides: pandoc renders a `notes` div as a Beamer
+  speaker note, and as plain text elsewhere.
 - **Demo evidence lives in `demo/`.** `demo/RESULTS.md` is the only source for
   demo numbers in the prose; the per-run records are in `demo/runs/`, and the
   pre-registered protocol with its amendments in `demo/PROTOCOL.md`. Post-hoc

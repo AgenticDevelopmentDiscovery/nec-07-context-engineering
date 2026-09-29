@@ -37,11 +37,13 @@ This is not a formatting nuisance. A `##` unit that overflows a slide is prose t
 its shape: it is carrying more than one idea, or it is padded. Report overflow as a *writing*
 finding, not a build problem, and say which of the two it is.
 
-Nothing measures this for you — the build does not report it, and you cannot see the rendered
-deck. Judge it from the prose: count the ideas under each `##`, and read the length against
-what a projected slide holds. Say plainly that it is an estimate. A heading you are unsure
-about is worth naming anyway — the team can look at the page in a second, and a near miss
-you flagged costs them nothing.
+Nothing measures this for you — the build does not report it. Read the rendered deck,
+`output/slides.pdf`, which the round's build has just made. Use the prose to find
+candidates: count the ideas under each `##`, and read the length against what a projected
+slide holds. Then **confirm every overflow finding against the rendered page**, and give the
+page number. A unit that holds its text on the page is not an overflow finding, however
+long the prose looks; if it is tight, say tight. If you cannot open the deck, say so and
+file no overflow finding.
 
 ### The three registers
 
@@ -65,7 +67,8 @@ Write exactly this shape. The aggregator parses it.
 <one clause of reason>
 
 ## Slide overflow
-- `<file>` § <heading> — <overflows because: too many ideas | padded | genuinely dense>
+- `<file>` § <heading> — p. <page of `output/slides.pdf`> —
+  <overflows because: too many ideas | padded | genuinely dense>
 
 ## Strengths
 - <what works, in which register>
@@ -79,3 +82,5 @@ Write exactly this shape. The aggregator parses it.
 ```
 
 If no `##` unit overflows, write `- none` under **Slide overflow**. Do not omit the section.
+
+Rank `Actionable` hardest-hitting first. Seven items at most.

@@ -4,8 +4,8 @@
 > one slide. Tags and the writing constraint are defined in
 > `01-context.concepts.md`.
 
-**Purpose.** HOW. Readable budget, the demo, the index, layers, on-demand
-loading, pitfalls. Seven slides.
+**Purpose.** HOW. Readable budget, the `/context` reading, the demo, the index,
+layers, on-demand loading, pitfalls. Eight slides.
 
 ## The window is a budget you can read
 
@@ -18,8 +18,8 @@ loading, pitfalls. Seven slides.
   `[DOCS: commands page]`
 - Part of the budget is spent at launch, before any prompt. `[DOCS:
   context-window page]`
-  - Not run: no `/context` reading is recorded in `demo/`. Rests on the
-    documentation.
+  - Run: 32.3k tokens used at launch in this repository,
+    `demo/runs/context-at-launch-full.png`.
 - Compaction is the boundary: when the budget runs out the conversation is
   summarised. Named, not explained.
 - Project-root `CLAUDE.md` is re-read from disk after compaction. Instructions
@@ -29,23 +29,55 @@ loading, pitfalls. Seven slides.
 
 - Figure = annotated `/context` reading of this repository at launch. Model and
   instrument on one slide. Rejected: an abstract stacked bar — a second figure
-  restating the first.
+  restating the first. Superseded in part: the figure has its own slide,
+  § What `/context` shows at launch.
 - "Budget", not "position-weighted budget".
-- Percentages, not token counts.
+- Token counts, not percentages. Supersedes "percentages, not token counts".
 
 ### Open questions
 
-- Does the `/context` grid survive projection and PDF, or must it be redrawn as
-  SVG (`figures/README.md` prefers vector)?
 - Model, instrument and boundary under one heading. Overflow candidate.
   Fallback: the compaction lines move to § Pitfalls.
-- Auto memory belongs to T16 but is loaded at launch, so it appears in the
-  figure. Label it, or crop it?
 
 ### Not doing
 
 - How compaction summarises (T08).
 - Formal framing as a unit of its own. One sentence, on the index slide.
+
+## What `/context` shows at launch
+
+### Claims
+
+- All from the recorded reading, `demo/runs/context-at-launch-full.png`. The
+  figure, `figures/context-at-launch.png`, is the same capture cropped above
+  the per-file block.
+- Used at launch: 32.3k tokens.
+- Largest rows: Autocompact buffer 33.0k, System tools 17.4k. Then Skills 4.7k,
+  System prompt 4.5k, Memory files 4.3k.
+- Memory files = this repository's `CLAUDE.md`, 4.2k, and the auto-memory
+  index, 163. Both numbers are in the full reading, not in the figure.
+
+### Decisions
+
+- Figure on its own slide. Not shared with § The window is a budget you can
+  read.
+- Token counts, not percentages.
+- Scale ("5k tokens on a 1.0M window, why bother?") answered by marginal
+  value. The manual changed no behaviour, so its cost was pure cost, whatever
+  the window size (`demo/RESULTS.md` § Pre-registered observables).
+
+### Open questions
+
+- Moved from § The window is a budget you can read: does the `/context` panel
+  survive projection and PDF, or must it be redrawn as SVG
+  (`figures/README.md` prefers vector)?
+- Moved from the same unit: auto memory belongs to T16 but is loaded at
+  launch, so it appears in the figure. Label it, or crop it?
+
+### Not doing
+
+- Window sizes as a subject (`topic.md` § Scope). The 1.0M in the figure is
+  the reading, not a claim.
 
 ## The demo: one prompt, two windows
 
@@ -55,11 +87,11 @@ loading, pitfalls. Seven slides.
   Same prompt, same model, headless, fresh session per run
   (`demo/PROTOCOL.md` Amendment 5).
 - Arms: A, project `CLAUDE.md` moved out. B, `CLAUDE.md` as shipped. C, a
-  ~30-line index in its place.
+  32-line index in its place.
 - This unit compares A with B. C is reported under § CLAUDE.md as an index.
 - Observables fixed before any run: both files of the pair created; spine in
   note form; order by numeric prefix; `just build` run; nothing committed;
-  files read and percentage of window used before the first edit.
+  files read before the first edit and tokens consumed at it.
 - Five runs per arm, fifteen in all. Counts reported, not one transcript
   (`demo/RESULTS.md`; per-run records in `demo/runs/`).
 
@@ -169,6 +201,10 @@ loading, pitfalls. Seven slides.
 - Tension named openly: the demo substrate breaks the rule this unit teaches,
   and the template defends that choice. Rejected: saying nothing.
 - Argued from cost per session, not from authority.
+- Scale ("5k tokens on a 1.0M window, why bother?") answered by marginal
+  value. The manual changed no behaviour, so its cost was pure cost, whatever
+  the window size (`demo/RESULTS.md` § Pre-registered observables).
+- Token counts, not percentages.
 - Formal framing kept to one sentence here. Rejected: a slide, and a boxed
   aside.
 - Arm C index is pre-registered: written before any run, from `CLAUDE.md`
@@ -283,8 +319,9 @@ loading, pitfalls. Seven slides.
   removed `CLAUDE.md` recovered from git history
   (`demo/runs/superseded-a-1-history-leak`); auto memory from another
   directory acted on (`demo/runs/dryrun-b.memory-loaded.md`).
-- Directory added with `--add-dir`, agent does not know its contents →
-  reachable, not loaded. `[DOCS: memory page]`
+- Directory added with `--add-dir`, agent does not follow its `CLAUDE.md` or
+  rules → reachable, not loaded by default. Its skills, commands and subagents
+  are loaded. `[DOCS: memory and permissions pages]`
 - Agent re-derives a known result → pointer missing from the index.
 
 ### Decisions

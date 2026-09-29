@@ -52,8 +52,10 @@ answers to the question of what goes in the window.
 - Degradation with input length; position effects, dated and hedged
 - Instruction layers: load order, placement by stability, conflict removal
 - `CLAUDE.md` as an index rather than a manual
-- Front-loaded versus on-demand: `@path` imports and `--add-dir` versus typed
-  `@file`, subdirectory `CLAUDE.md`, path-scoped rules, and skill bodies
+- Front-loaded versus on-demand: `@path` imports versus typed `@file`,
+  subdirectory `CLAUDE.md`, path-scoped rules, and skill bodies
+- `--add-dir`, which belongs to neither group: an added directory's
+  `CLAUDE.md` and rules are not loaded; its skills, commands and subagents are
 - Compaction as the boundary of the budget, named but not explained
 
 **Out of scope**
@@ -65,39 +67,39 @@ answers to the question of what goes in the window.
 - Persistent agent memory — Tutorial 16
 - Provenance labelling — no capability above depends on it
 - Model-specific window sizes and pricing — change too often to be tutorial
-  content; the tutorial uses percentages, not token counts
+  content; the tutorial reports token counts, not percentages
 
 ## Shape
 
 - Default four-section arc kept, rebalanced: 01-context 2 units, 02-motivation
-  2, 03-content 7, 04-conclusion 2, for 13 content slides in a 10-minute talk
+  2, 03-content 8, 04-conclusion 2, for 14 content slides in a 10-minute talk
   (15 max). Origin history and "when to reach for it" fold into motivation
   rather than taking slides of their own.
-- `03-content`: the window as a readable budget → the demo (one prompt, two
-  windows) → what changed and what did not → `CLAUDE.md` as index → layers →
-  on-demand loading → pitfalls.
-- The demo runs in a throwaway git worktree at the template commit `b9f2176`,
-  with the project `CLAUDE.md` moved out for the without-arm, several runs per
-  arm, and observables fixed before any run. A third arm with a ~30-line index
-  is the one that tests the index-versus-manual claim. Results are presented as
-  a recorded diff with counts; a short live rerun of one arm is optional. A null
-  result is reported as a null result.
+- `03-content`: the window as a readable budget → what `/context` shows at
+  launch → the demo (one prompt, two windows) → what changed and what did not
+  → `CLAUDE.md` as index → layers → on-demand loading → pitfalls.
+- The demo runs on three independent single-commit copies of the template
+  commit `b9f2176`, differing only in the project `CLAUDE.md`: absent, the
+  shipped manual, or a 32-line index. Five runs per arm, and observables
+  fixed before any run. The arm with the 32-line index is the one that tests
+  the index-versus-manual claim. Results are presented as a recorded diff with
+  counts; a short live rerun of one arm is optional. A null result is reported
+  as a null result.
 - The formal framing (an index as a sufficient statistic for the repository)
-  gets one sentence on the index slide, not a slide.
+  gets one sentence under § CLAUDE.md as an index, not a manual. It does not
+  get a slide of its own.
 - The subtitle keeps the course brief's phrasing; the precise claim (weights
   versus window) is made on the first slide.
 
 ## Open questions
 
-- Document length. Thirteen slide-sized units is about a thousand words. After
-  the prose exists, decide between `::: notes` blocks that render in the
-  document only (a departure to record under House conventions) and accepting a
-  lean document.
+- Resolved: document length. The document carries `::: notes` blocks: teaching
+  detail that prints in the document and the site and stays off the slides.
+  Recorded under House conventions in `CLAUDE.md`.
 - Resolved: `section-titles: false` removes pandoc's section frame; Metropolis's
   own section page remains. Empty extra frames come from content placed between
   a `#` heading and its first `##` (the placeholder comments); write nothing
   there.
-- The exact demo prompt and the number of runs per arm.
 - What else is loaded in both arms (user-level `CLAUDE.md`, auto memory, the
   `/round` skill description): disclose or strip.
 - Whether the course symbolic-regression repository, if released before the
