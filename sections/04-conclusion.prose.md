@@ -30,3 +30,10 @@ and when.
   Code 2.1.281; the figure was captured on 29 September 2026.
 - These edges lead on: compaction (Tutorial 08); retrieval, the same question
   at scale (09); persistent memory (16).
+
+::: notes
+- A committed `CLAUDE.md` and folder layout are context infrastructure:
+  written once, loaded every session (C1, the reproducible repository).
+- In the capstone, constraints and prior expressions are context that steers
+  the search space; the same question of what to load, and when.
+:::
