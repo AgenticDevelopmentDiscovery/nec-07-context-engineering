@@ -10,12 +10,13 @@ Anthropic's guidance calls context "a finite resource with diminishing
 marginal returns" [@rajasekaran2025]; that is advice, not evidence.
 :::
 
-`/context` shows current usage as a bar and a table by category, in tokens and
-as a share of the window, and lists which instruction and memory files loaded
-[@claudecode-commands; @claudecode-context]. Run it in a fresh session, as in
-the figure under § What `/context` shows at launch: part of the budget is
-already spent, because instruction files, auto memory and skill descriptions
-load before you type anything [@claudecode-context].
+`/context` shows what is filling the window. The documentation describes "a
+colored grid" [@claudecode-commands] and a breakdown by category, with the
+instruction and memory files that loaded [@claudecode-context]. The VS Code
+panel, in the figure under § What `/context` shows at launch, draws a bar and
+a table. Run it in a fresh session: part of the budget is already spent,
+because instruction files, auto memory and skill descriptions load before you
+type anything [@claudecode-context].
 
 As the window approaches its limit, the conversation is summarised
 automatically [@claudecode-context]. This is *compaction*. The project-root
@@ -38,7 +39,7 @@ its header and Memory files listed per file, is
 `demo/runs/context-at-launch-full.png`.
 :::
 
-## The demo: one prompt, two windows
+## The demo: one prompt, three windows
 
 ::: notes
 - **Question.** Does a project `CLAUDE.md` change what the agent does on a
@@ -53,25 +54,31 @@ its header and Memory files listed per file, is
   did not.
 - **Task.** One fixed prompt: add an "Examples" section before the
   conclusion, following the project's conventions, with the build passing.
-- **Observables, numbered and fixed before any run.** 1 both files of the
-  section created; 2 the sidecar in note form; 3 numeric order; 4 `just build`
-  passing; 5 no commit; 6, the control: a convention stated nowhere in the
-  substrate (nothing between `#` and the first `##`), expected not to differ
-  between arms; 7 cost to the first edit.
+- **Observables, fixed before any run.** Five conventions scored per run
+  (1–5). One control (6): a convention stated nowhere in the substrate,
+  expected not to differ between arms. Cost to the first edit (7).
 
 ::: notes
+- **Observables 1 to 5.** 1, both files of the new section created: its
+  prose, and its notes file, `.concepts.md`. 2, the notes file in note form
+  under four headings: Claims, Decisions, Open questions, Not doing. 3, the
+  section placed by the numeric prefix of its filename, with the conclusion
+  renumbered. 4, `just build` run and passing. 5, no commit made.
+- **The control, 6.** Nothing between the new `#` heading and its first `##`.
+- **Observable 7.** Files read before the first edit, and tokens consumed at
+  it.
 - **Runs.** Five per arm, headless; Claude Code 2.1.281, `claude-fable-5-1`.
 :::
 
 ## What changed, and what did not
 
-| Arm | Observables 1–5 | Control | Reads to first edit | Tokens at first edit |
+| Arm | All of 1–5 | Control | Reads to first edit | Tokens at first edit |
 | -------- | ------------ | ------ | ------------- | -------------- |
 | A, no file | 5 of 5 | 0 of 5 | 17.0 (14–20) | 47.2k (44.9–50.3) |
 | B, manual | 5 of 5 | 0 of 5 | 11.6 (9–13) | 46.6k (44.7–49.1) |
 | C, index | 5 of 5 | 0 of 5 | 9.8 (9–11) | 41.3k (39.9–43.1) |
 
-: Runs meeting each observable, of five; then mean (range) over five runs.
+: Runs of five meeting all of 1–5, and the control; then mean (range).
 
 ::: notes
 - **Behaviour: a null result.** Observables 1 to 6 do not differ between
@@ -82,7 +89,12 @@ its header and Memory files listed per file, is
 - **Why.** The conventions behind observables 1 to 4 are also in the README,
   the `justfile` or the existing sections, and the agent read those. Among
   the repository's files, observable 5 is stated only in `CLAUDE.md`; no run
-  committed, in any arm.
+  committed, in any arm. This explanation does not cover observable 5, and we
+  did not test why arm A did not commit. By default Claude Code puts its own
+  instructions for writing commits in the window, in the Bash tool's
+  description [@claudecode-settings-reference]; the demo's command did not
+  turn them off, and the page does not say what they tell the agent about
+  when to commit.
 - **Cost.** Reads are `Read` tool calls. B made about five fewer than A, and
   the two ranges do not overlap; its token range overlaps A's. We infer, and
   did not measure, that the manual spent the saving on its own 1,854 words.
@@ -92,14 +104,17 @@ its header and Memory files listed per file, is
 :::
 
 The manual changed none of the six scored behaviours. It reduced reading
-before the first edit and saved no tokens. Tokens that change no scored
-behaviour are cost on any window. On a repository that describes itself, the
-file changed the cost of reaching the answer, not the answer.
+before the first edit, with no token saving the ranges can separate. The index
+matched the manual on observables 1–5 at 41.3k tokens against 46.6k, and the
+two ranges do not overlap. Tokens that change no scored behaviour are cost on
+any window. On a repository that describes itself, the file changed the cost
+of reaching the answer, not the answer.
 
 ## CLAUDE.md as an index, not a manual
 
 - `CLAUDE.md` loads in full at every launch and again after compaction: every
   line is paid for in every session [@claudecode-memory].
+- An index holds commands, conventions the files cannot supply, and pointers.
 - Arm C's index, six of its 33 lines; subheadings omitted
   (`demo/index.CLAUDE.md`):
 
@@ -115,16 +130,13 @@ critique round at a time. Toolchain and setup: README.md.
 ```
 
 ::: notes
-- An index holds commands, conventions that cannot be inferred from the files,
-  and pointers. Detail stays in files read on demand.
+- In an index, detail stays in files read on demand.
 - By analogy, an index is a *sufficient statistic*: enough to decide what to
   read next.
 - The documentation's advice is a target of "under 200 lines"
   [@claudecode-memory]; this template ships a 240-line manual.
 - The file arrives "as a user message after the system prompt", so its
   contents are advice to the model [@claudecode-memory].
-- **Arm C.** The index matched the manual at the lowest cost of the three
-  (table under § What changed, and what did not).
 :::
 
 ## Layers: order is documented, conflict is not
@@ -142,15 +154,28 @@ critique round at a time. Toolchain and setup: README.md.
   project. Private or per-machine: local. This task only: the conversation.
 - **The fix for a conflict** is to remove it, not to predict the winner.
 
+::: notes
+- **Where each layer lives.** User: `~/.claude/CLAUDE.md`. Project:
+  `./CLAUDE.md` or `./.claude/CLAUDE.md`, shared through version control.
+  Local: `./CLAUDE.local.md`, kept out of version control. Managed policy is
+  a file your organisation installs for every user; you do not edit it
+  [@claudecode-memory].
+- **A conflict, as an illustration; not an observed case.** Your user file
+  says "commit after every change". This project's file says "Do not commit
+  unless asked". Both load, and neither overrides the other. The project rule
+  is the team's, so remove the line from the user file.
+:::
+
 ## On demand: reachable is not loaded
 
 - **Front-loaded.** `CLAUDE.md` at and above the working directory, plus its
   `@path` imports, "expanded and loaded into context at launch"
-  [@claudecode-memory]. Moving text into imports saves nothing.
+  [@claudecode-memory]; skill descriptions and auto memory
+  [@claudecode-context]. Moving text into imports saves nothing.
 - **On demand.** The agent's own file reads, `@file` typed in a prompt, a
   subdirectory `CLAUDE.md`, path-scoped rules, a skill's body
   [@claudecode-memory; @claudecode-context; @claudecode-workflows].
-- **Reachable only.** `--add-dir` grants file access. By default the added
+- **Both: `--add-dir`.** It grants file access. By default the added
   directory's `CLAUDE.md` and rules are not loaded [@claudecode-memory], but
   its skills, commands and subagents are [@claudecode-permissions], so it can
   still spend budget at launch.
@@ -158,6 +183,18 @@ critique round at a time. Toolchain and setup: README.md.
   the rest, which Anthropic's post calls "just in time" [@rajasekaran2025].
 - **Here.** The `/round` skill's description loads at launch; its body loads
   only on use.
+
+::: notes
+- **Where each is written.** An import is `@path/to/file` inside a
+  `CLAUDE.md`. A path-scoped rule is a file in `.claude/rules/` with a
+  `paths` field; it loads when the agent works with matching files. A
+  subdirectory `CLAUDE.md` loads when the agent reads files in that directory
+  [@claudecode-memory].
+- **Two files decided.** Arm C's index, as `CLAUDE.md`: front-loaded, because
+  every task needs its commands and it is 33 lines. `README.md`: deferred.
+  The index names it, "Toolchain and setup: README.md", without an `@`, so it
+  is a pointer and not an import.
+:::
 
 ## Pitfalls: symptom, then the structural fix
 

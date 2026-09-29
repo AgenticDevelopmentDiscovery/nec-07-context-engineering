@@ -23,9 +23,10 @@ and when.
 - Our demo is one prompt and one model, on a repository that describes itself,
   and every run met observables 1 to 5 and built. It says nothing about
   correctness, or about conventions that live only in `CLAUDE.md`.
-- How conflicting instruction files resolve is undocumented
-  [@claudecode-memory].
-- Tool behaviour is as documented on 28 and 29 September 2026, for Claude Code
-  2.1.281, and changes by version [@claudecode-memory; @claudecode-context].
+- Conflicting instruction files have no documented winner: the documentation
+  says Claude "may pick one arbitrarily" [@claudecode-memory].
+- Tool behaviour is as documented on 28 and 29 September 2026, and changes by
+  version [@claudecode-memory; @claudecode-context]. The demo runs used Claude
+  Code 2.1.281; the figure was captured on 29 September 2026.
 - These edges lead on: compaction (Tutorial 08); retrieval, the same question
   at scale (09); persistent memory (16).

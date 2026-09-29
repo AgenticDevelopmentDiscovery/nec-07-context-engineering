@@ -54,20 +54,36 @@
   - Result: the without-arm did not show it. Arm A held observables 1–5 in 5/5
     runs (`demo/RESULTS.md` § Pre-registered observables).
   - Observed case used instead: the control. Observable 6, stated nowhere in
-    the repository, followed in 0/15 runs (same table; `demo/runs/`).
-- Too much: performance degrades as input grows, even on simple tasks. `[CITE:
-  Hong, Troynikov, Huber, "Context Rot", Chroma technical report, 14 Jul 2025 —
-  not peer reviewed]` `[CITE: Modarressi et al., "NoLiMa", arXiv 2502.05167 —
-  venue unchecked]`
-- Position, dated: 2023-era models retrieved mid-context information worse than
-  information at the edges, on multi-document QA and key-value retrieval.
-  `[CITE: Liu et al., "Lost in the Middle", TACL 12:157–173, 2024, DOI
-  10.1162/tacl_a_00638]`
-- Position, hedged: a later benchmark reports most current models robust to
-  that effect, with other spacing biases remaining. `[CITE: Tian et al.,
-  LongPiBench, arXiv 2410.14641 — venue unchecked]`
-- Bound: if the agent had the information and still erred, it is not a context
-  problem.
+    the repository, followed in 0/15 runs (same table; `demo/runs/`). In the
+    notes, not on the slide: the slide keeps the generic description and a
+    pointer to § The demo.
+- Too much: performance degrades as input grows. Dated by study.
+  - 2025, 18 models, "even on simple tasks": Hong et al. only. Names GPT-4.1,
+    Claude 4, Gemini 2.5, Qwen3. `[CITE: Hong, Troynikov, Huber, "Context
+    Rot", Chroma technical report, 14 Jul 2025 — not peer reviewed]`
+  - 2025, 13 models: GPT-4o, GPT-4o mini, Gemini 1.5 and 2.0, Claude 3.5
+    Sonnet, and open-weight models. Not "simple tasks": built to be harder
+    than literal matching. `[CITE: Modarressi et al., "NoLiMa", arXiv
+    2502.05167, submitted 7 Feb 2025 — ICML 2025 per the arXiv record]`
+- Position, dated: models of 2023 (GPT-3.5-Turbo, Claude-1.3,
+  MPT-30B-Instruct, LongChat-13B) often used mid-context information worse
+  than information at the edges, on multi-document QA and key-value
+  retrieval. `[CITE: Liu et al., "Lost in the Middle", TACL 12:157–173, 2024,
+  DOI 10.1162/tacl_a_00638; arXiv 2307.03172, submitted 6 Jul 2023]`
+- Position, hedged: a 2024 benchmark reports most models it tested more
+  robust to that effect, with biases from the spacing of relevant information
+  remaining. Tested Gemini-1.5-Flash, Claude-3-Haiku, GPT-4o-mini and six
+  open-source models; some open-source models still affected. "More robust"
+  is the body's wording; the abstract says "robust". Not "current": the
+  paper's word, about models of 2024. `[CITE: Tian et al., LongPiBench, arXiv
+  2410.14641, submitted 18 Oct 2024 — Findings of ACL 2025 per the arXiv
+  record]`
+- Bound: if the window held the information, alone and unconflicted, and the
+  agent still erred, it is not a context problem. "Alone and unconflicted"
+  keeps the first pitfall inside context problems: a rule in a file that is
+  too long, or in conflict, is loaded and still a context problem.
+- Absence of evidence from agentic coding: in the notes here, on the slide
+  under § Open edges.
 
 ### Decisions
 

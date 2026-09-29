@@ -11,8 +11,8 @@
 ### Claims
 
 - Same four capabilities as § What this tutorial covers, word for word.
-- Each maps to the unit that delivered it: read the window → § The window is a
-  budget you can read; index and test → § The demo, § What changed, § CLAUDE.md
+- Each maps to the unit that delivered it: read the window → § What
+  `/context` shows at launch; index and test → § The demo, § What changed, § CLAUDE.md
   as an index; place an instruction → § Layers; front-load or on demand → § On
   demand.
 - A capability without a unit is removed from both lists.
@@ -39,8 +39,13 @@
 
 - Evidence on length and position comes from retrieval-style benchmarks.
   Agentic coding sessions are untested in the sources found.
-- Conflict resolution between instruction files is undocumented behaviour.
-- Tool behaviour is as of the documentation on its access date. `[DOCS]`
+- Conflicting instruction files have no documented winner; the page says
+  Claude "may pick one arbitrarily". `[DOCS: memory page]` Not
+  "undocumented": the page documents that the choice may be arbitrary.
+- Tool behaviour is as of the documentation on its access dates, 28 and 29
+  September 2026. `[DOCS]` The pages are living and carry no version.
+- 2.1.281 is the version of the demo runs only (`demo/RESULTS.md`). The
+  figure has a date, 29 September 2026; the panel shows no version.
 - Edges map to later tutorials: compaction T08, retrieval T09, persistent
   memory T16.
 

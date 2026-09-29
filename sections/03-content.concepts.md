@@ -16,9 +16,12 @@ layers, on-demand loading, pitfalls. Eight slides.
   guidance, not evidence]`
 - `/context` shows what occupies the window and what each category costs.
   `[DOCS: commands page]`
-  - Prose: "a bar and a table by category", which is what the recorded panel
-    shows. Not "a grid": the commands page describes a grid, the VS Code
-    panel does not draw one.
+  - Prose names both, each with its source. Commands page: "Visualize
+    current context usage as a colored grid." Context-window page: "a live
+    breakdown by category with optimization suggestions, including which
+    CLAUDE.md and auto memory files loaded". The recorded VS Code panel: a
+    bar and a table.
+  - Not "in the terminal": neither page names a surface for the grid.
 - Part of the budget is spent at launch, before any prompt. `[DOCS:
   context-window page]`
   - Run: 32.5k tokens used at launch in this repository,
@@ -113,7 +116,7 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Window sizes as a subject (`topic.md` § Scope). The 1.0M in the figure is
   the reading, not a claim.
 
-## The demo: one prompt, two windows
+## The demo: one prompt, three windows
 
 ### Claims
 
@@ -123,10 +126,17 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Arms: A, project `CLAUDE.md` moved out. B, `CLAUDE.md` as shipped. C, a
   33-line index in its place (`wc -l` prints 32: the last line has no
   newline).
-- This unit compares A with B. C is reported under § CLAUDE.md as an index.
-- Observables fixed before any run: both files of the pair created; spine in
-  note form; order by numeric prefix; `just build` run; nothing committed;
-  files read before the first edit and tokens consumed at it.
+- This unit introduces all three arms. C is reported in the table under
+  § What changed, and what did not.
+- Observables fixed before any run, as registered (`demo/PROTOCOL.md`
+  § Observables): 1 both `.prose.md` and `.concepts.md` created; 2
+  `.concepts.md` in note form with Claims / Decisions / Open questions / Not
+  doing; 3 order correct by numeric prefix, conclusion renumbered; 4 `just
+  build` run and passing; 5 no commit made; 6 the control; 7 files read
+  before the first edit and tokens consumed at it.
+- On the slide, three groups, the table's: five conventions (1–5), one
+  control (6), cost to the first edit (7). The enumeration is in the notes,
+  without "sidecar" or "numeric order" bare.
 - Control, observable 6: nothing between `#` and the first `##`, stated
   nowhere in the substrate. Registered prediction: "6 should not differ
   between arms" (`demo/PROTOCOL.md` § Predictions). Prose: "expected not to
@@ -148,9 +158,11 @@ layers, on-demand loading, pitfalls. Eight slides.
   about `CLAUDE.md` is within the agent's reach in arm A.
 - Remove by moving the file. Rejected: `--bare`, which also drops skills, hooks
   and memory. `[DOCS: cli-reference page — check]`
-- Heading stays. This unit compares A with B, so "two windows" is true of it; C
-  is reported under § CLAUDE.md as an index, not a manual. Rejected: renaming
-  to three windows.
+- Heading: "three windows". The unit lists three arms and the table has
+  three rows; `demo/RESULTS.md` is titled "three windows". Supersedes
+  "Heading stays". `topic.md` § Shape agrees. The title of
+  `demo/PROTOCOL.md` keeps "two windows (plus a third arm)": the protocol is
+  the record.
 - Prompt fixed: add an "Examples" section between content and conclusion,
   following the project's conventions, build passing (`demo/prompt.txt`;
   `demo/PROTOCOL.md` § Task prompt).
@@ -181,7 +193,8 @@ layers, on-demand loading, pitfalls. Eight slides.
   paragraph that ends on the closing sentence. Everything else is in a
   `::: notes` block. As two paragraphs the frame was overfull.
 - Table, counts of five (§ Pre-registered observables): observables 1–5 at
-  5/5 in every arm; control (6) at 0/5 in every arm.
+  5/5 in every arm; control (6) at 0/5 in every arm. Column headed "All of
+  1–5": each of the five was 5/5, so every run met all five.
 - Table, mean and range over five runs (§ Observable 7). Reads to first edit,
   `Read` tool calls only, as registered: A 17.0 (14–20), B 11.6 (9–13),
   C 9.8 (9–11). Tokens at first edit: A 47.2k (44.9–50.3), B 46.6k
@@ -191,10 +204,17 @@ layers, on-demand loading, pitfalls. Eight slides.
   B 18.6 (17–21), C 17.4 (16–19). Post hoc, in `demo/RESULTS.md` § Post-hoc
   observations.
 - After the table, only what the table shows: the manual changed none of
-  observables 1 to 6, reduced reading before the first edit, saved no tokens.
+  observables 1 to 6 and reduced reading before the first edit. Tokens: no
+  saving the ranges can separate, B 44.7–49.1 against A 44.9–50.3. Not
+  "saved no tokens": B's mean is lower, 46.6k against 47.2k.
   "Spent the saving on its own length" is an inference: in the notes, marked
-  as inferred, not on the slide. Then the point, scoped to that: tokens that
-  change no scored behaviour are cost on any window.
+  as inferred, not on the slide.
+- Then arm C, on the slide: matched the manual on observables 1–5 at 41.3k
+  tokens against 46.6k; ranges do not overlap, 39.9–43.1 against 44.7–49.1
+  (`demo/RESULTS.md` § Observable 7, "C's worst run (43.1k) is below A's best
+  (44.9k) and B's best (44.7k): no overlap").
+- Then the point, scoped to that: tokens that change no scored behaviour are
+  cost on any window.
 - Closing sentence: on a repository that describes itself, the file changed
   the cost of reaching the answer, not the answer.
 - Notes, behaviour: null. Control 0 of 5 in every arm; the protocol predicted
@@ -206,16 +226,27 @@ layers, on-demand loading, pitfalls. Eight slides.
   existing sidecars (§ Threats to validity). Observable 5: stated in
   `CLAUDE.md` only, among the repository's files (`demo/PROTOCOL.md`
   § Observables); no run committed, in any arm. Not "no second source":
-  round 002 accuracy report, Claude Code puts built-in commit instructions in
-  context by default (settings reference, `includeGitInstructions`), and the
-  demo did not turn them off. Not checked here, and not in the prose: no
-  entry in `references.bib` for that page.
+  round 002 accuracy report.
+- Notes, why, disclosure: built-in instructions "for how to write commits
+  and pull requests, in the Bash tool's description", in context by default
+  (`includeGitInstructions`, default `true`). `[DOCS: settings reference
+  page, read 2026-09-29]` In `references.bib` as
+  `claudecode-settings-reference`.
+  - Not turned off: `demo/run.sh` sets no flag or variable for it and the
+    repository has no setting for it. User-level settings are not in the
+    record. Bash is in the tool list of every run's init event.
+  - The page does not say what the instructions tell the agent about when
+    to commit. So not claimed: that they explain observable 5.
+- Notes, why, the gap stated: the explanation does not cover observable 5;
+  why arm A did not commit was not tested. Not "the prompt asked for no
+  commit": `demo/prompt.txt` does not mention commits.
 - Notes, cost: B about five fewer `Read` calls than A (11.6 against 17.0);
   ranges do not overlap (9–13, 14–20). Token ranges overlap. "Spent on the
   manual's 1,854 words" is an inference, not measured.
 - Notes, post hoc, labelled as such: 1 of 5 B runs cited `CLAUDE.md` for a
   choice (b-1); 4 of 5 A runs named the README, the `justfile` and the
-  existing sections (a-1 to a-4). Counted from `demo/runs/*/log.jsonl`.
+  existing sections (a-1 to a-4). Counted from `demo/runs/*/log.jsonl`, and
+  recorded in `demo/RESULTS.md` § Post-hoc observations.
 
 ### Decisions
 
@@ -242,8 +273,13 @@ layers, on-demand loading, pitfalls. Eight slides.
 
 ### Claims
 
-- On the slide: the load claim and the excerpt. Everything else is in a
-  `::: notes` block.
+- On the slide: the load claim, the definition and the excerpt. Everything
+  else is in a `::: notes` block. Frame holds at 13 lines, p. 13; if it
+  overflows, the load claim moves to notes, since § The window is a budget
+  you can read states it.
+- On the slide, the definition: an index holds commands, conventions the
+  files cannot supply, and pointers. Same rule as `topic.md` ("cannot be
+  inferred from the files").
 - Loaded in full at every launch and re-read after compaction. Every line is
   paid for in every session. `[DOCS: memory page]`
 - Excerpt: six of the 33 lines of `demo/index.CLAUDE.md`, lines 1, 3, 4, 8, 9
@@ -252,13 +288,12 @@ layers, on-demand loading, pitfalls. Eight slides.
   lines dropped. Two "…" markers, for lines 10 to 29 and 31 to 33. The `##`
   heading on line 6 is dropped without a marker; the lead-in discloses it,
   "subheadings omitted". The `#` title on line 1 is shown.
-- Notes, Arm C, one clause: the index matched the manual at the lowest cost of the
-  three (`demo/RESULTS.md` § What the demo supports). Numbers are in the table
-  under § What changed, and what did not.
+- Arm C is not in this unit's notes. Its result is on the slide under § What
+  changed, and what did not, in the table and the paragraph under it. The
+  notes bullet here repeated that paragraph and was removed.
 - Not in the prose: turns and seconds. C lowest, ranges overlap, tendency
   only (`demo/RESULTS.md` § Observable 7).
-- Notes: an index holds commands, conventions that cannot be inferred from
-  the files, and pointers. Detail stays in files read on demand.
+- Notes: in an index, detail stays in files read on demand.
 - Notes, by analogy, one sentence: an index is a sufficient statistic, enough
   to decide what to read next.
 - Notes, vendor guidance: "target under 200 lines per CLAUDE.md file".
@@ -314,6 +349,14 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Placement by stability and audience: personal habit → user; team convention →
   project; private or per-machine → local; this task → the conversation.
 - Structural fix for a conflict: remove it.
+- Notes, locations: user `~/.claude/CLAUDE.md`; project `./CLAUDE.md` or
+  `./.claude/CLAUDE.md`; local `./CLAUDE.local.md`; managed policy is
+  organisation-wide, installed by IT. `[DOCS: memory page, table under
+  "Choose where to put CLAUDE.md files"]`
+- Notes, one conflict worked: user file against this project's "Do not
+  commit unless asked". An illustration, labelled as one; not run. "If two
+  files give different guidance for the same behavior, Claude may pick one
+  arbitrarily." `[DOCS: memory page]`
 
 ### Decisions
 
@@ -344,6 +387,18 @@ layers, on-demand loading, pitfalls. Eight slides.
   context-window pages]`
 - Front-loaded: `@path` imports inside `CLAUDE.md` — "expanded and loaded into
   context at launch". `[DOCS: memory page]`
+- Front-loaded, also: skill descriptions and auto memory. "Before you type
+  anything: CLAUDE.md, auto memory, MCP tool names, and skill descriptions
+  all load into context." `[DOCS: context-window page]`
+- `--add-dir` bullet labelled "Both", not "Reachable only": its instruction
+  files are reachable, its skills, commands and subagents are loaded.
+- Notes, where each is written: `@path/to/import`; `.claude/rules/` with a
+  `paths` field, loaded "when Claude works with matching files"; subdirectory
+  files "load on demand when Claude reads files in those directories".
+  `[DOCS: memory page]`
+- Notes, two files decided: arm C's index front-loaded; `README.md` deferred,
+  named in the index without an `@`, so a pointer and not an import
+  (`demo/index.CLAUDE.md`, line 4).
 - `--add-dir` grants file access. `CLAUDE.md` and rules in an added directory
   are not loaded by default. `[DOCS: memory page]`
 - Skills, commands and subagents in an added directory are loaded, so it can

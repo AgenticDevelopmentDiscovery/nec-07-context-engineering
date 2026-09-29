@@ -72,9 +72,20 @@ other models, or about correctness — every run was correct.
 - **Tool calls of every kind before the first edit** (post hoc; the
   registered measure is reads): A 25.2 (24–27), B 18.6 (17–21), C 17.4
   (16–19). Per-run values: the `calls` column of `table.sh`.
-- **Provenance of the same action differs.** Arm B justified choices by
-  citing `CLAUDE.md` ("names renumbering as the way to change the arc");
-  arm A reached identical choices from the README and existing files.
+- **Provenance of the same action differs.** Counted from the final message
+  of each run's `log.jsonl`.
+  - Arm B: 1 of 5 runs cited `CLAUDE.md` for a choice. b-1: "`CLAUDE.md`
+    names renumbering as the way to change the arc". b-2 to b-5 name
+    `CLAUDE.md` only as a file they edited.
+  - Arm A: 4 of 5 runs named the README, the `justfile` and the existing
+    sections as their source (a-1 to a-4). a-2: "I took the conventions from
+    the README, the justfile, and the existing sections instead."
+  - a-5 noted the missing file and named no source in its place:
+    "`README.md` points to a `CLAUDE.md` as "the method", but that file does
+    not exist in the repo. I left this alone." All five A runs noted that
+    `CLAUDE.md` was missing.
+  - Arm C: 0 of 5 runs cited `CLAUDE.md` for a choice; all five name it as a
+    file they edited.
 - **Run-to-run variation is real.** The new section got 3 `##` units in 12
   runs and 4 in two (c-1, c-5). Three runs (a-3, b-1, b-3) renumbered with
   `mv` rather than `git mv`, leaving the rename unstaged.

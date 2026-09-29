@@ -76,7 +76,7 @@ answers to the question of what goes in the window.
   (15 max). Origin history and "when to reach for it" fold into motivation
   rather than taking slides of their own.
 - `03-content`: the window as a readable budget → what `/context` shows at
-  launch → the demo (one prompt, two windows) → what changed and what did not
+  launch → the demo (one prompt, three windows) → what changed and what did not
   → `CLAUDE.md` as index → layers → on-demand loading → pitfalls.
 - The demo runs on three independent single-commit copies of the template
   commit `b9f2176`, differing only in the project `CLAUDE.md`: absent, the
