@@ -13,10 +13,10 @@ marginal returns" [@rajasekaran2025]; that is advice, not evidence.
 `/context` shows what is filling the window. The documentation describes "a
 colored grid" [@claudecode-commands] and a breakdown by category, with the
 instruction and memory files that loaded [@claudecode-context]. The VS Code
-panel, in the figure under § What `/context` shows at launch, draws a bar and
-a table. Run it in a fresh session: part of the budget is already spent,
-because instruction files, auto memory and skill descriptions load before you
-type anything [@claudecode-context].
+panel draws a bar and a table; the figure shows the table. Run it in a fresh
+session: part of the budget is already spent, because instruction files, auto
+memory and skill descriptions load before you type anything
+[@claudecode-context].
 
 As the window approaches its limit, the conversation is summarised
 automatically [@claudecode-context]. This is *compaction*. The project-root
@@ -33,9 +33,10 @@ before any prompt. The four largest rows counted in the 32.5k are System tools
 (17.4k), Skills (4.7k), System prompt (4.5k) and Memory files (4.4k). The
 autocompact buffer is reserved on top of them. Memory files is this
 repository's `CLAUDE.md` plus the auto-memory index. Skills is skill
-descriptions loaded from this repository and the user level. The harness
-controls System tools and System prompt. The full readout, with the total in
-its header and Memory files listed per file, is
+descriptions, and the panel does not break the row down by source. In our
+demo runs the logs list 28 skills at launch; one of them, `/round`, is this
+repository's. The harness controls System tools and System prompt. The full
+readout, with the total in its header and Memory files listed per file, is
 `demo/runs/context-at-launch-full.png`.
 :::
 
@@ -87,33 +88,35 @@ its header and Memory files listed per file, is
   arm's window. Our prediction that observables 2 and 5 would separate A from
   B failed.
 - **Why.** The conventions behind observables 1 to 4 are also in the README,
-  the `justfile` or the existing sections, and the agent read those. Among
-  the repository's files, observable 5 is stated only in `CLAUDE.md`; no run
-  committed, in any arm. This explanation does not cover observable 5, and we
-  did not test why arm A did not commit. By default Claude Code puts its own
-  instructions for writing commits in the window, in the Bash tool's
-  description [@claudecode-settings-reference]; the demo's command did not
-  turn them off, and the page does not say what they tell the agent about
+  the `justfile` or the existing sections, and the agent read those.
+  Observable 5 is stated in `CLAUDE.md` and, for the end of a critique round,
+  in the `/round` skill's file, `.claude/skills/round/SKILL.md`, which every
+  arm-A run read or searched before its first edit. No run committed, in any
+  arm, and we did not test why arm A did not. By default Claude Code also
+  puts its own instructions for writing commits in the window, in the Bash
+  tool's description [@claudecode-settings-reference]; the demo's command did
+  not turn them off, and the page does not say what they tell the agent about
   when to commit.
-- **Cost.** Reads are `Read` tool calls. B made about five fewer than A, and
-  the two ranges do not overlap; its token range overlaps A's. We infer, and
-  did not measure, that the manual spent the saving on its own 1,854 words.
+- **Cost.** The manual reduced reading before the first edit, with no token
+  saving the ranges can separate. Reads are `Read` tool calls. B made about
+  five fewer than A, and the two ranges do not overlap; its token range
+  overlaps A's. We infer, and did not measure, that the manual spent the
+  saving on its own 1,854 words.
 - **Post hoc, not pre-registered.** One B run of five cited `CLAUDE.md` for a
   choice. Four A runs of five named the README, the `justfile` and the
   existing sections as their source.
 :::
 
-The manual changed none of the six scored behaviours. It reduced reading
-before the first edit, with no token saving the ranges can separate. The index
-matched the manual on observables 1–5 at 41.3k tokens against 46.6k, and the
-two ranges do not overlap. Tokens that change no scored behaviour are cost on
-any window. On a repository that describes itself, the file changed the cost
-of reaching the answer, not the answer.
+The manual changed no scored behaviour. The index matched it on 1–5 at 41.3k
+tokens against 46.6k, with no overlap of ranges. Why cut 5k tokens on a 1.0M
+window? Tokens that change no scored behaviour are cost on any window. On a
+repository that describes itself, the file changed the cost of reaching the
+answer, not the answer.
 
 ## CLAUDE.md as an index, not a manual
 
-- `CLAUDE.md` loads in full at every launch and again after compaction: every
-  line is paid for in every session [@claudecode-memory].
+- The project-root `CLAUDE.md` loads in full at every launch and again after
+  compaction: every line is paid for in every session [@claudecode-memory].
 - An index holds commands, conventions the files cannot supply, and pointers.
 - Arm C's index, six of its 33 lines; subheadings omitted
   (`demo/index.CLAUDE.md`):

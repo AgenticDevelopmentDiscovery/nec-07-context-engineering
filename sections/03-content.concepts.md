@@ -20,14 +20,15 @@ layers, on-demand loading, pitfalls. Eight slides.
     current context usage as a colored grid." Context-window page: "a live
     breakdown by category with optimization suggestions, including which
     CLAUDE.md and auto memory files loaded". The recorded VS Code panel: a
-    bar and a table.
+    bar and a table. The figure is cropped to the table, and the prose says
+    so: "the figure shows the table".
   - Not "in the terminal": neither page names a surface for the grid.
 - Part of the budget is spent at launch, before any prompt. `[DOCS:
   context-window page]`
   - Run: 32.5k tokens used at launch in this repository,
     `demo/runs/context-at-launch-full.png`.
-  - "Run it in a fresh session" refers to the figure by its heading, § What
-    `/context` shows at launch.
+  - The prose refers to "the figure", not to its heading. One figure in the
+    document, on the next slide.
 - Compaction is the boundary: the conversation is summarised automatically as
   the window approaches its limit, not when it runs out. `[DOCS:
   context-window page]` Named, not explained.
@@ -83,9 +84,17 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Notes: Memory files = this repository's `CLAUDE.md` plus the auto-memory
   index. No per-file numbers in the prose. In the full readout: `CLAUDE.md`
   4.3k, auto-memory index 163.
-- Notes: Skills = skill descriptions loaded from this repository and the user
-  level. Not confirmed that all 4.7k comes from this repository, so not
-  claimed.
+- Notes: Skills = skill descriptions; the panel gives one row, no breakdown
+  by source. `[DOCS: context-window page]`
+- Notes: the demo logs list 28 skills in the init event of every run, 15 of
+  15; one, `round`, is this repository's (`demo/runs/*/log.jsonl`).
+  - "28 skills", not "28 skill descriptions": the init event lists names.
+  - The logs are the headless demo runs. The capture is a VS Code session in
+    this repository, a day later; its skill count is not recorded. So the 28
+    is attributed to the demo runs, not to the figure.
+  - Not "from this repository and the user level": 27 of the 28 are not this
+    repository's. Their sources are not named in the prose; the skills page
+    is not in `references.bib`.
 - Notes: the harness controls System tools and System prompt.
 - Notes: pointer to the full readout.
 
@@ -94,14 +103,14 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Figure on its own slide. Not shared with § The window is a budget you can
   read.
 - Token counts, not percentages.
-- Scale ("5k tokens on a 1.0M window, why bother?") answered by marginal
-  value, under § What changed, and what did not. Not answered here.
+- Scale ("5k tokens on a 1.0M window, why bother?") posed and answered by
+  marginal value, under § What changed, and what did not. Not answered here.
 - Per-file numbers (4.3k, 163) are not in the notes. They are in the full
   readout, which the notes point to.
 - Source is the light-theme capture. Supersedes the dark capture: 32.3k used,
   Memory files 4.3k, `CLAUDE.md` 4.2k, Free space 934.7k.
-- "This repository controls Memory files and Skills" dropped. Skills includes
-  user-level skills.
+- "This repository controls Memory files and Skills" dropped. One skill of
+  the 28 in the demo logs is this repository's.
 
 ### Open questions
 
@@ -204,17 +213,23 @@ layers, on-demand loading, pitfalls. Eight slides.
   B 18.6 (17–21), C 17.4 (16–19). Post hoc, in `demo/RESULTS.md` § Post-hoc
   observations.
 - After the table, only what the table shows: the manual changed none of
-  observables 1 to 6 and reduced reading before the first edit. Tokens: no
-  saving the ranges can separate, B 44.7–49.1 against A 44.9–50.3. Not
-  "saved no tokens": B's mean is lower, 46.6k against 47.2k.
+  observables 1 to 6.
+- In the notes, under Cost, not on the slide: the manual reduced reading
+  before the first edit. Tokens: no saving the ranges can separate, B
+  44.7–49.1 against A 44.9–50.3. Not "saved no tokens": B's mean is lower,
+  46.6k against 47.2k. With the scale question added the frame was 18.6pt
+  overfull; this sentence moved and the frame is back at five lines.
   "Spent the saving on its own length" is an inference: in the notes, marked
   as inferred, not on the slide.
 - Then arm C, on the slide: matched the manual on observables 1–5 at 41.3k
   tokens against 46.6k; ranges do not overlap, 39.9–43.1 against 44.7–49.1
   (`demo/RESULTS.md` § Observable 7, "C's worst run (43.1k) is below A's best
   (44.9k) and B's best (44.7k): no overlap").
-- Then the point, scoped to that: tokens that change no scored behaviour are
-  cost on any window.
+- Then the scale question, posed on the slide before its answer: "Why cut 5k
+  tokens on a 1.0M window?" 5k is 46.6k less 41.3k, 5.3k; 1.0M is the header
+  of the `/context` reading.
+- Then the answer, scoped to the table: tokens that change no scored
+  behaviour are cost on any window.
 - Closing sentence: on a repository that describes itself, the file changed
   the cost of reaching the answer, not the answer.
 - Notes, behaviour: null. Control 0 of 5 in every arm; the protocol predicted
@@ -223,10 +238,18 @@ layers, on-demand loading, pitfalls. Eight slides.
   failed (§ Predictions against outcomes).
 - Notes, why: conventions behind observables 1–4 are also in `README.md`, the
   `justfile` or the existing section pairs; for 2 the second source is the
-  existing sidecars (§ Threats to validity). Observable 5: stated in
-  `CLAUDE.md` only, among the repository's files (`demo/PROTOCOL.md`
-  § Observables); no run committed, in any arm. Not "no second source":
-  round 002 accuracy report.
+  existing sidecars (§ Threats to validity).
+- Notes, why, observable 5: stated in `CLAUDE.md` and in
+  `.claude/skills/round/SKILL.md`, "Do not edit `sections/`, do not commit,
+  do not start another round", scoped to the end of a round. No run
+  committed, in any arm.
+  - Every arm-A run met that line before its first edit: a-2 to a-5 by
+    `Read` of the file, a-1 by a `grep` over `.claude/skills/round/` that
+    returned it (`demo/runs/a-*/log.jsonl`).
+  - Not "stated only in `CLAUDE.md`": contradicted by the substrate.
+    `demo/PROTOCOL.md` § Observables still says "CLAUDE.md only", and
+    `demo/RESULTS.md` does not record the second file. Both to be amended.
+  - Not claimed: that the line explains observable 5 in arm A. Not tested.
 - Notes, why, disclosure: built-in instructions "for how to write commits
   and pull requests, in the Bash tool's description", in context by default
   (`includeGitInstructions`, default `true`). `[DOCS: settings reference
@@ -237,9 +260,10 @@ layers, on-demand loading, pitfalls. Eight slides.
     record. Bash is in the tool list of every run's init event.
   - The page does not say what the instructions tell the agent about when
     to commit. So not claimed: that they explain observable 5.
-- Notes, why, the gap stated: the explanation does not cover observable 5;
-  why arm A did not commit was not tested. Not "the prompt asked for no
-  commit": `demo/prompt.txt` does not mention commits.
+- Notes, why, the gap stated: why arm A did not commit was not tested. Two
+  candidates are named, the skill file and the built-in instructions, and
+  neither is claimed. Not "the prompt asked for no commit":
+  `demo/prompt.txt` does not mention commits.
 - Notes, cost: B about five fewer `Read` calls than A (11.6 against 17.0);
   ranges do not overlap (9–13, 14–20). Token ranges overlap. "Spent on the
   manual's 1,854 words" is an inference, not measured.
@@ -280,8 +304,11 @@ layers, on-demand loading, pitfalls. Eight slides.
 - On the slide, the definition: an index holds commands, conventions the
   files cannot supply, and pointers. Same rule as `topic.md` ("cannot be
   inferred from the files").
-- Loaded in full at every launch and re-read after compaction. Every line is
-  paid for in every session. `[DOCS: memory page]`
+- The project-root `CLAUDE.md`: loaded in full at every launch and re-read
+  after compaction. Every line is paid for in every session. `[DOCS: memory
+  page, "Project-root CLAUDE.md survives compaction"]` Scoped to the
+  project-root file: nested files "reload as Claude reads files they apply
+  to".
 - Excerpt: six of the 33 lines of `demo/index.CLAUDE.md`, lines 1, 3, 4, 8, 9
   and 30. Title, the pointer to `README.md`, the `just build` command, "Do
   not commit unless asked". Long lines re-broken to fit the frame; blank
@@ -307,10 +334,10 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Tension named openly: the demo substrate breaks the rule this unit teaches,
   and the template defends that choice. Rejected: saying nothing.
 - Argued from cost per session, not from authority.
-- Scale ("5k tokens on a 1.0M window, why bother?") answered by marginal
-  value, under § What changed, and what did not. Scoped to the scored
-  behaviours: the manual changed none of observables 1 to 6. Rejected: "bought
-  no change in what the agent did" — the manual did reduce reading.
+- Scale ("5k tokens on a 1.0M window, why bother?") posed and answered by
+  marginal value, under § What changed, and what did not. Scoped to the
+  scored behaviours: the manual changed none of observables 1 to 6. Rejected:
+  "bought no change in what the agent did" — the manual did reduce reading.
 - Token counts, not percentages.
 - Formal framing kept to one sentence here. Rejected: a slide, and a boxed
   aside.

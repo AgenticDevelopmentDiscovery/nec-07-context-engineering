@@ -115,3 +115,15 @@ more runs are added to every arm, once. No other additions.
   zero, which satisfies "at most one run". The stopping rule was applied as
   written: two runs added to every arm (A4 B4 C4 A5 B5 C5). No further runs.
   Main-repository auto memory restored after C5.
+
+- 2026-09-29, after all fifteen runs, from a reading of the logs (critique
+  round 004). No run was added and no score changes:
+  8. The "Stated in" entry for observable 5, "CLAUDE.md only", was wrong. At
+     `b9f2176`, `.claude/skills/round/SKILL.md` line 94 also says it: "Then
+     **stop**. Do not edit `sections/`, do not commit, do not start another
+     round." The instruction is scoped to the end of a critique round, and
+     the file is present in every arm. Every arm-A run met that line before
+     its first edit: a-2 to a-5 read the file with `Read`, and a-1 ran a
+     `grep` over it that returned the line (`runs/a-*/log.jsonl`). The table
+     above is left as registered. The prediction that observable 5 would
+     separate A from B was made on that entry.

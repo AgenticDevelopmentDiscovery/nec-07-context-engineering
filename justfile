@@ -35,6 +35,7 @@ doc:
         --pdf-engine={{engine}} \
         --toc --toc-depth=2 --number-sections \
         -V documentclass=article -V fontsize=11pt -V geometry:margin=1in \
+        -V header-includes='\usepackage{float}\floatplacement{figure}{H}' \
         -o {{outdir}}/document.pdf
 
 # --- Presentation -----------------------------------------------------------

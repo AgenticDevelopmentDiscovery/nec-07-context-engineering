@@ -15,7 +15,14 @@
   - Not run: no share was measured. Stated without a number. The logs record
     `Read` calls before the first edit, not a share: 17.0 / 11.6 / 9.8 reads
     in arms A / B / C (`demo/RESULTS.md` § Observable 7).
-- Repositories exceed windows, so something always decides what is left out.
+- A working repository can exceed the window. Either way, something decides
+  what is loaded.
+  - Not "usually exceeds": no source, and this repository's own reading shows
+    934.5k of 1.0M free at launch.
+  - "This one does not, its run logs aside": measured on the working tree,
+    2026-09-29. Text without the logs: 567k characters, 90k words. The
+    `demo/runs/*.jsonl` logs: 5.1 MB, more than a 1.0M window by any plausible
+    characters-per-token ratio. Characters counted, not tokens.
 - Rewording the request cannot supply information the model cannot see.
 - Origin, one line: the term gained currency in June 2025. `[CITE: Lütke, post
   of 19 Jun 2025; Karpathy, post of 25 Jun 2025; earlier use in Yan, "Don't

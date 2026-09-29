@@ -6,8 +6,9 @@ In an agentic loop the window fills from tool calls and file reads, not only
 from what the person types: each file the agent reads and each command it runs
 adds to the context [@claudecode-context].
 
-A repository usually exceeds the window, so something always decides what is
-left out. Rewording the request cannot supply information the model cannot see.
+A working repository can exceed the window; this one does not, its run logs
+aside. Either way, something decides what is loaded. Rewording the request
+cannot supply information the model cannot see.
 A prompt that names a file is different: it changes the window.
 
 The name is recent. "Context engineering" gained currency in June 2025, in

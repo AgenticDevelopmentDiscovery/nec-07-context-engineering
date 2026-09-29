@@ -86,6 +86,15 @@ other models, or about correctness — every run was correct.
     `CLAUDE.md` was missing.
   - Arm C: 0 of 5 runs cited `CLAUDE.md` for a choice; all five name it as a
     file they edited.
+- **Observable 5 had a second source.** The protocol registered "No commit
+  made" as stated in `CLAUDE.md` only. That was wrong
+  (`PROTOCOL.md`, amendment 8). At `b9f2176`,
+  `.claude/skills/round/SKILL.md` line 94 reads: "Then **stop**. Do not edit
+  `sections/`, do not commit, do not start another round." It is scoped to
+  the end of a critique round. Every arm-A run met that line before its
+  first edit: a-2 to a-5 read the file with `Read`, and a-1 ran a `grep`
+  over it that returned the line. Whether it kept arm A from committing was
+  not tested.
 - **Run-to-run variation is real.** The new section got 3 `##` units in 12
   runs and 4 in two (c-1, c-5). Three runs (a-3, b-1, b-3) renumbered with
   `mv` rather than `git mv`, leaving the rename unstaged.
@@ -101,7 +110,8 @@ other models, or about correctness — every run was correct.
 
 - The task is one prompt on one template. Conventions with no second source
   in the repository were not tested; observable 2 turned out to have one
-  (the existing sidecars).
+  (the existing sidecars), and so did observable 5 (the `/round` skill's
+  `SKILL.md`; see Post-hoc observations).
 - Bash was not gated by `--allowedTools` (sandbox auto-allow); equal across
   arms.
 - The `/round` skill description was in the window in every arm.
