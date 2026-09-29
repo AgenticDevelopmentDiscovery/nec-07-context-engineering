@@ -44,7 +44,8 @@ slides:
     mkdir -p {{outdir}}
     {{pandoc}} sections/*.prose.md {{common}} \
         --pdf-engine={{engine}} \
-        -t beamer --slide-level=2 \
+        -t beamer --slide-level=2 -M suppress-bibliography=true \
+        --lua-filter=filters/slide-figure-height.lua \
         -o {{outdir}}/slides.pdf
 
 # Overflowing slides are not a build problem to work around. They are the

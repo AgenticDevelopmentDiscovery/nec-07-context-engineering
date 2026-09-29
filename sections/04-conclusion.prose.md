@@ -1,33 +1,31 @@
 # Conclusion
 
-<!-- Every `##` becomes one slide. One idea each. -->
-
 ## What you can do now
 
-> The recap, stated as capability rather than as summary. Not "we covered X" —
-> rather, what the reader can now do that they could not before.
->
-> Keep it to what the tutorial actually delivered. This paragraph and
-> § What this tutorial covers must agree exactly; the panel will check.
+1. Read the window with `/context`, and say what each part costs.
+   (§ The window is a budget you can read)
+2. Write a `CLAUDE.md` that works as an index, and test on a fixed prompt, over
+   repeated runs, whether it changed the agent's behaviour.
+   (§ The demo; § What changed; § CLAUDE.md as an index)
+3. Place an instruction in the right layer by stability and audience, know the
+   load order, and remove a conflict rather than rely on precedence.
+   (§ Layers)
+4. Decide, for a given file, whether to front-load it or load it on demand, and
+   know which mechanisms do which. (§ On demand)
 
-Replace this paragraph.
+Diagnosis is these four applied: when the agent errs, ask what it could see,
+and when.
 
-## Where to go next
+## Open edges, and where they lead
 
-> The next thing to learn, and why it is the next one. Name the specific
-> resource, tool, or topic and say what it adds.
->
-> Order matters more than length. Three pointers in a sensible sequence beat a
-> list of ten a reader has to triage themselves.
-
-Replace this paragraph.
-
-## Open edges
-
-> What is still unsettled — where the tool is changing, where practice has not
-> converged, where you would not yet give firm advice.
->
-> End on the opening you leave, not on a restatement. A tutorial that admits its
-> edges is more trustworthy than one that implies the topic is finished.
-
-Replace this paragraph.
+- The evidence on length and position comes from retrieval-style benchmarks.
+  Agentic coding sessions are untested in the sources we found.
+- Our demo is one prompt and one model, on a repository that describes itself,
+  and every run was correct. It says nothing about correctness, or about
+  conventions that live only in `CLAUDE.md`.
+- How conflicting instruction files resolve is undocumented
+  [@claudecode-memory].
+- Tool behaviour is as documented on 28 September 2026, and changes by version
+  [@claudecode-memory; @claudecode-context].
+- These edges lead on: compaction (Tutorial 08); retrieval, the same question
+  at scale (09); persistent memory (16).

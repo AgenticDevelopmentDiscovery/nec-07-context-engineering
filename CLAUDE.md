@@ -224,6 +224,24 @@ hole.
   one ("sidecar", "propagate the concepts"), so they look applicable and are not.
   This project's registers are `.prose.md` and `.concepts.md`, and the only verb
   is `/round`.
+- **Nothing between a `#` heading and its first `##`.** In every
+  `sections/*.prose.md`, no comment, sentence or blockquote sits there: pandoc
+  makes a slide of whatever does. `section-titles: false` is set in
+  `metadata.yaml`; Metropolis still adds its own section page, so one divider
+  per section is expected and a second one means content in that position.
+- **Slide budget: 13 content slides** for a 10-minute talk, 15 at most. The
+  split is 2, 2, 7, 2 across the four sections. A new `##` is paid for by
+  merging or cutting another.
+- **Demo evidence lives in `demo/`.** `demo/RESULTS.md` is the only source for
+  demo numbers in the prose; the per-run records are in `demo/runs/`, and the
+  pre-registered protocol with its amendments in `demo/PROTOCOL.md`. Post-hoc
+  observations are labelled post-hoc wherever they appear.
+- **Spine tags.** `[CITE]` needs a primary source; `[DOCS]` rests on Claude
+  Code documentation and is cited with an access date; `[RUN]` must come from
+  a run on this repository, and is never written as a result before the run.
+  A tagged claim reaches the prose only with a citation key that exists in
+  `references.bib`, or a pointer into `demo/`. A claim without a source is
+  hedged or cut.
 
 ## Your topic
 

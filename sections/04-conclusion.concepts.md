@@ -20,8 +20,9 @@
 ### Decisions
 
 - Capability form. No recap of topics.
-- Test capability claimed only as far as the demo went. If arm C was not run,
-  the index-against-manual half is not claimed.
+- Test capability claimed only as far as the demo went. Arm C was run, five
+  runs, so the index-against-manual half is claimed (`demo/RESULTS.md`
+  § Observable 7).
 
 ### Open questions
 
@@ -48,12 +49,15 @@
 - "Where to go next" merged in. The out-of-scope items are the pointers.
   Rejected: a separate slide.
 - Ends on the opening, per the template.
+- Confounds disclosed: one prompt on one template; Bash not gated by
+  `--allowedTools`; `/round` skill description in every arm; index written by
+  the presenter before any run (`demo/RESULTS.md` § Threats to validity).
 
 ### Open questions
 
 - Subagents as context isolation: name as an edge, or stay silent?
 - Team list, not for the reader: document length; the symbolic-regression
-  substrate; which confounds were disclosed.
+  substrate.
 
 ### Not doing
 

@@ -1,15 +1,135 @@
 % Bibliography for all three outputs.
 %
-% Cite from any `.prose.md` section with pandoc's syntax:  [@knuth1984]
+% Cite from any `.prose.md` section with pandoc's syntax:  [@liu2024]
 % Pandoc's --citeproc renders the citation and builds the reference list.
 %
-% Delete this example and add your own.
+% Every entry below was re-read at its source on 2026-09-28. The note on each
+% group says where it was read and what was checked.
 
-@article{example2024,
-  author  = {Lastname, Firstname and Other, Another},
-  title   = {An Example Entry You Should Replace},
-  journal = {Journal of Placeholder Studies},
-  year    = {2024},
-  volume  = {1},
-  pages   = {1--10}
+% --- Peer-reviewed and preprint ----------------------------------------------
+
+% Read at the ACL Anthology record (title, authors, volume, pages, DOI and
+% abstract). The DOI resolves to direct.mit.edu, which returned HTTP 403 to the
+% fetch; the Anthology record carries the same DOI.
+@article{liu2024,
+  author    = {Liu, Nelson F. and Lin, Kevin and Hewitt, John and Paranjape, Ashwin and Bevilacqua, Michele and Petroni, Fabio and Liang, Percy},
+  title     = {Lost in the Middle: How Language Models Use Long Contexts},
+  journal   = {Transactions of the Association for Computational Linguistics},
+  volume    = {12},
+  pages     = {157--173},
+  year      = {2024},
+  publisher = {MIT Press},
+  doi       = {10.1162/tacl_a_00638},
+  url       = {https://aclanthology.org/2024.tacl-1.9/}
+}
+
+% Read at the arXiv abstract page. The venue is as stated in the arXiv comments
+% field ("ICML 2025"); the proceedings record itself was not read.
+@online{modarressi2025,
+  author  = {Modarressi, Ali and Deilamsalehy, Hanieh and Dernoncourt, Franck and Bui, Trung and Rossi, Ryan A. and Yoon, Seunghyun and Sch{\"u}tze, Hinrich},
+  title   = {{NoLiMa}: Long-Context Evaluation Beyond Literal Matching},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2502.05167},
+  urldate = {2026-09-28},
+  note    = {arXiv:2502.05167. Accepted at ICML 2025, per the arXiv record}
+}
+
+% Read at the arXiv abstract page. The venue is as stated in the arXiv comments
+% field ("ACL 2025 Findings"); the proceedings record itself was not read.
+% First submitted 2024-10-18; version 3 is dated 2025-05-28.
+@online{tian2025,
+  author  = {Tian, Runchu and Li, Yanghao and Fu, Yuepeng and Deng, Siyang and Luo, Qinyu and Qian, Cheng and Wang, Shuo and Cong, Xin and Zhang, Zhong and Wu, Yesai and Lin, Yankai and Wang, Huadong and Liu, Xiaojiang},
+  title   = {Distance between Relevant Information Pieces Causes Bias in Long-Context {LLMs}},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2410.14641},
+  urldate = {2026-09-28},
+  note    = {arXiv:2410.14641. Findings of ACL 2025, per the arXiv record}
+}
+
+% --- Vendor reports and posts (not peer reviewed) ----------------------------
+
+@online{hong2025,
+  author       = {Hong, Kelly and Troynikov, Anton and Huber, Jeff},
+  title        = {Context Rot: How Increasing Input Tokens Impacts {LLM} Performance},
+  date         = {2025-07-14},
+  organization = {Chroma},
+  url          = {https://www.trychroma.com/research/context-rot},
+  urldate      = {2026-09-28},
+  note         = {Technical report, not peer reviewed}
+}
+
+@online{rajasekaran2025,
+  author       = {Rajasekaran, Prithvi and Dixon, Ethan and Ryan, Carly and Hadfield, Jeremy},
+  title        = {Effective Context Engineering for {AI} Agents},
+  date         = {2025-09-29},
+  organization = {Anthropic},
+  url          = {https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents},
+  urldate      = {2026-09-28},
+  note         = {Anthropic Applied AI team, engineering blog}
+}
+
+@online{yan2025,
+  author       = {Yan, Walden},
+  title        = {Don't Build Multi-Agents},
+  date         = {2025-06-12},
+  organization = {Cognition},
+  url          = {https://cognition.com/blog/dont-build-multi-agents},
+  urldate      = {2026-09-28}
+}
+
+% Secondary source for the posts by Tobi L{\"u}tke and Andrej Karpathy, which it
+% quotes and links. The posts themselves, on X, returned HTTP 402 to the fetch
+% and were not read at source.
+@online{willison2025,
+  author  = {Willison, Simon},
+  title   = {Context Engineering},
+  date    = {2025-06-27},
+  url     = {https://simonwillison.net/2025/Jun/27/context-engineering/},
+  urldate = {2026-09-28}
+}
+
+% --- Claude Code documentation -----------------------------------------------
+%
+% Living pages with no publication date, so none is given: they render as
+% "n.d." with the access date. `urldate` is the day each was read. Behaviour
+% changes by version: the runs in demo/ used Claude Code 2.1.281.
+
+@online{claudecode-memory,
+  author  = {{Anthropic}},
+  title   = {How {Claude} Remembers Your Project},
+  url     = {https://code.claude.com/docs/en/memory},
+  urldate = {2026-09-28},
+  note    = {Claude Code documentation}
+}
+
+@online{claudecode-context,
+  author  = {{Anthropic}},
+  title   = {Explore the Context Window},
+  url     = {https://code.claude.com/docs/en/context-window},
+  urldate = {2026-09-28},
+  note    = {Claude Code documentation}
+}
+
+@online{claudecode-commands,
+  author  = {{Anthropic}},
+  title   = {Commands},
+  url     = {https://code.claude.com/docs/en/commands},
+  urldate = {2026-09-28},
+  note    = {Claude Code documentation}
+}
+
+@online{claudecode-settings,
+  author  = {{Anthropic}},
+  title   = {Settings Files and Precedence},
+  url     = {https://code.claude.com/docs/en/settings},
+  urldate = {2026-09-28},
+  note    = {Claude Code documentation}
+}
+
+@online{claudecode-workflows,
+  author  = {{Anthropic}},
+  title   = {Common Workflows},
+  url     = {https://code.claude.com/docs/en/common-workflows},
+  urldate = {2026-09-28},
+  note    = {Claude Code documentation}
 }

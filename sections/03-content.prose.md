@@ -1,47 +1,111 @@
 # Content
 
-<!-- Every `##` becomes one slide. One idea each.
-     This is the main portion of the tutorial and the section most likely to
-     need more `##` units than the four below. Add them freely — each new
-     heading is a new slide, and splitting is how you find the joints. -->
+## The window is a budget you can read
 
-## How it works
+The window is finite, and everything loaded spends it whether or not it is
+used. Anthropic's guidance calls context "a finite resource with diminishing
+marginal returns" [@rajasekaran2025]; that is advice, not evidence.
 
-> The mental model, before any procedure. What are the moving parts and how do
-> they relate? A reader who has this can predict what the tool will do in a case
-> you never showed them; one who has only the steps cannot.
->
-> This is the unit most likely to need a figure — the boxes, the arrows, the one
-> relationship the prose leaves abstract. See `figures/README.md`.
+`/context` draws current usage as a grid and breaks it down by category,
+including which instruction and memory files loaded [@claudecode-commands;
+@claudecode-context]. Run it in a fresh session: part of the budget is already
+spent, because instruction files, auto memory and skill descriptions load
+before you type anything [@claudecode-context].
 
-Replace this paragraph.
+When the budget runs out, the conversation is summarised. This is *compaction*.
+The project-root `CLAUDE.md` is re-read from disk afterwards; an instruction
+given only in conversation may not survive [@claudecode-memory].
 
-## Using it: the basic case
+## What `/context` shows at launch
 
-> The first walkthrough, concrete enough to follow along. Show the actual
-> commands, code, or configuration — not a description of them.
->
-> Pick the smallest case that is still real. A toy that could not occur in
-> practice teaches the toy; a realistic case teaches the tool.
+![`/context` in a fresh session in this repository, before any prompt.](figures/context-at-launch.png){width=70%}
 
-Replace this paragraph.
+## The demo: one prompt, two windows
 
-## Using it: going further
+- **Question.** Does a project `CLAUDE.md` change what the agent does on a
+  fixed task?
+- **Substrate.** Single-commit copies of this repository's template commit,
+  `b9f2176`, differing only in `CLAUDE.md`.
+- **Arms.** A: the file absent. B: the shipped 240-line manual. Arm C, a
+  32-line index, is reported on the index slide.
+- **Task.** One fixed prompt: add an "Examples" section before the
+  conclusion, following the project's conventions, with the build passing.
+- **Runs.** Five per arm, headless; Claude Code 2.1.281, `claude-fable-5-1`.
+- **Observables, fixed before any run.** Both files of the section created;
+  the sidecar in note form; numeric order; `just build` passing; no commit; one
+  control; cost to the first edit.
 
-> The second case, one step harder, chosen to expose something the first one
-> hid. Say what is new here and why the basic case could not show it.
->
-> Split this into several `##` units if it does not fit one slide. That split is
-> a feature: it forces you to find the joints in your own explanation.
+## What changed, and what did not
 
-Replace this paragraph.
+- **Behaviour: a null result.** Observables 1 to 5 held in 5 of 5 runs in both
+  arms; the control failed in 5 of 5 in both. Our prediction that the arms
+  would separate failed.
+- **Why.** Every convention the task touches is also in the README, the
+  `justfile` or the existing sections, and the agent read those.
+- **Reads before the first edit**, mean (range) over five runs: 25.2 (24–27)
+  without the file, 18.6 (17–21) with the manual. The ranges separate.
+- **Tokens at the first edit.** 47.2k (44.9–50.3) against 46.6k (44.7–49.1):
+  overlapping. The manual spent its saving on its own 1,854 words.
+- **Post hoc, not pre-registered.** B cited `CLAUDE.md` for its choices; A
+  reached the same choices from the README and the existing files.
 
-## Pitfalls
+## CLAUDE.md as an index, not a manual
 
-> The mistakes people actually make, and what each one looks like when it
-> happens. Lead with the symptom the reader will see, then the cause.
->
-> Prefer the errors you have made yourself. Invented pitfalls are obvious to a
-> reader who has made the real ones.
+- `CLAUDE.md` loads in full at every launch and again after compaction: every
+  line is paid for in every session [@claudecode-memory].
+- An index holds commands, conventions that cannot be inferred from the files,
+  and pointers. Detail stays in files read on demand.
+- Formally, an index aims to be a *sufficient statistic* for the repository: a
+  summary that keeps what a decision needs, here what to read next, and
+  discards the rest.
+- The documentation's target is "under 200 lines", as advice, not
+  enforcement: the file arrives "as a user message after the system prompt"
+  [@claudecode-memory]. This template ships a 240-line manual, by design.
+- **Arm C.** A 32-line index matched the manual on observables 1 to 5 and
+  reached the first edit at 41.3k tokens (39.9–43.1), its worst run below the
+  best of either other arm.
 
-Replace this paragraph.
+## Layers: order is documented, conflict is not
+
+- Instruction files load at launch in a documented order: managed policy,
+  user, project, local. They are concatenated, not overriding
+  [@claudecode-memory].
+- Across directories the order runs from the filesystem root down to the
+  working directory, with `CLAUDE.local.md` after `CLAUDE.md` at each level
+  [@claudecode-memory].
+- Conflict has no documented winner: "if two rules contradict each other,
+  Claude may pick one arbitrarily" [@claudecode-memory]. `settings.json`, by
+  contrast, has a fixed precedence [@claudecode-settings].
+- **Place by stability and audience.** Personal habit: user. Team convention:
+  project. Private or per-machine: local. This task only: the conversation.
+- **The fix for a conflict** is to remove it, not to predict the winner.
+
+## On demand: reachable is not loaded
+
+- **Front-loaded.** `CLAUDE.md` at and above the working directory, plus its
+  `@path` imports, "expanded and loaded into context at launch"
+  [@claudecode-memory]. Moving text into imports saves nothing.
+- **On demand.** The agent's own file reads, `@file` typed in a prompt, a
+  subdirectory `CLAUDE.md`, path-scoped rules, a skill's body
+  [@claudecode-memory; @claudecode-context; @claudecode-workflows].
+- **Reachable only.** `--add-dir` gives access and loads nothing: by default,
+  not even that directory's `CLAUDE.md` [@claudecode-memory].
+- **Rule.** Front-load what every task needs and is short and stable. Defer
+  the rest, which Anthropic's post calls "just in time" [@rajasekaran2025].
+- **Here.** The `/round` skill's description loads at launch; its body loads
+  only on use.
+
+## Pitfalls: symptom, then the structural fix
+
+- **A rule in `CLAUDE.md` is ignored.** The file is too long, or the rule
+  conflicts with another. Cut or resolve. If the rule must hold, enforce it
+  with a hook or a permission setting [@claudecode-memory].
+- **An instruction given in chat is obeyed, then lost late in a long
+  session.** It was summarised away at compaction. Put it in a file
+  [@claudecode-memory].
+- **The agent uses something you removed.** Observed in our demo, post hoc:
+  one run recovered a deleted `CLAUDE.md` from git history, and a dry run
+  acted on an auto memory saved in another directory. Check what is
+  reachable, not only what is loaded.
+
+Every fix changes what is loaded, or when. None is a rewording.

@@ -9,13 +9,13 @@
 **Tags, used in all four spines.**
 
 - `[CITE]` — needs a primary source. Candidate named only where one was found.
-  None is in `references.bib` yet.
+  Those verified at source are in `references.bib`.
 - `[DOCS]` — rests on Claude Code documentation. Cite with access date; changes
   by version.
 - `[RUN]` — must come from a run on this repository. Not written as a result
-  before the run.
-- Quotations were reached through a summarising fetch on 2026-09-28. Re-read at
-  source before use.
+  before the run. After the demo: each is replaced by the recorded result with
+  a pointer into `demo/`, or marked *not run*.
+- Quotations re-read at source on 2026-09-28.
 
 **Writing constraint, all four prose files.**
 
@@ -34,7 +34,9 @@
   this repository is what is in it. `[DOCS: context-window page]`
 - In a Claude Code session the window holds: system prompt, tool definitions,
   instruction files, skill descriptions, memory index, conversation, tool
-  output, file reads. `[DOCS]` `[RUN: confirm categories with /context here]`
+  output, file reads. `[DOCS]`
+  - Not run: no `/context` reading is recorded in `demo/`. Categories rest on
+    the documentation alone.
 - Context engineering = deciding what occupies the window at each step: what,
   when, at what level of detail.
 - Acts on what the model can see, not on the wording of the request.

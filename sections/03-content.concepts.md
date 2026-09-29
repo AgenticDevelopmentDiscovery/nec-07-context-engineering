@@ -16,8 +16,10 @@ loading, pitfalls. Seven slides.
   guidance, not evidence]`
 - `/context` shows what occupies the window and what each category costs.
   `[DOCS: commands page]`
-- Part of the budget is spent at launch, before any prompt. `[RUN: /context in
-  a fresh session here]`
+- Part of the budget is spent at launch, before any prompt. `[DOCS:
+  context-window page]`
+  - Not run: no `/context` reading is recorded in `demo/`. Rests on the
+    documentation.
 - Compaction is the boundary: when the budget runs out the conversation is
   summarised. Named, not explained.
 - Project-root `CLAUDE.md` is re-read from disk after compaction. Instructions
@@ -49,36 +51,44 @@ loading, pitfalls. Seven slides.
 
 ### Claims
 
-- Throwaway git worktree at the template commit `b9f2176`. Same prompt, same
-  model, fresh session per run.
+- Three independent single-commit copies of the template commit `b9f2176`.
+  Same prompt, same model, headless, fresh session per run
+  (`demo/PROTOCOL.md` Amendment 5).
 - Arms: A, project `CLAUDE.md` moved out. B, `CLAUDE.md` as shipped. C, a
   ~30-line index in its place.
 - This unit compares A with B. C is reported under § CLAUDE.md as an index.
 - Observables fixed before any run: both files of the pair created; spine in
   note form; order by numeric prefix; `just build` run; nothing committed;
   files read and percentage of window used before the first edit.
-- Several runs per arm. Counts reported, not one transcript.
+- Five runs per arm, fifteen in all. Counts reported, not one transcript
+  (`demo/RESULTS.md`; per-run records in `demo/runs/`).
 
 ### Decisions
 
 - Evidence = recorded diff with counts. A short live rerun of one arm is
   optional alongside it.
 - Worktree, not the live tree. Demo edits would land in `sections/`, and an
-  absent `CLAUDE.md` could be committed.
+  absent `CLAUDE.md` could be committed. Superseded after run A1: the agent
+  recovered the removed file from git history, so the substrate became three
+  repositories with no shared history (`demo/PROTOCOL.md` Amendment 5;
+  `demo/runs/superseded-a-1-history-leak`).
 - Template commit, not the current state. Otherwise the tutorial's own prose
   about `CLAUDE.md` is within the agent's reach in arm A.
 - Remove by moving the file. Rejected: `--bare`, which also drops skills, hooks
   and memory. `[DOCS: cli-reference page — check]`
 - Heading stays. This unit compares A with B, so "two windows" is true of it; C
   is reported on the index slide. Rejected: renaming to three windows.
+- Prompt fixed: add an "Examples" section between content and conclusion,
+  following the project's conventions, build passing (`demo/prompt.txt`;
+  `demo/PROTOCOL.md` § Task prompt).
+- Runs per arm: three, extended once to five by the pre-registered stopping
+  rule (`demo/PROTOCOL.md` § Runs and stopping rule, last amendment).
+- Loaded in every arm: user-level `CLAUDE.md` absent; auto memory stripped;
+  `/round` skill description kept and disclosed (`demo/PROTOCOL.md`
+  Amendments 1 and 7; `demo/RESULTS.md` § Threats to validity).
 
 ### Open questions
 
-- Exact prompt. Candidate: "Add a section on X between 03-content and
-  04-conclusion", which forces the numbering decision.
-- Runs per arm.
-- Still loaded in every arm: user-level `CLAUDE.md`, auto memory, the `/round`
-  skill description. Disclose or strip?
 - Live rerun: which arm, and what is said if it disagrees with the recorded
   counts?
 - Symbolic-regression repository, if released before the talk. Same protocol;
@@ -93,25 +103,38 @@ loading, pitfalls. Seven slides.
 
 ### Claims
 
-- All `[RUN]`. None written until the demo has been run.
-- Expectation, not a claim: the gap may be in exploration cost more than in
-  correctness. `README.md`, `justfile` and the placeholder comments restate
-  most conventions.
-- Conventions stated only in `CLAUDE.md` are where behaviour should differ, for
-  example "Do not commit unless asked". `[RUN: confirm which are unique]`
+- All from `demo/RESULTS.md`; per-run records in `demo/runs/`.
+- Behaviour, A against B: null. Observables 1–5 at 5/5 in both arms; control
+  (6) at 0/5 in both (§ Pre-registered observables).
+- Prediction that 2 and 5 separate A from B: failed (§ Predictions against
+  outcomes).
+- Every convention the task touches is also in `README.md`, the `justfile` or
+  the existing section pairs. Observable 2 had a second source, the existing
+  sidecars (§ Threats to validity).
+- Reads before first edit: A 25.2 (24–27), B 18.6 (17–21). Ranges separate.
+- Tokens at first edit: A 47.2k (44.9–50.3), B 46.6k (44.7–49.1). Ranges
+  overlap. About seven reads saved, spent on the manual's 1,854 words
+  (§ Observable 7).
+- Post hoc, labelled as such: B justified choices by citing `CLAUDE.md`; A
+  reached the same from the README and existing files (§ Post-hoc
+  observations).
 
 ### Decisions
 
 - A null result is reported as a null result. Lesson then: a self-describing
   repository needs less in `CLAUDE.md`.
 - Side-by-side diff of outputs, not transcripts.
+- Result was null on behaviour. The argument rests on cost: a loaded file is
+  paid for every session, and the index was cheapest (`demo/RESULTS.md` § What
+  the demo supports).
+- No observable discriminated on behaviour: 1–6 identical across arms. All six
+  reported, none dropped.
+- Limits stated in § Open edges, not here: one prompt, one model, a
+  self-describing repository, every run correct.
 
 ### Open questions
 
-- If the result is null, what does the talk's argument rest on? Decide before
-  the prose is written.
-- Which observables turned out not to discriminate. Report them; do not drop
-  them silently.
+- None outstanding from the demo.
 
 ### Not doing
 
@@ -132,10 +155,13 @@ loading, pitfalls. Seven slides.
   page]`
 - Delivered "as a user message after the system prompt". Advice, not
   enforcement. `[DOCS: memory page]`
-- This repository's `CLAUDE.md`: 240 lines, about 1,850 words. A manual by
-  design.
-- Arm C against arm B: `[RUN]`. Only comparison that tests index against
-  manual.
+- This repository's `CLAUDE.md` as shipped at `b9f2176`: 240 lines, 1,854
+  words. A manual by design.
+- Arm C against arm B (`demo/RESULTS.md` § Observable 7; index at
+  `demo/index.CLAUDE.md`, 32 lines): C matched B on observables 1–5, 5/5.
+  Tokens at first edit: C 41.3k (39.9–43.1), B 46.6k (44.7–49.1), A 47.2k
+  (44.9–50.3). C's worst run below the best of A and of B. Turns and seconds:
+  C lowest, ranges overlap, tendency only.
 
 ### Decisions
 
@@ -226,7 +252,9 @@ loading, pitfalls. Seven slides.
 
 - Show a subdirectory `CLAUDE.md`? None exists here, and adding one changes the
   demo substrate.
-- `@file` typed in a prompt: the docs do not contrast it with imports. `[RUN]`
+- `@file` typed in a prompt: the docs do not contrast it with imports. Not
+  run; nothing in `demo/` tests it. Sourced instead: "This includes the full
+  content of the file in the conversation." `[DOCS: common-workflows page]`
 - Figure: a timeline of what enters when. Earns its place, or restates the two
   lists?
 
@@ -246,7 +274,12 @@ loading, pitfalls. Seven slides.
 - `CLAUDE.md` slimmed by moving text into imports → nothing saved. `[DOCS:
   memory page]`
 - Chat instruction obeyed, then lost late in a long session → summarised away →
-  put it in a file. `[DOCS: memory page]` `[RUN]`
+  put it in a file. `[DOCS: memory page]` Not run: no demo session reached
+  compaction.
+- Agent uses something that was removed → still reachable. Observed, post hoc:
+  removed `CLAUDE.md` recovered from git history
+  (`demo/runs/superseded-a-1-history-leak`); auto memory from another
+  directory acted on (`demo/runs/dryrun-b.memory-loaded.md`).
 - Directory added with `--add-dir`, agent does not know its contents →
   reachable, not loaded. `[DOCS: memory page]`
 - Agent re-derives a known result → pointer missing from the index.
@@ -256,10 +289,14 @@ loading, pitfalls. Seven slides.
 - Symptom first, per the template.
 - Every fix changes what is loaded or when. None is a rewording.
 - This unit delivers the diagnosis named in `metadata.yaml` `audience`.
+- Three kept: ignored rule (documented), chat instruction lost (documented),
+  removed but reachable (observed in the demo, post hoc). Marked as such in
+  the prose.
 
 ### Open questions
 
-- Which of these has the author hit? Mark observed against documented.
+- Which of the documented ones has the author hit in own sessions? The demo
+  answers only for the third.
 
 ### Not doing
 

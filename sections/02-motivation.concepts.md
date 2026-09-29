@@ -11,8 +11,10 @@
 ### Claims
 
 - In an agentic loop the window fills from tool calls and file reads, not only
-  from what the person types. `[RUN: measure the share with /context
-  mid-session, or state it without a number]`
+  from what the person types.
+  - Not run: no share was measured. Stated without a number. The logs record
+    tool calls before the first edit, not a share: 25.2 / 18.6 / 17.4 reads in
+    arms A / B / C (`demo/RESULTS.md` § Observable 7).
 - Repositories exceed windows, so something always decides what is left out.
 - Rewording the request cannot supply information the model cannot see.
 - Origin, one line: the term gained currency in June 2025. `[CITE: Lütke, post
@@ -48,8 +50,11 @@
 ### Claims
 
 - Too little: the agent guesses a convention, re-derives what the repository
-  already records, or invents. `[RUN: from the demo's without-arm, or an
-  observed case from own sessions]`
+  already records, or invents.
+  - Result: the without-arm did not show it. Arm A held observables 1–5 in 5/5
+    runs (`demo/RESULTS.md` § Pre-registered observables).
+  - Observed case used instead: the control. Observable 6, stated nowhere in
+    the repository, followed in 0/15 runs (same table; `demo/runs/`).
 - Too much: performance degrades as input grows, even on simple tasks. `[CITE:
   Hong, Troynikov, Huber, "Context Rot", Chroma technical report, 14 Jul 2025 —
   not peer reviewed]` `[CITE: Modarressi et al., "NoLiMa", arXiv 2502.05167 —

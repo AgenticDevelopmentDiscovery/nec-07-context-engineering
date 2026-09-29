@@ -1,35 +1,29 @@
 # Motivation
 
-<!-- Every `##` becomes one slide. One idea each. -->
+## Why agents make the window the bottleneck
 
-## Why it matters for agentic development
+In an agentic loop the window fills from tool calls and file reads, not only
+from what the person types: each file the agent reads and each command it runs
+adds to the context [@claudecode-context].
 
-> The case, made concretely. What does this tool, technique, or notion let an
-> agentic system do that is hard or impossible without it?
->
-> Tie it to agentic development specifically — not to software in general. If the
-> answer would read the same for any programming topic, you have not made the
-> case yet.
+A repository usually exceeds the window, so something always decides what is
+left out. Rewording the request cannot supply information the model cannot see.
+A prompt that names a file is different: it changes the window.
 
-Replace this paragraph.
+The name is recent. "Context engineering" gained currency in June 2025, in
+writing about how to build on language models [@yan2025; @willison2025].
 
-## What goes wrong without it
+## Two ways a window fails
 
-> The failure it prevents, shown rather than asserted. A concrete situation that
-> goes badly, and how it goes badly.
->
-> This is the paragraph that makes the tutorial worth reading. A reader who has
-> felt the failure will follow you through the mechanics; one who has not will
-> skim. Use a real case if you have one.
-
-Replace this paragraph.
-
-## When to reach for it
-
-> The bounds, stated by you rather than discovered by a frustrated reader. What
-> it is good for, and — just as important — when it is the wrong tool.
->
-> A technique with honestly stated limits is more usable than one presented as
-> universal, because the reader can tell whether their situation is in scope.
-
-Replace this paragraph.
+- **Too little.** The agent guesses a convention, re-derives what the
+  repository records, or invents. In our demo, a convention written nowhere
+  was followed in 0 of 15 runs.
+- **Too much.** On retrieval-style benchmarks, performance degrades as input
+  grows, even on simple tasks [@hong2025, a vendor report; @modarressi2025].
+- **Position.** An earlier study found its models used mid-input information
+  worse than information at either end [@liu2024]. A later benchmark reports
+  most current models robust to this, with spacing biases remaining
+  [@tian2025].
+- **Caveat.** No source we found tests either effect in agentic coding.
+- **The bound.** If the agent had the information and still erred, it is not
+  a context problem.

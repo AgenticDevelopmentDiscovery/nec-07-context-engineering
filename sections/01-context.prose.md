@@ -1,40 +1,33 @@
 # Context
 
-<!-- SHIPPED PROSE. This file is rendered into all three outputs.
-     Every `##` below becomes one slide — keep each to one idea.
-     Delete these comments and the guidance blockquotes as you write. -->
+## What context engineering is
 
-## What this is
+A language model draws on two stores. Its *weights* hold what it was trained
+on. Its *context window* holds everything else it can use now: the system
+prompt, instruction files such as `CLAUDE.md`, auto memory, skill
+descriptions, the conversation, file reads and tool output
+[@claudecode-context]. The window is a bounded budget of tokens. What the
+model knows about this session and this repository is what is in it.
 
-> Name the topic and say plainly what it is, in one paragraph, before any
-> argument about why it matters. A reader who stops here should be able to
-> describe the thing correctly to someone else, even if coarsely.
->
-> Define it in terms of what it *does*, not what it is built from. Resist the
-> urge to justify it — that is the next section's job, and mixing the two is the
-> most common way a tutorial loses its opening.
-
-Replace this paragraph.
-
-## Where it came from
-
-> The short history: what problem it was invented to solve, by whom or in what
-> setting, and what people did before it existed.
->
-> This is not a literature survey and not a timeline. Two or three sentences of
-> origin earn their place because they explain the design — most of what looks
-> arbitrary about a tool is a fossil of the problem it was built for. Cut any
-> history that does not explain something the reader will meet later.
-
-Replace this paragraph.
+*Context engineering* is deciding what occupies the window at each step: what
+goes in, when, and in how much detail. Anthropic's guidance defines it
+likewise, as curating "the optimal set of tokens" [@rajasekaran2025]. It acts
+on what the model can see, not on the wording of the request. You control
+selection and timing; the harness, Claude Code, controls most of the ordering.
 
 ## What this tutorial covers
 
-> The scope and the roadmap. Name each section and what the reader gets from it,
-> and say what the reader will be able to *do* by the end — a capability, not a
-> list of topics.
->
-> Say what is out of scope here too. This is the promise the rest of the tutorial
-> must keep, and the panel will check it against what you actually delivered.
+By the end you can:
 
-Replace this paragraph.
+1. Read the window with `/context`, and say what each part costs.
+2. Write a `CLAUDE.md` that works as an index, and test on a fixed prompt, over
+   repeated runs, whether it changed the agent's behaviour.
+3. Place an instruction in the right layer by stability and audience, know the
+   load order, and remove a conflict rather than rely on precedence.
+4. Decide, for a given file, whether to front-load it or load it on demand, and
+   know which mechanisms do which.
+
+The route: a readable budget, a demo on this repository, the index, layers,
+on-demand loading, pitfalls. Out of scope: prompt wording (Tutorial 06),
+compaction internals (08), retrieval (09), persistent memory (16), provenance
+labelling, window sizes and pricing.
