@@ -18,7 +18,7 @@ given only in conversation may not survive [@claudecode-memory].
 
 ## What `/context` shows at launch
 
-![`/context` in a fresh session in this repository, before any prompt.](figures/context-at-launch.png){width=70%}
+![`/context` in a fresh session in this repository, before any prompt. Memory files is this repository's `CLAUDE.md` (4.2k) and the auto-memory index (163).](figures/context-at-launch.png){width=70%}
 
 ## The demo: one prompt, two windows
 
@@ -60,7 +60,7 @@ given only in conversation may not survive [@claudecode-memory].
   discards the rest.
 - The documentation's target is "under 200 lines", as advice, not
   enforcement: the file arrives "as a user message after the system prompt"
-  [@claudecode-memory]. This template ships a 240-line manual, by design.
+  [@claudecode-memory]. This template ships a 240-line manual.
 - **Arm C.** A 32-line index matched the manual on observables 1 to 5 and
   reached the first edit at 41.3k tokens (39.9–43.1), its worst run below the
   best of either other arm.
@@ -104,8 +104,8 @@ given only in conversation may not survive [@claudecode-memory].
   session.** It was summarised away at compaction. Put it in a file
   [@claudecode-memory].
 - **The agent uses something you removed.** Observed in our demo, post hoc:
-  one run recovered a deleted `CLAUDE.md` from git history, and a dry run
-  acted on an auto memory saved in another directory. Check what is
+  a superseded run recovered a deleted `CLAUDE.md` from git history, and a
+  dry run acted on an auto memory saved in another directory. Check what is
   reachable, not only what is loaded.
 
 Every fix changes what is loaded, or when. None is a rewording.

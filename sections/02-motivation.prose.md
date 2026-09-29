@@ -13,7 +13,7 @@ A prompt that names a file is different: it changes the window.
 The name is recent. "Context engineering" gained currency in June 2025, in
 writing about how to build on language models [@yan2025; @willison2025].
 
-## Two ways a window fails
+## How a window fails
 
 - **Too little.** The agent guesses a convention, re-derives what the
   repository records, or invents. In our demo, a convention written nowhere
