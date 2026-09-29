@@ -49,6 +49,7 @@ jobs:
             texlive-xetex \
             texlive-latex-extra \
             texlive-fonts-recommended \
+            lmodern \
             librsvg2-bin
 
       # Builds output/document.pdf, output/slides.pdf and _site/ — including
