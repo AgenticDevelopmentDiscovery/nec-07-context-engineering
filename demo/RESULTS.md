@@ -25,7 +25,7 @@ sections instead." (a-1, final message.)
 
 ## Observable 7: cost to the first edit
 
-| Arm | Reads before first edit | Tokens at first edit | Turns | Seconds |
+| Arm | Tool calls before first edit | Tokens at first edit | Turns | Seconds |
 | --- | --- | --- | --- | --- |
 | A — absent | 25.2 (24–27) | 47.2k (44.9–50.3) | 49 (44–56) | 147 (125–165) |
 | B — manual | 18.6 (17–21) | 46.6k (44.7–49.1) | 51 (42–64) | 181 (137–261) |
@@ -37,8 +37,8 @@ Per-run values: `table.sh`.
 
 - **Tokens.** C's worst run (43.1k) is below A's best (44.9k) and B's best
   (44.7k): no overlap. A and B overlap almost entirely. The manual saved
-  about seven reads per run and spent the saving on its own 1,854 words.
-- **Reads.** B and C both separate from A (B's worst, 21, is below A's best,
+  about seven tool calls per run and spent the saving on its own 1,854 words.
+- **Tool calls.** B and C both separate from A (B's worst, 21, is below A's best,
   24). The manual did reduce exploration; it did not reduce cost.
 - **Turns and seconds.** C lowest on both; ranges overlap. Tendency only.
   b-4 (261 s) is the one outlier.
@@ -57,7 +57,7 @@ No significance testing, per protocol. Counts and ranges only.
 ## What the demo supports, and what it does not
 
 Supports: on a repository that already describes itself, a manual-length
-`CLAUDE.md` buys no behaviour and costs more tokens than no file at all; a
+`CLAUDE.md` buys no behaviour and does not reduce cost against no file at all; a
 short index matches the manual's behaviour at the lowest cost of the three.
 Every line of a loaded instruction file is paid for every session.
 

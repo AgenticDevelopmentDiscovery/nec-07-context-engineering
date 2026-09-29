@@ -2,7 +2,7 @@
 function Image(img)
   if img.attributes.width then
     img.attributes.width = nil
-    img.attributes.height = "75%"
+    img.attributes.height = "70%"
     return img
   end
 end

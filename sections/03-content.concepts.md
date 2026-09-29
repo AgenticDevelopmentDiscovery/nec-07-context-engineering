@@ -111,9 +111,10 @@ loading, pitfalls. Seven slides.
 - Every convention the task touches is also in `README.md`, the `justfile` or
   the existing section pairs. Observable 2 had a second source, the existing
   sidecars (§ Threats to validity).
-- Reads before first edit: A 25.2 (24–27), B 18.6 (17–21). Ranges separate.
+- Tool calls before first edit: A 25.2 (24–27), B 18.6 (17–21). Ranges
+  separate.
 - Tokens at first edit: A 47.2k (44.9–50.3), B 46.6k (44.7–49.1). Ranges
-  overlap. About seven reads saved, spent on the manual's 1,854 words
+  overlap. About seven tool calls saved, spent on the manual's 1,854 words
   (§ Observable 7).
 - Post hoc, labelled as such: B justified choices by citing `CLAUDE.md`; A
   reached the same from the README and existing files (§ Post-hoc
@@ -234,8 +235,10 @@ loading, pitfalls. Seven slides.
   context-window pages]`
 - Front-loaded: `@path` imports inside `CLAUDE.md` — "expanded and loaded into
   context at launch". `[DOCS: memory page]`
-- `--add-dir` extends access and loads nothing. `CLAUDE.md` in an added
-  directory is not loaded by default. `[DOCS: memory page]`
+- `--add-dir` grants file access. `CLAUDE.md` and rules in an added directory
+  are not loaded by default. `[DOCS: memory page]`
+- Skills, commands and subagents in an added directory are loaded, so it can
+  still spend budget at launch. `[DOCS: permissions page]`
 - Rule: front-load what every task needs and is short and stable. Defer what is
   long, volatile, or needed by some tasks only.
 - Local example: `/round`. Description in the window from launch; `SKILL.md`

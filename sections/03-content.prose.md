@@ -18,7 +18,7 @@ given only in conversation may not survive [@claudecode-memory].
 
 ## What `/context` shows at launch
 
-![`/context` in a fresh session in this repository, before any prompt. Memory files is this repository's `CLAUDE.md` (4.2k) and the auto-memory index (163).](figures/context-at-launch.png){width=70%}
+![`/context` in a fresh session in this repository, before any prompt. Memory files is this repository's `CLAUDE.md` (4.2k) and the auto-memory index (163); the full readout is `demo/runs/context-at-launch-full.png`.](figures/context-at-launch.png){width=70%}
 
 ## The demo: one prompt, two windows
 
@@ -31,9 +31,11 @@ given only in conversation may not survive [@claudecode-memory].
 - **Task.** One fixed prompt: add an "Examples" section before the
   conclusion, following the project's conventions, with the build passing.
 - **Runs.** Five per arm, headless; Claude Code 2.1.281, `claude-fable-5-1`.
-- **Observables, fixed before any run.** Both files of the section created;
-  the sidecar in note form; numeric order; `just build` passing; no commit; one
-  control; cost to the first edit.
+- **Observables, numbered and fixed before any run.** 1 both files of the
+  section created; 2 the sidecar in note form; 3 numeric order; 4 `just build`
+  passing; 5 no commit; 6, the control: a convention stated nowhere in the
+  substrate (nothing between `#` and the first `##`), expected to fail in
+  every arm; 7 cost to the first edit.
 
 ## What changed, and what did not
 
@@ -42,7 +44,7 @@ given only in conversation may not survive [@claudecode-memory].
   would separate failed.
 - **Why.** Every convention the task touches is also in the README, the
   `justfile` or the existing sections, and the agent read those.
-- **Reads before the first edit**, mean (range) over five runs: 25.2 (24–27)
+- **Tool calls before the first edit**, mean (range) over five runs: 25.2 (24–27)
   without the file, 18.6 (17–21) with the manual. The ranges separate.
 - **Tokens at the first edit.** 47.2k (44.9–50.3) against 46.6k (44.7–49.1):
   overlapping. The manual spent its saving on its own 1,854 words.
@@ -88,8 +90,10 @@ given only in conversation may not survive [@claudecode-memory].
 - **On demand.** The agent's own file reads, `@file` typed in a prompt, a
   subdirectory `CLAUDE.md`, path-scoped rules, a skill's body
   [@claudecode-memory; @claudecode-context; @claudecode-workflows].
-- **Reachable only.** `--add-dir` gives access and loads nothing: by default,
-  not even that directory's `CLAUDE.md` [@claudecode-memory].
+- **Reachable only.** `--add-dir` grants file access. By default the added
+  directory's `CLAUDE.md` and rules are not loaded [@claudecode-memory], but
+  its skills, commands and subagents are [@claudecode-permissions], so it can
+  still spend budget at launch.
 - **Rule.** Front-load what every task needs and is short and stable. Defer
   the rest, which Anthropic's post calls "just in time" [@rajasekaran2025].
 - **Here.** The `/round` skill's description loads at launch; its body loads
