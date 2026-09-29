@@ -29,10 +29,14 @@ writing about how to build on language models [@yan2025; @willison2025].
   and the agent still erred, it is not a context problem.
 
 ::: notes
-- **Our case of too little.** In our demo one convention, nothing between a
-  `#` heading and its first `##`, was written nowhere, and the template's own
-  sections modelled the opposite. It was followed in 0 of 15 runs: every run
-  copied the sections (§ The demo).
+- **Our case of too little, worked.** The rule: nothing between a section's
+  `#` heading and its first `##`. No file in the demo's copies stated it, and
+  all four existing sections broke it with a comment in that position; it was
+  written in an auto memory, removed before the runs (`demo/PROTOCOL.md`,
+  amendments 1 and 4). Every run read those four sections and wrote the same
+  comment into its own: 0 of 15 followed the rule. Reading the window would
+  have shown no loaded file that stated the rule, and four files read that
+  modelled the opposite (§ The demo).
 - **Models tested.** The vendor report names GPT-4.1, Claude 4, Gemini 2.5 and
   Qwen3 among its 18 [@hong2025]. The 2025 benchmark tested GPT-4o, Gemini
   1.5 and 2.0, Claude 3.5 Sonnet and open-weight models [@modarressi2025].

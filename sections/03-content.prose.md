@@ -212,4 +212,23 @@ critique round at a time. Toolchain and setup: README.md.
   dry run acted on an auto memory saved in another directory. Check what is
   reachable, not only what is loaded.
 
+::: notes
+- **Check, ignored rule.** Run `/context` and read the list under Memory
+  files: a file missing there was never seen [@claudecode-memory].
+- **Check, lost instruction.** Look for it in the files `/memory` lists: an
+  instruction in no file was given only in conversation
+  [@claudecode-memory].
+- **Check, removed but used.** Run `git log` to see whether history still
+  holds the file, and `/memory` to open the auto-memory folder
+  [@claudecode-memory]. In a headless run, read `memory_paths` in the log's
+  first event.
+- **The superseded run** was the first arm-A run, on a branch where a commit
+  had removed the manual. The agent ran `git show HEAD~1:CLAUDE.md` and read
+  it, so the run was voided (`demo/runs/superseded-a-1-history-leak/`).
+- **The dry run** was a trial on arm B before the demo. Worktrees of one
+  repository share an auto-memory directory [@claudecode-memory], so a memory
+  saved in this repository loaded, and the agent followed it
+  (`demo/runs/dryrun-b.jsonl`, `demo/runs/dryrun-b.memory-loaded.md`).
+:::
+
 Every fix changes what is loaded, or when. None is a rewording.

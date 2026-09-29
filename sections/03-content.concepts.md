@@ -50,8 +50,9 @@ layers, on-demand loading, pitfalls. Eight slides.
 
 ### Open questions
 
-- Model, instrument and boundary under one heading. Overflow candidate.
-  Fallback: the compaction lines move to § Pitfalls.
+- Model, instrument and boundary under one heading. The frame holds: no
+  overfull box in the TeX log. Fallback if it grows: the compaction lines
+  move to § Pitfalls.
 
 ### Not doing
 
@@ -213,18 +214,20 @@ layers, on-demand loading, pitfalls. Eight slides.
   B 18.6 (17–21), C 17.4 (16–19). Post hoc, in `demo/RESULTS.md` § Post-hoc
   observations.
 - After the table, only what the table shows: the manual changed none of
-  observables 1 to 6.
+  observables 1 to 6. Prose: "changed no scored behaviour".
+- The paragraph is four lines, and the frame has no overfull box in the TeX
+  log. Wording tightened to fit; no sentence dropped from the unit.
 - In the notes, under Cost, not on the slide: the manual reduced reading
   before the first edit. Tokens: no saving the ranges can separate, B
   44.7–49.1 against A 44.9–50.3. Not "saved no tokens": B's mean is lower,
-  46.6k against 47.2k. With the scale question added the frame was 18.6pt
-  overfull; this sentence moved and the frame is back at five lines.
+  46.6k against 47.2k.
   "Spent the saving on its own length" is an inference: in the notes, marked
   as inferred, not on the slide.
 - Then arm C, on the slide: matched the manual on observables 1–5 at 41.3k
   tokens against 46.6k; ranges do not overlap, 39.9–43.1 against 44.7–49.1
   (`demo/RESULTS.md` § Observable 7, "C's worst run (43.1k) is below A's best
-  (44.9k) and B's best (44.7k): no overlap").
+  (44.9k) and B's best (44.7k): no overlap"). Prose: "matched it on 1–5",
+  "with no overlap of ranges".
 - Then the scale question, posed on the slide before its answer: "Why cut 5k
   tokens on a 1.0M window?" 5k is 46.6k less 41.3k, 5.3k; 1.0M is the header
   of the `/context` reading.
@@ -247,8 +250,9 @@ layers, on-demand loading, pitfalls. Eight slides.
     `Read` of the file, a-1 by a `grep` over `.claude/skills/round/` that
     returned it (`demo/runs/a-*/log.jsonl`).
   - Not "stated only in `CLAUDE.md`": contradicted by the substrate.
-    `demo/PROTOCOL.md` § Observables still says "CLAUDE.md only", and
-    `demo/RESULTS.md` does not record the second file. Both to be amended.
+    Recorded in `demo/PROTOCOL.md`, amendment 8, dated 2026-09-29, with the
+    registered table left as written; and in `demo/RESULTS.md` § Post-hoc
+    observations and § Threats to validity.
   - Not claimed: that the line explains observable 5 in arm A. Not tested.
 - Notes, why, disclosure: built-in instructions "for how to write commits
   and pull requests, in the Bash tool's description", in context by default
@@ -276,7 +280,8 @@ layers, on-demand loading, pitfalls. Eight slides.
 
 - A null result is reported as a null result. Lesson then: a self-describing
   repository needs less in `CLAUDE.md`.
-- Side-by-side diff of outputs, not transcripts.
+- Side-by-side diff of outputs, not transcripts. Not in the prose: the prose
+  has the table of counts and no diff.
 - Result was null on behaviour. The argument rests on cost: a loaded file is
   paid for every session, and the index was cheapest (`demo/RESULTS.md` § What
   the demo supports).
@@ -332,7 +337,9 @@ layers, on-demand loading, pitfalls. Eight slides.
 ### Decisions
 
 - Tension named openly: the demo substrate breaks the rule this unit teaches,
-  and the template defends that choice. Rejected: saying nothing.
+  and the template defends that choice. Rejected: saying nothing. In the
+  prose so far: the notes give the 200-line target beside the 240-line
+  manual. The defence is not in the prose.
 - Argued from cost per session, not from authority.
 - Scale ("5k tokens on a 1.0M window, why bother?") posed and answered by
   marginal value, under § What changed, and what did not. Scoped to the
@@ -354,7 +361,8 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Any study of adherence against instruction-file length? The docs assert it.
   None found.
 - Eight claims under one heading: two on the slide, five in notes, one not
-  in the prose. Overflow candidate.
+  in the prose. The TeX log reports the frame 0.1pt overfull; nothing is
+  clipped on the page. No line to spare.
 
 ### Not doing
 
@@ -474,6 +482,29 @@ layers, on-demand loading, pitfalls. Eight slides.
   removed `CLAUDE.md` recovered from git history
   (`demo/runs/superseded-a-1-history-leak`); auto memory from another
   directory acted on (`demo/runs/dryrun-b.memory-loaded.md`).
+- Notes, one check per pitfall, before the fix.
+  - Ignored rule: `/context`, the list under Memory files. "If a `CLAUDE.md`
+    file is missing there, Claude can't see it." `[DOCS: memory page,
+    "Claude isn't following my CLAUDE.md"]`
+  - Lost instruction: look for it in the files `/memory` lists. "If an
+    instruction disappeared after compaction, it was given only in
+    conversation", or is in a nested file or path-scoped rule not yet
+    reloaded. `[DOCS: memory page]` Prose gives the first case only.
+  - Removed but used: `git log` for history; `/memory` for the auto-memory
+    folder `[DOCS: memory page]`; headless, `memory_paths` in the init event
+    (`demo/runs/*/log.jsonl`).
+- Notes, the superseded run: first arm-A run, on branch `demo/arm-a`, two
+  commits, `c33d022` on `b9f2176` (`git-log.txt`). Agent ran `git show
+  HEAD~1:CLAUDE.md` (`log.jsonl`). Void as a measurement, kept as record
+  (`demo/PROTOCOL.md`, amendment 5).
+- Notes, the dry run: arm B, before the demo; tooling validation, not
+  evidence. Read `no-content-between-h1-and-first-h2.md` from this
+  repository's memory directory and left the comment out, citing "a saved
+  memory" (`demo/runs/dryrun-b.jsonl`; `demo/PROTOCOL.md`, amendment 1).
+  "All worktrees and subdirectories within the same repo share one auto
+  memory directory." `[DOCS: memory page]`
+- On the slide the two runs keep their record names, "a superseded run" and
+  "a dry run". The notes say what each was.
 - Directory added with `--add-dir`, agent does not follow its `CLAUDE.md` or
   rules → reachable, not loaded by default. Its skills, commands and subagents
   are loaded. `[DOCS: memory and permissions pages]`
