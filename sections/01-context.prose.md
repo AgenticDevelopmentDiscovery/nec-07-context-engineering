@@ -28,6 +28,10 @@ By the end you can:
    know which mechanisms do which.
 
 The route: a readable budget, a demo on this repository, the index, layers,
-on-demand loading, pitfalls. Out of scope: prompt wording (Tutorial 06),
-compaction internals (08), retrieval (09), persistent memory (16), provenance
-labelling, window sizes and pricing.
+on-demand loading, pitfalls.
+
+::: notes
+Out of scope: prompt wording (Tutorial 06), compaction internals (08),
+retrieval (09), persistent memory (16), provenance labelling, window sizes and
+pricing.
+:::

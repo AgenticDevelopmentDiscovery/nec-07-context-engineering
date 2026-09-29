@@ -42,7 +42,8 @@ layers, on-demand loading, pitfalls. Eight slides.
 ### Not doing
 
 - How compaction summarises (T08).
-- Formal framing as a unit of its own. One sentence, on the index slide.
+- Formal framing as a unit of its own. One sentence, under § CLAUDE.md as an
+  index, not a manual.
 
 ## What `/context` shows at launch
 
@@ -109,7 +110,8 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Remove by moving the file. Rejected: `--bare`, which also drops skills, hooks
   and memory. `[DOCS: cli-reference page — check]`
 - Heading stays. This unit compares A with B, so "two windows" is true of it; C
-  is reported on the index slide. Rejected: renaming to three windows.
+  is reported under § CLAUDE.md as an index, not a manual. Rejected: renaming
+  to three windows.
 - Prompt fixed: add an "Examples" section between content and conclusion,
   following the project's conventions, build passing (`demo/prompt.txt`;
   `demo/PROTOCOL.md` § Task prompt).
@@ -136,21 +138,27 @@ layers, on-demand loading, pitfalls. Eight slides.
 ### Claims
 
 - All from `demo/RESULTS.md`; per-run records in `demo/runs/`.
-- Behaviour, A against B: null. Observables 1–5 at 5/5 in both arms; control
-  (6) at 0/5 in both (§ Pre-registered observables).
-- Prediction that 2 and 5 separate A from B: failed (§ Predictions against
-  outcomes).
-- Every convention the task touches is also in `README.md`, the `justfile` or
-  the existing section pairs. Observable 2 had a second source, the existing
-  sidecars (§ Threats to validity).
-- Tool calls before first edit: A 25.2 (24–27), B 18.6 (17–21). Ranges
-  separate.
-- Tokens at first edit: A 47.2k (44.9–50.3), B 46.6k (44.7–49.1). Ranges
-  overlap. About seven tool calls saved, spent on the manual's 1,854 words
-  (§ Observable 7).
-- Post hoc, labelled as such: B justified choices by citing `CLAUDE.md`; A
-  reached the same from the README and existing files (§ Post-hoc
-  observations).
+- On the slide: one table, three rows (A no file, B manual, C index), and the
+  closing sentence. Everything else is in a `::: notes` block.
+- Table, counts of five (§ Pre-registered observables): observables 1–5 at
+  5/5 in every arm; control (6) at 0/5 in every arm.
+- Table, mean and range over five runs (§ Observable 7). Tool calls to first
+  edit: A 25.2 (24–27), B 18.6 (17–21), C 17.4 (16–19). Tokens at first edit:
+  A 47.2k (44.9–50.3), B 46.6k (44.7–49.1), C 41.3k (39.9–43.1).
+- Closing sentence: on a repository that describes itself, the file changed
+  the cost of reaching the answer, not the answer.
+- Notes, behaviour: null. Control failed as expected for a convention stated
+  nowhere. Prediction that 2 and 5 separate A from B: failed (§ Predictions
+  against outcomes).
+- Notes, why: conventions behind observables 1–4 are also in `README.md`, the
+  `justfile` or the existing section pairs; for 2 the second source is the
+  existing sidecars (§ Threats to validity). Observable 5 had no second
+  source (`demo/PROTOCOL.md` § Observables); no run committed unprompted.
+- Notes, cost: B about seven fewer tool calls than A; token ranges overlap.
+  "Spent on the manual's 1,854 words" is an inference, not measured.
+- Notes, post hoc, labelled as such: 1 of 5 B runs cited `CLAUDE.md` for a
+  choice (b-1); 4 of 5 A runs named the README, the `justfile` and the
+  existing sections (a-1 to a-4). Counted from `demo/runs/*/log.jsonl`.
 
 ### Decisions
 
@@ -163,7 +171,7 @@ layers, on-demand loading, pitfalls. Eight slides.
 - No observable discriminated on behaviour: 1–6 identical across arms. All six
   reported, none dropped.
 - Limits stated in § Open edges, not here: one prompt, one model, a
-  self-describing repository, every run correct.
+  self-describing repository, every run met observables 1 to 5 and built.
 
 ### Open questions
 
@@ -177,24 +185,30 @@ layers, on-demand loading, pitfalls. Eight slides.
 
 ### Claims
 
+- On the slide: the load claim and the excerpt. Everything else is in a
+  `::: notes` block.
 - Loaded in full at every launch and re-read after compaction. Every line is
   paid for in every session. `[DOCS: memory page]`
-- An index holds commands, conventions that cannot be inferred from the files,
-  and pointers. Detail stays in files read on demand.
-- Formal framing, one sentence: an index is a sufficient statistic for the
-  repository — enough to decide what to read next, without holding the
-  contents.
-- Vendor guidance: "target under 200 lines per CLAUDE.md file". `[DOCS: memory
-  page]`
-- Delivered "as a user message after the system prompt". Advice, not
-  enforcement. `[DOCS: memory page]`
-- This repository's `CLAUDE.md` as shipped at `b9f2176`: 240 lines, 1,854
-  words. A manual by design.
-- Arm C against arm B (`demo/RESULTS.md` § Observable 7; index at
-  `demo/index.CLAUDE.md`, 32 lines): C matched B on observables 1–5, 5/5.
-  Tokens at first edit: C 41.3k (39.9–43.1), B 46.6k (44.7–49.1), A 47.2k
-  (44.9–50.3). C's worst run below the best of A and of B. Turns and seconds:
-  C lowest, ranges overlap, tendency only.
+- Excerpt: six of the 32 lines of `demo/index.CLAUDE.md`, lines 1, 3, 4, 8, 9
+  and 30. Title, the pointer to `README.md`, the `just build` command, "Do
+  not commit unless asked". Long lines re-broken to fit the frame; blank
+  lines dropped. Two "…" markers, for lines 10 to 29 and 31 to 33. The `##`
+  heading on line 6 is dropped without a marker; the lead-in discloses it,
+  "subheadings omitted". The `#` title on line 1 is shown.
+- Notes, Arm C, one clause: the index matched the manual at the lowest cost of the
+  three (`demo/RESULTS.md` § What the demo supports). Numbers are in the table
+  under § What changed, and what did not.
+- Not in the prose: turns and seconds. C lowest, ranges overlap, tendency
+  only (`demo/RESULTS.md` § Observable 7).
+- Notes: an index holds commands, conventions that cannot be inferred from
+  the files, and pointers. Detail stays in files read on demand.
+- Notes, by analogy, one sentence: an index is a sufficient statistic, enough
+  to decide what to read next.
+- Notes, vendor guidance: "target under 200 lines per CLAUDE.md file".
+  `[DOCS: memory page]` This repository's `CLAUDE.md` as shipped at
+  `b9f2176`: 240 lines, 1,854 words. A manual by design.
+- Notes: delivered "as a user message after the system prompt", so its
+  contents are advice to the model. `[DOCS: memory page]`
 
 ### Decisions
 
@@ -219,7 +233,8 @@ layers, on-demand loading, pitfalls. Eight slides.
 
 - Any study of adherence against instruction-file length? The docs assert it.
   None found.
-- Seven claims under one heading. Overflow candidate.
+- Eight claims under one heading: two on the slide, five in notes, one not
+  in the prose. Overflow candidate.
 
 ### Not doing
 

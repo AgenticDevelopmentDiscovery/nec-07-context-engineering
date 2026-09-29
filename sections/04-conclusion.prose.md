@@ -21,8 +21,8 @@ and when.
 - The evidence on length and position comes from retrieval-style benchmarks.
   Agentic coding sessions are untested in the sources we found.
 - Our demo is one prompt and one model, on a repository that describes itself,
-  and every run was correct. It says nothing about correctness, or about
-  conventions that live only in `CLAUDE.md`.
+  and every run met observables 1 to 5 and built. It says nothing about
+  correctness, or about conventions that live only in `CLAUDE.md`.
 - How conflicting instruction files resolve is undocumented
   [@claudecode-memory].
 - Tool behaviour is as documented on 28 September 2026, and changes by version

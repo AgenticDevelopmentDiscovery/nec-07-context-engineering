@@ -16,14 +16,21 @@ writing about how to build on language models [@yan2025; @willison2025].
 ## How a window fails
 
 - **Too little.** The agent guesses a convention, re-derives what the
-  repository records, or invents. In our demo, a convention written nowhere
-  was followed in 0 of 15 runs.
+  repository records, or invents. In our demo one convention, nothing between
+  a `#` heading and its first `##`, was written nowhere, and the template's
+  own sections modelled the opposite. It was followed in 0 of 15 runs: every
+  run copied the sections.
 - **Too much.** On retrieval-style benchmarks, performance degrades as input
   grows, even on simple tasks [@hong2025, a vendor report; @modarressi2025].
 - **Position.** An earlier study found its models used mid-input information
   worse than information at either end [@liu2024]. A later benchmark reports
   most current models robust to this, with spacing biases remaining
-  [@tian2025].
-- **Caveat.** No source we found tests either effect in agentic coding.
+  [@tian2025]; none of these effects is tested in agentic coding in any
+  source we found.
 - **The bound.** If the agent had the information and still erred, it is not
   a context problem.
+
+::: notes
+In the demo's control, the agent followed what was in the window over a rule
+that was not (§ The demo).
+:::
