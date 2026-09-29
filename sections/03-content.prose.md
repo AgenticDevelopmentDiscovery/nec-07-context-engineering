@@ -3,32 +3,39 @@
 ## The window is a budget you can read
 
 The window is finite, and everything loaded spends it whether or not it is
-used. In our demo the manual changed none of the six behaviours we scored, so
-every token it cost bought no change in what the agent did; that holds on any
-window, which is why the argument for an index does not depend on window size.
+used.
 
 ::: notes
 Anthropic's guidance calls context "a finite resource with diminishing
 marginal returns" [@rajasekaran2025]; that is advice, not evidence.
 :::
 
-`/context` draws current usage as a grid and breaks it down by category,
-including which instruction and memory files loaded [@claudecode-commands;
-@claudecode-context]. Run it in a fresh session: part of the budget is already
-spent, because instruction files, auto memory and skill descriptions load
-before you type anything [@claudecode-context].
+`/context` shows current usage as a bar and a table by category, in tokens and
+as a share of the window, and lists which instruction and memory files loaded
+[@claudecode-commands; @claudecode-context]. Run it in a fresh session, as in
+the figure under § What `/context` shows at launch: part of the budget is
+already spent, because instruction files, auto memory and skill descriptions
+load before you type anything [@claudecode-context].
 
-When the budget runs out, the conversation is summarised. This is *compaction*.
-The project-root `CLAUDE.md` is re-read from disk afterwards; an instruction
-given only in conversation may not survive [@claudecode-memory].
+As the window approaches its limit, the conversation is summarised
+automatically [@claudecode-context]. This is *compaction*. The project-root
+`CLAUDE.md` is re-read from disk afterwards; an instruction given only in
+conversation may not survive [@claudecode-memory].
 
 ## What `/context` shows at launch
 
-![`/context` in a fresh session in this repository, before any prompt.](figures/context-at-launch.png){width=70%}
+![`/context` at launch: 32.5k spent; 33.0k autocompact buffer reserved, not counted.](figures/context-at-launch.png){width=70%}
 
 ::: notes
-Memory files is this repository's `CLAUDE.md` (4.2k) and the auto-memory index
-(163); the full readout is `demo/runs/context-at-launch-full.png`.
+The figure is the category table from a fresh session in this repository,
+before any prompt. The four largest rows counted in the 32.5k are System tools
+(17.4k), Skills (4.7k), System prompt (4.5k) and Memory files (4.4k). The
+autocompact buffer is reserved on top of them. Memory files is this
+repository's `CLAUDE.md` plus the auto-memory index. Skills is skill
+descriptions loaded from this repository and the user level. The harness
+controls System tools and System prompt. The full readout, with the total in
+its header and Memory files listed per file, is
+`demo/runs/context-at-launch-full.png`.
 :::
 
 ## The demo: one prompt, two windows
@@ -42,15 +49,15 @@ Memory files is this repository's `CLAUDE.md` (4.2k) and the auto-memory index
   `b9f2176`, a tutorial template whose sections are pairs of files. The
   copies differ only in `CLAUDE.md`.
 - **Arms.** A, no file. B, the manual: the shipped 240-line `CLAUDE.md`. C,
-  the index: 32 lines, reported in the table under § What changed, and what
+  the index: 33 lines, reported in the table under § What changed, and what
   did not.
 - **Task.** One fixed prompt: add an "Examples" section before the
   conclusion, following the project's conventions, with the build passing.
 - **Observables, numbered and fixed before any run.** 1 both files of the
   section created; 2 the sidecar in note form; 3 numeric order; 4 `just build`
   passing; 5 no commit; 6, the control: a convention stated nowhere in the
-  substrate (nothing between `#` and the first `##`), expected to fail in
-  every arm; 7 cost to the first edit.
+  substrate (nothing between `#` and the first `##`), expected not to differ
+  between arms; 7 cost to the first edit.
 
 ::: notes
 - **Runs.** Five per arm, headless; Claude Code 2.1.281, `claude-fable-5-1`.
@@ -58,38 +65,42 @@ Memory files is this repository's `CLAUDE.md` (4.2k) and the auto-memory index
 
 ## What changed, and what did not
 
-| Arm | Observables 1–5 | Control | Tool calls to first edit | Tokens at first edit |
-| ------- | --------- | ----- | -------------- | -------------- |
-| A, no file | 5 of 5 | 0 of 5 | 25.2 (24–27) | 47.2k (44.9–50.3) |
-| B, manual | 5 of 5 | 0 of 5 | 18.6 (17–21) | 46.6k (44.7–49.1) |
-| C, index | 5 of 5 | 0 of 5 | 17.4 (16–19) | 41.3k (39.9–43.1) |
+| Arm | Observables 1–5 | Control | Reads to first edit | Tokens at first edit |
+| -------- | ------------ | ------ | ------------- | -------------- |
+| A, no file | 5 of 5 | 0 of 5 | 17.0 (14–20) | 47.2k (44.9–50.3) |
+| B, manual | 5 of 5 | 0 of 5 | 11.6 (9–13) | 46.6k (44.7–49.1) |
+| C, index | 5 of 5 | 0 of 5 | 9.8 (9–11) | 41.3k (39.9–43.1) |
 
 : Runs meeting each observable, of five; then mean (range) over five runs.
 
 ::: notes
 - **Behaviour: a null result.** Observables 1 to 6 do not differ between
-  arms. The control failed in every run, as expected for a convention stated
-  nowhere: the rule was in no arm's window. Our prediction that observables 2
-  and 5 would separate A from B failed.
+  arms. The control was met in 0 of 5 in every arm; the protocol predicted no
+  difference. After the runs, we explain the zero by the rule being in no
+  arm's window. Our prediction that observables 2 and 5 would separate A from
+  B failed.
 - **Why.** The conventions behind observables 1 to 4 are also in the README,
-  the `justfile` or the existing sections, and the agent read those.
-  Observable 5 had no second source: no run committed unprompted.
-- **Cost.** B made about seven fewer tool calls than A, and its token range
-  overlaps A's. We infer, and did not measure, that the manual spent the
-  saving on its own 1,854 words.
+  the `justfile` or the existing sections, and the agent read those. Among
+  the repository's files, observable 5 is stated only in `CLAUDE.md`; no run
+  committed, in any arm.
+- **Cost.** Reads are `Read` tool calls. B made about five fewer than A, and
+  the two ranges do not overlap; its token range overlaps A's. We infer, and
+  did not measure, that the manual spent the saving on its own 1,854 words.
 - **Post hoc, not pre-registered.** One B run of five cited `CLAUDE.md` for a
   choice. Four A runs of five named the README, the `justfile` and the
   existing sections as their source.
 :::
 
-On a repository that describes itself, the file changed the cost of reaching
-the answer, not the answer.
+The manual changed none of the six scored behaviours. It reduced reading
+before the first edit and saved no tokens. Tokens that change no scored
+behaviour are cost on any window. On a repository that describes itself, the
+file changed the cost of reaching the answer, not the answer.
 
 ## CLAUDE.md as an index, not a manual
 
 - `CLAUDE.md` loads in full at every launch and again after compaction: every
   line is paid for in every session [@claudecode-memory].
-- Arm C's index, six of its 32 lines; subheadings omitted
+- Arm C's index, six of its 33 lines; subheadings omitted
   (`demo/index.CLAUDE.md`):
 
 ```markdown

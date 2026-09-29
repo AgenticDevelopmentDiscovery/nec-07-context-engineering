@@ -2,7 +2,7 @@
 
 Fifteen headless runs of one fixed prompt on three single-commit copies of
 the template commit `b9f2176`, differing only in the project `CLAUDE.md`:
-absent (A), the shipped 240-line manual (B), or a pre-registered 32-line
+absent (A), the shipped 240-line manual (B), or a pre-registered 33-line
 index (C). Protocol, amendments, and every run's log are in this folder.
 Claude Code 2.1.281, model `claude-fable-5-1`, 2026-09-28.
 
@@ -25,21 +25,23 @@ sections instead." (a-1, final message.)
 
 ## Observable 7: cost to the first edit
 
-| Arm | Tool calls before first edit | Tokens at first edit | Turns | Seconds |
+| Arm | `Read` calls before first edit | Tokens at first edit | Turns | Seconds |
 | --- | --- | --- | --- | --- |
-| A — absent | 25.2 (24–27) | 47.2k (44.9–50.3) | 49 (44–56) | 147 (125–165) |
-| B — manual | 18.6 (17–21) | 46.6k (44.7–49.1) | 51 (42–64) | 181 (137–261) |
-| C — index | 17.4 (16–19) | 41.3k (39.9–43.1) | 42 (37–50) | 129 (110–156) |
+| A — absent | 17.0 (14–20) | 47.2k (44.9–50.3) | 49 (44–56) | 147 (125–165) |
+| B — manual | 11.6 (9–13) | 46.6k (44.7–49.1) | 51 (42–64) | 181 (137–261) |
+| C — index | 9.8 (9–11) | 41.3k (39.9–43.1) | 42 (37–50) | 129 (110–156) |
 
-Means with ranges over five runs. Tokens = cache-read + cache-creation +
-input tokens on the assistant turn that made the first `Edit` or `Write`.
-Per-run values: `table.sh`.
+Means with ranges over five runs. Reads = `Read` tool calls before the first
+`Edit` or `Write`, the observable as registered. Tokens = cache-read +
+cache-creation + input tokens on the assistant turn that made the first
+`Edit` or `Write`. Per-run values: `table.sh`.
 
 - **Tokens.** C's worst run (43.1k) is below A's best (44.9k) and B's best
   (44.7k): no overlap. A and B overlap almost entirely. The manual saved
-  about seven tool calls per run and spent the saving on its own 1,854 words.
-- **Tool calls.** B and C both separate from A (B's worst, 21, is below A's best,
-  24). The manual did reduce exploration; it did not reduce cost.
+  about five `Read` calls per run; that it spent the saving on its own 1,854
+  words is inferred, not measured.
+- **Reads.** B and C both separate from A (B's worst, 13, is below A's best,
+  14). B and C overlap. The manual did reduce reading; it did not reduce cost.
 - **Turns and seconds.** C lowest on both; ranges overlap. Tendency only.
   b-4 (261 s) is the one outlier.
 
@@ -67,6 +69,9 @@ other models, or about correctness — every run was correct.
 
 ## Post-hoc observations (not pre-registered; labelled as such)
 
+- **Tool calls of every kind before the first edit** (post hoc; the
+  registered measure is reads): A 25.2 (24–27), B 18.6 (17–21), C 17.4
+  (16–19). Per-run values: the `calls` column of `table.sh`.
 - **Provenance of the same action differs.** Arm B justified choices by
   citing `CLAUDE.md` ("names renumbering as the way to change the arc");
   arm A reached identical choices from the README and existing files.
@@ -91,3 +96,13 @@ other models, or about correctness — every run was correct.
 - The `/round` skill description was in the window in every arm.
 - The index was written by the presenter, before any run, from the manual
   alone (`index.CLAUDE.md`, committed at `273faf9`).
+
+## `/context` reading at launch (not a demo run)
+
+- 2026-09-29, `runs/context-at-launch-full.png`: `/context` in a fresh
+  session in this repository, before any prompt. Claude Code VS Code
+  extension, light theme, model `claude-fable-5-1`. Installed that day:
+  extension 2.1.284, CLI 2.1.281; the panel shows neither, and the date is
+  the file's. 32.5k of 1.0M tokens used, autocompact buffer 33.0k;
+  `CLAUDE.md` 4.3k, auto-memory index 163.
+  `figures/context-at-launch.png` is its category table, 840 × 565 px.

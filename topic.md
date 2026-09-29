@@ -80,8 +80,8 @@ answers to the question of what goes in the window.
   → `CLAUDE.md` as index → layers → on-demand loading → pitfalls.
 - The demo runs on three independent single-commit copies of the template
   commit `b9f2176`, differing only in the project `CLAUDE.md`: absent, the
-  shipped manual, or a 32-line index. Five runs per arm, and observables
-  fixed before any run. The arm with the 32-line index is the one that tests
+  shipped manual, or a 33-line index. Five runs per arm, and observables
+  fixed before any run. The arm with the 33-line index is the one that tests
   the index-versus-manual claim. Results are presented as a recorded diff with
   counts; a short live rerun of one arm is optional. A null result is reported
   as a null result.
@@ -100,8 +100,10 @@ answers to the question of what goes in the window.
   own section page remains. Empty extra frames come from content placed between
   a `#` heading and its first `##` (the placeholder comments); write nothing
   there.
-- What else is loaded in both arms (user-level `CLAUDE.md`, auto memory, the
-  `/round` skill description): disclose or strip.
+- Resolved: what else is loaded in every arm. User-level `CLAUDE.md` was
+  absent, auto memory was stripped, and the `/round` skill description was
+  kept and disclosed (`demo/PROTOCOL.md` § Disclosed confounds, Amendments 1
+  and 7; `demo/RESULTS.md` § Threats to validity).
 - Whether the course symbolic-regression repository, if released before the
   talk, replaces this one as the demo substrate; observables would have to be
   rewritten for it.

@@ -3,7 +3,7 @@
 ## What you can do now
 
 1. Read the window with `/context`, and say what each part costs.
-   (§ The window is a budget you can read)
+   (§ What `/context` shows at launch)
 2. Write a `CLAUDE.md` that works as an index, and test on a fixed prompt, over
    repeated runs, whether it changed the agent's behaviour.
    (§ The demo; § What changed; § CLAUDE.md as an index)
@@ -25,7 +25,7 @@ and when.
   correctness, or about conventions that live only in `CLAUDE.md`.
 - How conflicting instruction files resolve is undocumented
   [@claudecode-memory].
-- Tool behaviour is as documented on 28 September 2026, and changes by version
-  [@claudecode-memory; @claudecode-context].
+- Tool behaviour is as documented on 28 and 29 September 2026, for Claude Code
+  2.1.281, and changes by version [@claudecode-memory; @claudecode-context].
 - These edges lead on: compaction (Tutorial 08); retrieval, the same question
   at scale (09); persistent memory (16).

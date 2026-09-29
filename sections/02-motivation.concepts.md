@@ -13,8 +13,8 @@
 - In an agentic loop the window fills from tool calls and file reads, not only
   from what the person types.
   - Not run: no share was measured. Stated without a number. The logs record
-    tool calls before the first edit, not a share: 25.2 / 18.6 / 17.4 reads in
-    arms A / B / C (`demo/RESULTS.md` § Observable 7).
+    `Read` calls before the first edit, not a share: 17.0 / 11.6 / 9.8 reads
+    in arms A / B / C (`demo/RESULTS.md` § Observable 7).
 - Repositories exceed windows, so something always decides what is left out.
 - Rewording the request cannot supply information the model cannot see.
 - Origin, one line: the term gained currency in June 2025. `[CITE: Lütke, post
