@@ -10,22 +10,32 @@ Anthropic's guidance calls context "a finite resource with diminishing
 marginal returns" [@rajasekaran2025]; that is advice, not evidence.
 :::
 
+Run `/context` in a fresh session: part of the budget is already spent
+[@claudecode-context].
+
+::: notes
 `/context` shows what is filling the window. The documentation describes "a
 colored grid" [@claudecode-commands] and a breakdown by category, with the
 instruction and memory files that loaded [@claudecode-context]. The VS Code
-panel draws a bar and a table; the figure shows the table. Run it in a fresh
-session: part of the budget is already spent, because instruction files, auto
-memory and skill descriptions load before you type anything
-[@claudecode-context].
+panel draws a bar and a table; the figure shows the table. The launch cost is
+instruction files, auto memory and skill descriptions, which load before you
+type anything [@claudecode-context].
+:::
 
-As the window approaches its limit, the conversation is summarised
-automatically [@claudecode-context]. This is *compaction*. The project-root
-`CLAUDE.md` is re-read from disk afterwards; an instruction given only in
-conversation may not survive [@claudecode-memory].
+*Compaction* summarises the conversation [@claudecode-context], and the
+project-root `CLAUDE.md` is re-read afterwards [@claudecode-memory].
+
+::: notes
+Compaction happens automatically as the window approaches its limit
+[@claudecode-context]. An instruction given only in conversation may not
+survive it [@claudecode-memory].
+:::
 
 ## What `/context` shows at launch
 
-![`/context` at launch: 32.5k spent; 33.0k autocompact buffer reserved, not counted.](figures/context-at-launch.png){width=70%}
+![`/context`: 32.5k spent; 33.0k held back for compaction (the autocompact buffer).](figures/context-at-launch.png){height=63%}
+
+Memory files is this repository's `CLAUDE.md` — the row you write.
 
 ::: notes
 The figure is the category table from a fresh session in this repository,
@@ -40,7 +50,7 @@ readout, with the total in its header and Memory files listed per file, is
 `demo/runs/context-at-launch-full.png`.
 :::
 
-## The demo: one prompt, three windows
+## The demo: does a project CLAUDE.md change what the agent does?
 
 ::: notes
 - **Question.** Does a project `CLAUDE.md` change what the agent does on a
@@ -53,13 +63,12 @@ readout, with the total in its header and Memory files listed per file, is
   did not.
 :::
 
-![Three single-commit copies of the template, differing only in `CLAUDE.md`.](figures/three-windows.svg){height=32%}
+![One prompt, three windows: copies of this template at commit `b9f2176`, differing only in `CLAUDE.md`.](figures/three-windows.svg){height=36%}
 
 - **Task.** One fixed prompt: add an "Examples" section before the
   conclusion, following the project's conventions, with the build passing.
-- **Observables, fixed before any run.** Five conventions scored per run
-  (1–5). One control (6): a convention stated nowhere in the substrate,
-  expected not to differ between arms. Cost to the first edit (7).
+- **Observables, fixed before any run.** Five conventions (1–5); a control
+  (6), stated nowhere, expected not to differ; cost to the first edit (7).
 
 ::: notes
 - **Observables 1 to 5.** 1, both files of the new section created: its
@@ -83,6 +92,12 @@ readout, with the total in its header and Memory files listed per file, is
 
 : Runs of five meeting all of 1–5, and the control; then mean (range).
 
+The manual changed no scored behaviour; the index matched it at lower cost,
+with no overlap of ranges. Why cut 5k tokens on a 1.0M window? Tokens that
+change no scored behaviour are cost on any window. On a repository that
+describes itself, the file changed the cost of reaching the answer, not the
+answer.
+
 ::: notes
 - **Behaviour: a null result.** Observables 1 to 6 do not differ between
   arms. The control was met in 0 of 5 in every arm; the protocol predicted no
@@ -103,17 +118,12 @@ readout, with the total in its header and Memory files listed per file, is
   saving the ranges can separate. Reads are `Read` tool calls. B made about
   five fewer than A, and the two ranges do not overlap; its token range
   overlaps A's. We infer, and did not measure, that the manual spent the
-  saving on its own 1,854 words.
+  saving on its own 1,854 words. The index matched the manual on 1–5 at
+  41.3k tokens against 46.6k.
 - **Post hoc, not pre-registered.** One B run of five cited `CLAUDE.md` for a
   choice. Four A runs of five named the README, the `justfile` and the
   existing sections as their source.
 :::
-
-The manual changed no scored behaviour. The index matched it on 1–5 at 41.3k
-tokens against 46.6k, with no overlap of ranges. Why cut 5k tokens on a 1.0M
-window? Tokens that change no scored behaviour are cost on any window. On a
-repository that describes itself, the file changed the cost of reaching the
-answer, not the answer.
 
 ## CLAUDE.md as an index, not a manual
 
@@ -135,7 +145,8 @@ critique round at a time. Toolchain and setup: README.md.
 ```
 
 ::: notes
-- In an index, detail stays in files read on demand.
+- In an index, detail stays in files read on demand. The course notes state
+  the same rule as "reference, not inclusion" [@coursenotes2026, § 4.3.3].
 - By analogy, an index is a *sufficient statistic*: enough to decide what to
   read next.
 - The documentation's advice is a target of "under 200 lines"
@@ -146,6 +157,13 @@ critique round at a time. Toolchain and setup: README.md.
 
 ## Layers: order is documented, conflict is not
 
+![The four instruction-file layers and their load order [@claudecode-memory].](figures/layers.svg){height=45%}
+
+Place by stability and audience: personal habit → user; team convention →
+project; per-machine → local; this task only → the conversation. Remove a
+conflict; do not predict the winner.
+
+::: notes
 - Instruction files load at launch in a documented order: managed policy,
   user, project, local. They are concatenated, not overriding
   [@claudecode-memory].
@@ -155,16 +173,11 @@ critique round at a time. Toolchain and setup: README.md.
 - Conflict has no documented winner: "if two rules contradict each other,
   Claude may pick one arbitrarily" [@claudecode-memory]. `settings.json`, by
   contrast, has a fixed precedence [@claudecode-settings].
-- **Place by stability and audience.** Personal habit: user. Team convention:
-  project. Private or per-machine: local. This task only: the conversation.
-- **The fix for a conflict** is to remove it, not to predict the winner.
-
-::: notes
 - **Where each layer lives.** User: `~/.claude/CLAUDE.md`. Project:
   `./CLAUDE.md` or `./.claude/CLAUDE.md`, shared through version control.
-  Local: `./CLAUDE.local.md`, kept out of version control. Managed policy is
-  a file your organisation installs for every user; you do not edit it
-  [@claudecode-memory].
+  Local: `./CLAUDE.local.md`, kept out of version control, for what is
+  private as well as per-machine. Managed policy is a file your organisation
+  installs for every user; you do not edit it [@claudecode-memory].
 - **A conflict, as an illustration; not an observed case.** Your user file
   says "commit after every change". This project's file says "Do not commit
   unless asked". Both load, and neither overrides the other. The project rule
@@ -173,7 +186,7 @@ critique round at a time. Toolchain and setup: README.md.
 
 ## On demand: reachable is not loaded
 
-![What enters the window, and when. Sources: memory, context-window and permissions pages.](figures/window-timeline.svg){height=47%}
+![What enters the window, and when. Sources: memory, context-window and permissions pages.](figures/window-timeline.svg){height=49%}
 
 - **Rule.** Front-load what every task needs and is short and stable. Defer
   the rest, which Anthropic's post calls "just in time" [@rajasekaran2025].
@@ -205,27 +218,32 @@ critique round at a time. Toolchain and setup: README.md.
 
 ## Pitfalls: symptom, then the structural fix
 
-- **A rule in `CLAUDE.md` is ignored.** The file is too long, or the rule
-  conflicts with another. Cut or resolve. If the rule must hold, enforce it
-  with a hook or a permission setting [@claudecode-memory].
-- **An instruction given in chat is obeyed, then lost late in a long
-  session.** It was summarised away at compaction. Put it in a file
-  [@claudecode-memory].
-- **The agent uses something you removed.** Observed in our demo, post hoc:
-  a superseded run recovered a deleted `CLAUDE.md` from git history, and a
-  dry run acted on an auto memory saved in another directory. Check what is
-  reachable, not only what is loaded.
+| Symptom | Check | Fix |
+| --------- | ------------ | ------------ |
+| A `CLAUDE.md` rule is ignored | `/context`: is the file under Memory files? | Cut, resolve, or enforce by a hook or permission |
+| A chat instruction is obeyed, then lost | `/memory` (lists loaded files): is it in any listed file? | Put it in a file |
+| Removed but used | `git log`; `/memory` | Reachable, not just loaded |
+
+: Rows 1–2: the memory page [@claudecode-memory]; row 3: our demo, post hoc. A hook is a script the tool runs.
+
+Every fix changes what is loaded, or when.
 
 ::: notes
-- **Check, ignored rule.** Run `/context` and read the list under Memory
-  files: a file missing there was never seen [@claudecode-memory].
-- **Check, lost instruction.** Look for it in the files `/memory` lists: an
-  instruction in no file was given only in conversation
+- **Ignored rule.** The file is too long, or the rule conflicts with another:
+  cut or resolve. If the rule must hold, enforce it with a hook or a
+  permission setting [@claudecode-memory]. Check: run `/context` and read the
+  list under Memory files; a file missing there was never seen
   [@claudecode-memory].
-- **Check, removed but used.** Run `git log` to see whether history still
-  holds the file, and `/memory` to open the auto-memory folder
-  [@claudecode-memory]. In a headless run, read `memory_paths` in the log's
-  first event.
+- **Lost instruction.** Obeyed, then lost late in a long session: it was
+  summarised away at compaction, so put it in a file [@claudecode-memory].
+  Check: look for it in the files `/memory` lists; an instruction in no file
+  was given only in conversation [@claudecode-memory].
+- **Removed but used.** Observed in our demo, post hoc: a superseded run
+  recovered a deleted `CLAUDE.md` from git history, and a dry run acted on an
+  auto memory saved in another directory. Check what is reachable, not only
+  what is loaded: run `git log` to see whether history still holds the file,
+  and `/memory` to open the auto-memory folder [@claudecode-memory]. In a
+  headless run, read `memory_paths` in the log's first event.
 - **The superseded run** was the first arm-A run, on a branch where a commit
   had removed the manual. The agent ran `git show HEAD~1:CLAUDE.md` and read
   it, so the run was voided (`demo/runs/superseded-a-1-history-leak/`).
@@ -233,6 +251,5 @@ critique round at a time. Toolchain and setup: README.md.
   repository share an auto-memory directory [@claudecode-memory], so a memory
   saved in this repository loaded, and the agent followed it
   (`demo/runs/dryrun-b.jsonl`, `demo/runs/dryrun-b.memory-loaded.md`).
+- None of these fixes is a rewording.
 :::
-
-Every fix changes what is loaded, or when. None is a rewording.

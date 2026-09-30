@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="430" viewBox="0 0 1600 430"
+     font-family="Helvetica, Arial, 'Liberation Sans', sans-serif" fill="#000000">
+  <title>Four layers, one load order</title>
+  <desc>A stack of four instruction-file layers, managed policy (set by your organisation), user, project and local, with an arrow down the stack labelled loaded in this order, concatenated: appended, none overrides, and a callout reading conflict: no documented winner.</desc>
+  <style>
+    .arm   { fill: #ffffff; stroke: #1f6fb2; stroke-width: 3; }
+    .lbl   { font-size: 30px; }
+    .armlbl{ font-size: 32px; font-weight: bold; }
+    .wire  { fill: none; stroke: #8a8a8a; stroke-width: 3; }
+    .head  { fill: #8a8a8a; stroke: none; }
+    .tag   { fill: #ffffff; stroke: #1f6fb2; stroke-width: 3; }
+    .taglbl{ font-size: 30px; font-weight: bold; fill: #1f6fb2; }
+  </style>
+
+  <rect width="1600" height="430" fill="#ffffff"/>
+
+  <!-- The stack, in load order -->
+  <rect class="arm" x="470" y="20" width="560" height="88"/>
+  <text class="armlbl" x="750" y="56" text-anchor="middle">managed policy</text>
+  <text class="lbl" x="750" y="92" text-anchor="middle">(set by your organisation)</text>
+
+  <rect class="arm" x="470" y="120" width="560" height="88"/>
+  <text class="armlbl" x="750" y="175" text-anchor="middle">user</text>
+
+  <rect class="arm" x="470" y="220" width="560" height="88"/>
+  <text class="armlbl" x="750" y="275" text-anchor="middle">project</text>
+
+  <rect class="arm" x="470" y="320" width="560" height="88"/>
+  <text class="armlbl" x="750" y="375" text-anchor="middle">local</text>
+
+  <!-- The order -->
+  <line class="wire" x1="420" y1="20" x2="420" y2="392"/>
+  <polygon class="head" points="420,408 412,392 428,392"/>
+  <text class="lbl" x="40" y="176">loaded in this order,</text>
+  <text class="lbl" x="40" y="214">concatenated: appended,</text>
+  <text class="lbl" x="40" y="252">none overrides</text>
+
+  <!-- The callout -->
+  <line x1="1030" y1="214" x2="1090" y2="214" stroke="#8a8a8a" stroke-width="2" stroke-dasharray="6 6"/>
+  <rect class="tag" x="1090" y="164" width="470" height="100"/>
+  <text class="taglbl" x="1110" y="204">conflict:</text>
+  <text class="lbl" x="1110" y="244">no documented winner</text>
+</svg>

@@ -47,12 +47,22 @@ layers, on-demand loading, pitfalls. Eight slides.
   them. Now under § What changed, and what did not, after the table.
 - "Budget", not "position-weighted budget".
 - Token counts, not percentages. Supersedes "percentages, not token counts".
+- Slide cut (2026-09-30), 39 words, three sentences each with its key: the
+  finite budget; "Run `/context` in a fresh session: part of the budget is
+  already spent"; compaction summarises the conversation and the
+  project-root `CLAUDE.md` is re-read. Three `::: notes` blocks, one after
+  each sentence, so the document keeps each elaboration beside its claim:
+  the Anthropic quotation; what `/context` shows, the grid and the
+  breakdown with their keys, the VS Code panel, and the launch cost named
+  (instruction files, auto memory, skill descriptions); the compaction
+  trigger ("as the window approaches its limit") and the instruction that
+  may not survive it. The word *compaction* is on the slide, its trigger in
+  the notes.
 
 ### Open questions
 
-- Model, instrument and boundary under one heading. The frame holds: no
-  overfull box in the TeX log. Fallback if it grows: the compaction lines
-  move to § Pitfalls.
+- Resolved (2026-09-30): three sentences on the slide, the frame holds with
+  room. The fallback (compaction lines to § Pitfalls) is not needed.
 
 ### Not doing
 
@@ -80,6 +90,20 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Caption carries both: 32.5k spent, 33.0k buffer reserved and not counted.
   Cut to fit one line on the slide; "a fresh session in this repository,
   before any prompt" is in the notes.
+- Self-containment pass: caption now "`/context`: 32.5k spent; 33.0k held
+  back for compaction (the autocompact buffer)", defining the buffer. The
+  presenter's wording had "at launch" after `/context`; with it the caption
+  wrapped and the frame was 6.6pt over, so "at launch" was dropped from the
+  caption, since the frame title carries it. One line, frame holds.
+- Hinge line under the figure (2026-09-30, later): "Memory files is this
+  repository's `CLAUDE.md` — the row you write." The notes keep the fuller
+  statement, with the auto-memory index. Slide: 21 words.
+- Figure attribute is now `{height=63%}`, not `{width=70%}`. With the line
+  added the frame was 14.4pt over at the filter's 70%; the frame's text
+  height is 228pt, so 1% is 2.28pt, and 63% is the largest whole percentage
+  that fits (64% is 0.7pt over). Cost, as for the SVG figures: the document
+  renders the PNG at full text width instead of 70%, and the site at column
+  width.
 - Notes, the four largest rows counted in the 32.5k: System tools 17.4k,
   Skills 4.7k, System prompt 4.5k, Memory files 4.4k.
 - Notes: Memory files = this repository's `CLAUDE.md` plus the auto-memory
@@ -126,7 +150,7 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Window sizes as a subject (`topic.md` § Scope). The 1.0M in the figure is
   the reading, not a claim.
 
-## The demo: one prompt, three windows
+## The demo: does a project CLAUDE.md change what the agent does?
 
 ### Claims
 
@@ -179,6 +203,47 @@ layers, on-demand loading, pitfalls. Eight slides.
   height the figure still spans about two thirds of the slide width and its
   30 px labels stay readable. Frame holds: no overfull box, p. 11, the
   Observables bullet's third line on the page.
+- Self-containment pass: labels now "A — no CLAUDE.md", "B — the shipped
+  CLAUDE.md, a 240-line manual", "C — a 33-line index we wrote"; top box
+  "same starting repository, same prompt"; "5 unattended runs" under each;
+  drawn title removed; canvas 1600 × 372, arm boxes two lines. Caption:
+  "Three copies of this template at commit `b9f2176`, differing only in
+  `CLAUDE.md`; runs unattended (headless)." Two lines on the slide, which
+  put the frame 4.7pt over at 32%; height lowered to 27%, frame holds.
+  "substrate" → "repository" in the Observables bullet. Slide: 67 words.
+- Hinge pass (2026-09-30, later): the Question is the first line of the
+  slide, as a paragraph above the figure, and no longer a notes bullet;
+  caption cut to one line, "Three copies of this template at commit
+  `b9f2176`, differing only in `CLAUDE.md`." Slide: 78 words, over the
+  70-word budget by the Question line; the presenter chose the line.
+- Height: asked for 34%, landed at 24%. Measured with the frame's 228pt
+  text height (1% = 2.28pt): at 34% the frame was 34.7pt over with the
+  Question as a one-item list, 21.2pt over as a paragraph, so the paragraph
+  form was kept and the height stepped down by 2% to the first that fits,
+  24% (26% is 3.0pt over). The Question line costs about 19pt, a line plus
+  spacing; the one-line caption saved about 11pt, so the figure ends
+  smaller than the 27% it had. The fallback, shortening the Task bullet to
+  "One fixed prompt: add an "Examples" section, following the project's
+  conventions, build passing.", was measured and recovers nothing: it
+  still wraps to two lines. Not applied, since it would drop "before the
+  conclusion" for no room. Open: at 24% the figure's labels are about 4pt
+  on the slide; the room is in the three-line Observables bullet, or in
+  moving the Question back to the notes.
+- Heading pass (2026-09-30, later): Question back in the notes; heading is
+  the question; caption "One prompt, three windows: copies of this template
+  at commit `b9f2176`, differing only in `CLAUDE.md`." (two lines on the
+  slide); Observables bullet at the presenter's wording, "Five conventions
+  (1–5); one control (6), a convention stated nowhere, expected not to
+  differ between arms; cost to the first edit (7)." It renders as three
+  lines, not two: "edit (7)." spills. Slide: 61 words. Height: the largest
+  whole percentage that fits, up to 40%, is 29%: 22.97pt over at 40%, and
+  1% is 2.28pt, so 30% is 0.17pt over. Each line of the Observables bullet
+  is about 13pt, so a two-line wording would allow about 35%.
+- Observables reworded (2026-09-30, later): "Five conventions (1–5); a
+  control (6), stated nowhere, expected not to differ; cost to the first
+  edit (7)." Two lines on the slide, confirmed in the rendered text. Height
+  raised to 36%, the cap asked for; 36% fits with no overfull box (33–36%
+  all measured clean). Slide: 57 words.
 - Evidence = recorded diff with counts. A short live rerun of one arm is
   optional alongside it.
 - Worktree, not the live tree. Demo edits would land in `sections/`, and an
@@ -195,6 +260,11 @@ layers, on-demand loading, pitfalls. Eight slides.
   "Heading stays". `topic.md` § Shape agrees. The title of
   `demo/PROTOCOL.md` keeps "two windows (plus a third arm)": the protocol is
   the record.
+- Superseded (2026-09-30, later): the heading is the question, "The demo:
+  does a project CLAUDE.md change what the agent does?", and the Question
+  bullet is back in the notes. "One prompt, three windows" opens the
+  caption instead. `topic.md` § Shape updated to the new heading; "§ The
+  demo" short references unchanged. `demo/RESULTS.md` keeps its title.
 - Prompt fixed: add an "Examples" section between content and conclusion,
   following the project's conventions, build passing (`demo/prompt.txt`;
   `demo/PROTOCOL.md` § Task prompt).
@@ -222,8 +292,11 @@ layers, on-demand loading, pitfalls. Eight slides.
 
 - All from `demo/RESULTS.md`; per-run records in `demo/runs/`.
 - On the slide: one table, three rows (A no file, B manual, C index), and one
-  paragraph that ends on the closing sentence. Everything else is in a
-  `::: notes` block. As two paragraphs the frame was overfull.
+  paragraph of three sentences, at the presenter's wording: "The manual
+  changed no scored behaviour; the index matched it at lower cost, with no
+  overlap of ranges." then the scale question and its answer. Everything
+  else is in a `::: notes` block after the paragraph. As two paragraphs the
+  frame was overfull. Slide: 50 words, table cells not counted.
 - Table, counts of five (§ Pre-registered observables): observables 1–5 at
   5/5 in every arm; control (6) at 0/5 in every arm. Column headed "All of
   1–5": each of the five was 5/5, so every run met all five.
@@ -245,18 +318,21 @@ layers, on-demand loading, pitfalls. Eight slides.
   46.6k against 47.2k.
   "Spent the saving on its own length" is an inference: in the notes, marked
   as inferred, not on the slide.
-- Then arm C, on the slide: matched the manual on observables 1–5 at 41.3k
-  tokens against 46.6k; ranges do not overlap, 39.9–43.1 against 44.7–49.1
-  (`demo/RESULTS.md` § Observable 7, "C's worst run (43.1k) is below A's best
-  (44.9k) and B's best (44.7k): no overlap"). Prose: "matched it on 1–5",
-  "with no overlap of ranges".
+- Then arm C, on the slide: matched the manual at lower cost; ranges do not
+  overlap, 39.9–43.1 against 44.7–49.1 (`demo/RESULTS.md` § Observable 7,
+  "C's worst run (43.1k) is below A's best (44.9k) and B's best (44.7k): no
+  overlap"). Prose: "matched it at lower cost", "with no overlap of ranges".
+  The numbers, "on 1–5 at 41.3k tokens against 46.6k", are in the table and
+  in the notes' Cost bullet.
 - Then the scale question, posed on the slide before its answer: "Why cut 5k
   tokens on a 1.0M window?" 5k is 46.6k less 41.3k, 5.3k; 1.0M is the header
   of the `/context` reading.
 - Then the answer, scoped to the table: tokens that change no scored
   behaviour are cost on any window.
-- Closing sentence: on a repository that describes itself, the file changed
-  the cost of reaching the answer, not the answer.
+- Closing sentence, back on the slide since the self-containment pass, as
+  the paragraph's last sentence, and no longer in the notes: on a
+  repository that describes itself, the file changed the cost of reaching
+  the answer, not the answer. Slide: 68 words. Frame holds.
 - Notes, behaviour: null. Control 0 of 5 in every arm; the protocol predicted
   no difference. "The rule was in no arm's window" is an explanation made
   after the runs, and labelled so. Prediction that 2 and 5 separate A from B:
@@ -347,7 +423,11 @@ layers, on-demand loading, pitfalls. Eight slides.
   notes bullet here repeated that paragraph and was removed.
 - Not in the prose: turns and seconds. C lowest, ranges overlap, tendency
   only (`demo/RESULTS.md` § Observable 7).
-- Notes: in an index, detail stays in files read on demand.
+- Notes: in an index, detail stays in files read on demand. The course notes
+  state the same rule as "reference, not inclusion". `[CITE: course notes,
+  Fall 2026, § 4.3.3 — `coursenotes2026`; added on the presenter's
+  instruction, verified by the presenter against their copy, not by the
+  agent]` The slide is unchanged.
 - Notes, by analogy, one sentence: an index is a sufficient statistic, enough
   to decide what to read next.
 - Notes, vendor guidance: "target under 200 lines per CLAUDE.md file".
@@ -414,6 +494,19 @@ layers, on-demand loading, pitfalls. Eight slides.
   commit unless asked". An illustration, labelled as one; not run. "If two
   files give different guidance for the same behavior, Claude may pick one
   arbitrarily." `[DOCS: memory page]`
+- Figure, `figures/layers.svg`, 1600 × 440, title inside "Four layers, one
+  load order". A stack of four boxes, managed policy / user / project /
+  local; an arrow down the stack, "loaded in this order, concatenated"; a
+  callout off the stack, "conflict: no documented winner". Every label is a
+  claim in this unit's notes. Caption: "The four instruction-file layers
+  and their load order", with the memory key. `[DOCS: memory page]`
+- On the slide (34 words): the caption; "Place by stability and audience:
+  personal habit → user; team convention → project; per-machine → local;
+  this task only → the conversation."; "Remove a conflict; do not predict
+  the winner." In the notes, keys unchanged: load order and concatenation;
+  the cross-directory order; the conflict quotation and the `settings.json`
+  contrast; where each layer lives, now also "for what is private as well
+  as per-machine", since "Private or" left the slide; the worked conflict.
 
 ### Decisions
 
@@ -422,6 +515,14 @@ layers, on-demand loading, pitfalls. Eight slides.
 - The conversation is the fourth place an instruction can live. It is not a
   file layer.
 - Managed policy named in the load order, not taught.
+- Slide cut (2026-09-30). The arrow "→" is in the slide text at the
+  presenter's wording; it renders in both PDFs (checked in the extracted
+  text of each). Figure attribute `{height=45%}` since the enlargement
+  pass.
+- Self-containment pass: figure labels "managed policy (set by your
+  organisation)", on two lines in the top box; arrow label "loaded in this
+  order, concatenated: appended, none overrides"; drawn title removed;
+  canvas 1600 × 430. Frame holds at 45%.
 
 ### Open questions
 
@@ -510,6 +611,13 @@ layers, on-demand loading, pitfalls. Eight slides.
   30 px, so that at 47% of the frame height the figure spans about 60% of
   the slide width. Frame holds: no overfull box, p. 15, both lines of the
   Rule bullet on the page.
+- Self-containment pass: labels "project-root CLAUDE.md and its @path
+  imports (files it pulls in)", three lines; "rules scoped to file paths";
+  "--add-dir (an extra directory)", two lines in the tag; drawn title
+  removed; canvas 1600 × 560. Frame holds at 47%.
+- Height raised (2026-09-30, later): asked for 55%, which was 10.1pt over;
+  stepped down by 2% to 49%, the first that fits (51% is 1.0pt over).
+  Slide: 33 words, unchanged.
 
 ### Open questions
 
@@ -574,6 +682,14 @@ layers, on-demand loading, pitfalls. Eight slides.
   rules → reachable, not loaded by default. Its skills, commands and subagents
   are loaded. `[DOCS: memory and permissions pages]`
 - Agent re-derives a known result → pointer missing from the index.
+- On the slide (27 words since the self-containment pass, cells not
+  counted): a three-column table, symptom
+  | check | fix, one row per pitfall, every cell eight words or fewer, the
+  checks taken from the notes; a caption carrying the memory key for the
+  first two rows and the post-hoc label for the third; the closing line
+  "Every fix changes what is loaded, or when." In the notes, one bullet per
+  pitfall: cause, fix in full with its key, and the check with its key; the
+  two run records unchanged; "None of these fixes is a rewording." last.
 
 ### Decisions
 
@@ -583,11 +699,41 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Three kept: ignored rule (documented), chat instruction lost (documented),
   removed but reachable (observed in the demo, post hoc). Marked as such in
   the prose.
+- Table column widths 9 : 12 : 12 (the dash counts under the header). At
+  7 : 5 : 3 the Fix cells wrapped to three lines and the closing line fell
+  off the frame (rendered p. 16, first build of 2026-09-30). With the widths
+  fixed the frame was still 16.7pt over in the TeX log, then 1.1pt: the
+  caption wrapped to two lines. Caption cut to one line, "Rows 1–2: the
+  memory page; row 3: our demo, post hoc", with the memory key; the third
+  symptom cut to "The agent uses what you removed" so that its cell wraps to
+  two lines, not three. The fix cell for the third row, "Check what is
+  reachable, not only loaded", is the prose's own prescription, not a
+  documented fix; no new fix invented.
 
 ### Open questions
 
 - Which of the documented ones has the author hit in own sessions? The demo
   answers only for the third.
+- The Fix column is a check for the third row. Is there a documented
+  structural fix for "removed but reachable"? None claimed.
+- Self-containment pass: "`/memory` (lists loaded files)" in row 2's check
+  fits its cell in two lines and costs no height. "a hook (a script the
+  tool runs)" in row 1's fix made that row three lines and the frame 2.9pt
+  over, so per the fallback the definition is in the caption: "A hook is a
+  script the tool runs." The caption is two lines and the frame is 1.1pt
+  over in the TeX log: the frame had about 10pt to spare and a caption
+  line costs about 11pt. Nothing is clipped on the page. Every row has two
+  two-line cells, so no single cell change frees a line; an uncaptioned
+  table was tried and is worse (1.7pt).
+- Resolved (2026-09-30, later): row 3 cut to one line, "Removed but used |
+  `git log`; `/memory` | Reachable, not just loaded". The symptom is the
+  notes' own bullet label. Shortening only the check and the fix left the
+  symptom holding the row at two lines, and shortening row 1's fix changed
+  no line count; both were measured, still 1.1pt. The presenter's example
+  fix, "Check reachable, not just loaded", wraps at any column split that
+  keeps rows 1–2 at two lines, so one word had to go: the verb, keeping the
+  contrast. Also fit: "Check reachable, not loaded" and "Check what is
+  reachable too". Row 1's fix is unchanged. Frame holds, no overfull box.
 
 ### Not doing
 

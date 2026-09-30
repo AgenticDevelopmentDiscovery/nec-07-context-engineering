@@ -9,7 +9,7 @@
 #
 
 title: "Context Engineering & the Context Window"
-subtitle: "The model only knows what is in the window — deciding what that is, and when"
+subtitle: "The model only knows what is in the window; context engineering is deciding what that is, and when."
 author:
   - Abhishek Jaiswal
 date: \today

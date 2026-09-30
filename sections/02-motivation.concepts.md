@@ -28,6 +28,20 @@
   of 19 Jun 2025; Karpathy, post of 25 Jun 2025; earlier use in Yan, "Don't
   Build Multi-Agents", Cognition blog, 12 Jun 2025]` Posts read through a
   mirror, not on X directly.
+- Figure, `figures/window-fills.svg`, 1600 × 520, title inside "The window
+  fills as the agent works". Five steps joined by arrows: prompt → read a
+  file → run a command → output returns → next step. Under each, the window
+  as a bar filled from beneath, higher at each step, with the larger rises
+  after the file read and after the output returns. The levels illustrate
+  the claim above; no share was measured, and the figure's description says
+  so. Caption: "Each step of the loop adds to the window", with the
+  context-window key. `[DOCS: context-window page]`
+- On the slide (34 words): the caption; "The window fills from tool calls
+  and file reads, not only from what you type", with its key; "Rewording the
+  request cannot supply information the model cannot see." In the notes:
+  "each file the agent reads and each command it runs adds to the context"
+  with its key; the repository-size sentences; "A prompt that names a file
+  is different"; the origin line with its keys.
 
 ### Decisions
 
@@ -40,11 +54,18 @@
   changed when agents became multi-step.
 - Not used: "competence is largely a function of window contents". No source
   found; "largely" unquantified.
+- Slide cut (2026-09-30). "what you type" replaces "what the person types"
+  on the slide, at the presenter's wording. Figure attribute `{height=40%}`.
+- Self-containment pass: the drawn title "The window fills as the agent
+  works" removed from the figure; canvas 1600 × 460, so at 40% the figure
+  is wider than before. Frame holds.
 
 ### Open questions
 
 - Is there a measured figure for the human-typed share of an agentic window?
-  None found. Do not state one.
+  None found. Do not state one. The figure's fill levels are not one either:
+  they are drawn to show that reads and output add to the window, not by how
+  much.
 - Earliest use of the term not established. Pre-2025 uses not searched.
 
 ### Not doing
@@ -91,6 +112,22 @@
   too long, or in conflict, is loaded and still a context problem.
 - Absence of evidence from agentic coding: in the notes here, on the slide
   under § Open edges.
+- On the slide (60 words), four bullets of at most 16 words each, citation
+  keys not counted, hedges kept: "a 2025 vendor report", "a 2023 study",
+  "most models more robust". Too little: no pointer; the worked case in the
+  notes points to § The demo. Too much: the two sources, without the model
+  counts and without "even on simple tasks". Position: "mid-input
+  information often used worse" without the comparison. The bound, since
+  the self-containment pass: "If the window held it, alone and
+  unconflicted, and the agent still erred, the problem is elsewhere." The
+  test reads as a sentence again; "not a context problem" became "the
+  problem is elsewhere". Slide: 63 words.
+- In the notes, one bullet, "The sources, and what each tested": that all
+  four are retrieval-style benchmarks; 18 and 13 models; "even on simple
+  tasks" with the vendor report only; "than information at either end";
+  publication years; "with biases from the spacing of relevant information
+  remaining"; the model names; "some of those still affected". Each with its
+  key.
 
 ### Decisions
 
@@ -107,7 +144,10 @@
 - Does any primary source test length or position effects in agentic coding
   sessions? None found. Say so in the prose.
 - "Hallucinates" or "invents a convention", for a mixed-discipline reader?
-- Five claims under one heading. Overflow candidate.
+- Resolved (2026-09-30): four one-line bullets, 60 words; the frame holds
+  with room.
+- The Position bullet reads "mid-input information often used worse" with no
+  "than". Clear enough on a slide, with the full sentence in the notes?
 
 ### Not doing
 
