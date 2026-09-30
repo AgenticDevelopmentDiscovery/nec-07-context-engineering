@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="380" viewBox="0 0 1600 380"
+     font-family="Helvetica, Arial, 'Liberation Sans', sans-serif" fill="#000000">
+  <title>One prompt, three windows</title>
+  <desc>One template commit and one prompt feed three arms that differ only in CLAUDE.md; each arm has five headless runs; all are scored on seven observables fixed before any run.</desc>
+  <style>
+    .box   { fill: #eeeeee; stroke: #8a8a8a; stroke-width: 2; }
+    .arm   { fill: #ffffff; stroke: #1f6fb2; stroke-width: 3; }
+    .lbl   { font-size: 30px; }
+    .armlbl{ font-size: 32px; font-weight: bold; }
+    .title { font-size: 40px; font-weight: bold; }
+    .wire  { fill: none; stroke: #8a8a8a; stroke-width: 2; }
+  </style>
+
+  <rect width="1600" height="380" fill="#ffffff"/>
+  <text class="title" x="40" y="44">One prompt, three windows</text>
+
+  <!-- Shared input -->
+  <rect class="box" x="400" y="68" width="800" height="52"/>
+  <text class="lbl" x="800" y="104" text-anchor="middle">same template commit b9f2176, same prompt</text>
+
+  <!-- Wires: input to arms -->
+  <polyline class="wire" points="800,120 800,136 280,136 280,152"/>
+  <polyline class="wire" points="800,120 800,152"/>
+  <polyline class="wire" points="800,120 800,136 1320,136 1320,152"/>
+
+  <!-- Arms -->
+  <rect class="arm" x="50" y="152" width="460" height="60"/>
+  <text class="armlbl" x="280" y="193" text-anchor="middle">A — no CLAUDE.md</text>
+
+  <rect class="arm" x="570" y="152" width="460" height="60"/>
+  <text class="armlbl" x="800" y="193" text-anchor="middle">B — the manual, 240 lines</text>
+
+  <rect class="arm" x="1090" y="152" width="460" height="60"/>
+  <text class="armlbl" x="1320" y="193" text-anchor="middle">C — the index, 33 lines</text>
+
+  <!-- Wires: arms to runs -->
+  <line class="wire" x1="280" y1="212" x2="280" y2="236"/>
+  <line class="wire" x1="800" y1="212" x2="800" y2="236"/>
+  <line class="wire" x1="1320" y1="212" x2="1320" y2="236"/>
+
+  <!-- Runs -->
+  <rect class="box" x="130" y="236" width="300" height="48"/>
+  <text class="lbl" x="280" y="269" text-anchor="middle">5 headless runs</text>
+
+  <rect class="box" x="650" y="236" width="300" height="48"/>
+  <text class="lbl" x="800" y="269" text-anchor="middle">5 headless runs</text>
+
+  <rect class="box" x="1170" y="236" width="300" height="48"/>
+  <text class="lbl" x="1320" y="269" text-anchor="middle">5 headless runs</text>
+
+  <!-- Wires: runs to observables -->
+  <line class="wire" x1="280" y1="284" x2="280" y2="308"/>
+  <line class="wire" x1="800" y1="284" x2="800" y2="308"/>
+  <line class="wire" x1="1320" y1="284" x2="1320" y2="308"/>
+
+  <!-- Observables -->
+  <rect class="box" x="50" y="308" width="1500" height="52"/>
+  <text class="lbl" x="800" y="344" text-anchor="middle">7 observables, fixed before any run</text>
+</svg>

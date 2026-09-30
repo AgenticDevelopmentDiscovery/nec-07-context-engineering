@@ -45,14 +45,16 @@ readout, with the total in its header and Memory files listed per file, is
 ::: notes
 - **Question.** Does a project `CLAUDE.md` change what the agent does on a
   fixed task?
-:::
-
 - **Substrate.** Single-commit copies of this repository's template commit,
   `b9f2176`, a tutorial template whose sections are pairs of files. The
   copies differ only in `CLAUDE.md`.
 - **Arms.** A, no file. B, the manual: the shipped 240-line `CLAUDE.md`. C,
   the index: 33 lines, reported in the table under § What changed, and what
   did not.
+:::
+
+![Three single-commit copies of the template, differing only in `CLAUDE.md`.](figures/three-windows.svg){height=32%}
+
 - **Task.** One fixed prompt: add an "Examples" section before the
   conclusion, following the project's conventions, with the build passing.
 - **Observables, fixed before any run.** Five conventions scored per run
@@ -171,6 +173,12 @@ critique round at a time. Toolchain and setup: README.md.
 
 ## On demand: reachable is not loaded
 
+![What enters the window, and when. Sources: memory, context-window and permissions pages.](figures/window-timeline.svg){height=47%}
+
+- **Rule.** Front-load what every task needs and is short and stable. Defer
+  the rest, which Anthropic's post calls "just in time" [@rajasekaran2025].
+
+::: notes
 - **Front-loaded.** `CLAUDE.md` at and above the working directory, plus its
   `@path` imports, "expanded and loaded into context at launch"
   [@claudecode-memory]; skill descriptions and auto memory
@@ -182,12 +190,8 @@ critique round at a time. Toolchain and setup: README.md.
   directory's `CLAUDE.md` and rules are not loaded [@claudecode-memory], but
   its skills, commands and subagents are [@claudecode-permissions], so it can
   still spend budget at launch.
-- **Rule.** Front-load what every task needs and is short and stable. Defer
-  the rest, which Anthropic's post calls "just in time" [@rajasekaran2025].
 - **Here.** The `/round` skill's description loads at launch; its body loads
   only on use.
-
-::: notes
 - **Where each is written.** An import is `@path/to/file` inside a
   `CLAUDE.md`. A path-scoped rule is a file in `.claude/rules/` with a
   `paths` field; it loads when the agent works with matching files. A

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="610" viewBox="0 0 1600 610"
+     font-family="Helvetica, Arial, 'Liberation Sans', sans-serif" fill="#000000">
+  <title>What enters the window, and when</title>
+  <desc>Three columns, At launch, Each turn and At compaction, each a stack of what enters the context window at that moment; below, what the add-dir flag loads and does not load by default.</desc>
+  <style>
+    .box   { fill: #eeeeee; stroke: #8a8a8a; stroke-width: 2; }
+    .lbl   { font-size: 30px; }
+    .head  { font-size: 34px; font-weight: bold; fill: #1f6fb2; }
+    .rule  { stroke: #1f6fb2; stroke-width: 3; }
+    .title { font-size: 40px; font-weight: bold; }
+    .tag   { fill: #ffffff; stroke: #1f6fb2; stroke-width: 3; }
+    .taglbl{ font-size: 30px; font-weight: bold; fill: #1f6fb2; }
+    .sub   { font-size: 30px; font-weight: bold; }
+  </style>
+
+  <rect width="1600" height="610" fill="#ffffff"/>
+  <text class="title" x="40" y="44">What enters the window, and when</text>
+
+  <!-- Column 1: At launch -->
+  <text class="head" x="40" y="100">At launch</text>
+  <line class="rule" x1="40" y1="112" x2="510" y2="112"/>
+
+  <rect class="box" x="40" y="126" width="470" height="44"/>
+  <text class="lbl" x="58" y="157">system prompt</text>
+
+  <rect class="box" x="40" y="178" width="470" height="44"/>
+  <text class="lbl" x="58" y="209">tool definitions</text>
+
+  <rect class="box" x="40" y="230" width="470" height="72"/>
+  <text class="lbl" x="58" y="259">project-root CLAUDE.md</text>
+  <text class="lbl" x="58" y="291">and its @path imports</text>
+
+  <rect class="box" x="40" y="310" width="470" height="44"/>
+  <text class="lbl" x="58" y="341">skill descriptions</text>
+
+  <rect class="box" x="40" y="362" width="470" height="44"/>
+  <text class="lbl" x="58" y="393">auto-memory index</text>
+
+  <!-- Column 2: Each turn -->
+  <text class="head" x="565" y="100">Each turn</text>
+  <line class="rule" x1="565" y1="112" x2="1035" y2="112"/>
+
+  <rect class="box" x="565" y="126" width="470" height="44"/>
+  <text class="lbl" x="583" y="157">your message</text>
+
+  <rect class="box" x="565" y="178" width="470" height="44"/>
+  <text class="lbl" x="583" y="209">@file in a prompt</text>
+
+  <rect class="box" x="565" y="230" width="470" height="72"/>
+  <text class="lbl" x="583" y="259">the agent's file reads</text>
+  <text class="lbl" x="583" y="291">and tool output</text>
+
+  <rect class="box" x="565" y="310" width="470" height="72"/>
+  <text class="lbl" x="583" y="339">a subdirectory CLAUDE.md</text>
+  <text class="lbl" x="583" y="371">when files there are read</text>
+
+  <rect class="box" x="565" y="390" width="470" height="44"/>
+  <text class="lbl" x="583" y="421">path-scoped rules</text>
+
+  <rect class="box" x="565" y="442" width="470" height="44"/>
+  <text class="lbl" x="583" y="473">a skill's body on use</text>
+
+  <!-- Column 3: At compaction -->
+  <text class="head" x="1090" y="100">At compaction</text>
+  <line class="rule" x1="1090" y1="112" x2="1560" y2="112"/>
+
+  <rect class="box" x="1090" y="126" width="470" height="72"/>
+  <text class="lbl" x="1108" y="155">the conversation</text>
+  <text class="lbl" x="1108" y="187">summarised</text>
+
+  <rect class="box" x="1090" y="206" width="470" height="72"/>
+  <text class="lbl" x="1108" y="235">project-root CLAUDE.md</text>
+  <text class="lbl" x="1108" y="267">re-read from disk</text>
+
+  <!-- Row: the add-dir flag -->
+  <line x1="40" y1="506" x2="1560" y2="506" stroke="#8a8a8a" stroke-width="1" stroke-dasharray="6 6"/>
+
+  <rect class="tag" x="40" y="522" width="300" height="72"/>
+  <text class="taglbl" x="190" y="568" text-anchor="middle">--add-dir</text>
+
+  <rect class="box" x="360" y="522" width="590" height="72"/>
+  <text class="sub" x="378" y="551">loaded</text>
+  <text class="lbl" x="378" y="583">skills, commands, subagents</text>
+
+  <rect class="box" x="970" y="522" width="590" height="72"/>
+  <text class="sub" x="988" y="551">not loaded by default</text>
+  <text class="lbl" x="988" y="583">CLAUDE.md, rules</text>
+</svg>

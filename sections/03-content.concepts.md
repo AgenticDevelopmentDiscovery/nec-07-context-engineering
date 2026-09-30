@@ -154,9 +154,31 @@ layers, on-demand loading, pitfalls. Eight slides.
   the direction.
 - Five runs per arm, fifteen in all. Counts reported, not one transcript
   (`demo/RESULTS.md`; per-run records in `demo/runs/`).
+- On the slide: the figure, then Task and Observables. Question, Substrate
+  and Arms are in the notes block above the figure, wording unchanged.
+- Figure, `figures/three-windows.svg`, 1600 × 380, title inside "One prompt,
+  three windows". Every label is a claim already in this unit: one box "same
+  template commit b9f2176, same prompt"; three arm boxes "A — no CLAUDE.md",
+  "B — the manual, 240 lines", "C — the index, 33 lines"; "5 headless runs"
+  under each; "7 observables, fixed before any run" under all three. No
+  number on the figure that is not on the slide or in its notes. Caption:
+  "Three single-commit copies of the template, differing only in
+  `CLAUDE.md`." No citation key: the arms rest on `demo/`, not on the docs.
 
 ### Decisions
 
+- Figure attribute is `{height=32%}`, not `{width=70%}`. The slides filter
+  (`filters/slide-figure-height.lua`) drops any `width` and sets height 70%
+  of the frame; at that size the frame was 42.5pt overfull with the caption
+  and the two bullets (TeX log, `pandoc --verbose`). A `height` attribute
+  passes the filter untouched. Rejected: cutting Task or Observables text;
+  editing the filter, outside the edit's scope. Cost: the document renders
+  the figure at full text width, since pandoc caps it at `\linewidth`; the
+  site ignores a percentage height and shows it at column width.
+- Canvas widened to 1600 × 380 (was 1600 × 500) so that at 32% of the frame
+  height the figure still spans about two thirds of the slide width and its
+  30 px labels stay readable. Frame holds: no overfull box, p. 11, the
+  Observables bullet's third line on the page.
 - Evidence = recorded diff with counts. A short live rerun of one arm is
   optional alongside it.
 - Worktree, not the live tree. Demo edits would land in `sections/`, and an
@@ -442,13 +464,52 @@ layers, on-demand loading, pitfalls. Eight slides.
   long, volatile, or needed by some tasks only.
 - Local example: `/round`. Description in the window from launch; `SKILL.md`
   body only on invocation. `[DOCS: context-window page]`
+- On the slide: the figure and the Rule bullet. Front-loaded, On demand,
+  Both and Here are in the notes block, wording and citation keys unchanged
+  (`@claudecode-memory`, `@claudecode-context`, `@claudecode-workflows`,
+  `@claudecode-permissions`).
+- Figure, `figures/window-timeline.svg`, 1600 × 610, title inside "What
+  enters the window, and when". Three columns, each a stack of boxes:
+  - At launch: system prompt, tool definitions, project-root `CLAUDE.md` and
+    its `@path` imports, skill descriptions, auto-memory index. The first two
+    are the System prompt and System tools rows of the `/context` reading
+    under § What `/context` shows at launch; the rest are the Front-loaded
+    bullet. `[DOCS: memory and context-window pages]`
+  - Each turn: your message, `@file` in a prompt, the agent's file reads and
+    tool output, a subdirectory `CLAUDE.md` when files there are read,
+    path-scoped rules, a skill's body on use. The On demand bullet and the
+    notes bullet "Where each is written". "Tool output" is the figure's word
+    for what a file read returns; the prose says "the agent's own file
+    reads".
+  - At compaction: the conversation summarised, project-root `CLAUDE.md`
+    re-read from disk. From § The window is a budget you can read. `[DOCS:
+    context-window and memory pages]`
+  - Below, one row: `--add-dir`; loaded: skills, commands, subagents; not
+    loaded by default: `CLAUDE.md`, rules. The Both bullet. `[DOCS: memory
+    and permissions pages]`
+  - Caption names the sources in words, "memory, context-window and
+    permissions pages", with no citation key; the keys stay on the notes
+    bullets.
 
 ### Decisions
 
 - Term is "on demand", as in `topic.md`. "Just-in-time" appears once, as the
   source's word. `[CITE: Anthropic 2025]`
 - Example taken from this repository, not invented.
-- Two lists, front-loaded against on demand. One contrast, one slide.
+- Figure replaces the two lists on the slide; it does not restate them beside
+  them. The lists survive in the notes, so the document and the site carry
+  both. Resolves the open question below.
+- Figure attribute is `{height=47%}`, not `{width=70%}`. The slides filter
+  drops any `width` and sets height 70% of the frame; at that size the frame
+  was 44.35pt overfull with the two-line caption and the Rule bullet (TeX
+  log, `pandoc --verbose`). A `height` attribute passes the filter untouched.
+  Rejected: cutting the Rule bullet or the caption; editing the filter,
+  outside the edit's scope. Cost: full text width in the document, column
+  width on the site.
+- Canvas 1600 × 610 (first draft 1600 × 720): box heights cut, fonts kept at
+  30 px, so that at 47% of the frame height the figure spans about 60% of
+  the slide width. Frame holds: no overfull box, p. 15, both lines of the
+  Rule bullet on the page.
 
 ### Open questions
 
@@ -458,7 +519,11 @@ layers, on-demand loading, pitfalls. Eight slides.
   run; nothing in `demo/` tests it. Sourced instead: "This includes the full
   content of the file in the conversation." `[DOCS: common-workflows page]`
 - Figure: a timeline of what enters when. Earns its place, or restates the two
-  lists?
+  lists? Drawn; the lists moved off the slide. Whether it earns its place is
+  the visual seat's call next round.
+- Should the slides filter honour a per-figure slide height, so that
+  `{width=70%}` can return for the document? The height attribute is a
+  workaround for a filter that knows one size.
 
 ### Not doing
 
