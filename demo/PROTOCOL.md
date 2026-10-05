@@ -171,3 +171,52 @@ more runs are added to every arm, once. No other additions.
       arm-D repository was built on 2026-10-05 by git archive of b9f2176
       plus demo/index-d.CLAUDE.md, one commit; its CLAUDE.md is blob
       5f5c3d3.
+
+- 2026-10-05, after runs d-1 to d-5 and c-6 to c-10 (`runs/d-1` to
+  `runs/d-5`, `runs/c-6` to `runs/c-10`), scored with `table.sh`. No earlier
+  score changes:
+  17. Run order, from each run's `started.txt` and `finished.txt`: d-1, c-6,
+      d-2, c-7, d-3, c-8, d-4, c-9, d-5, c-10, as registered in items 15
+      and 16. No two runs overlap.
+  18. Validity, all ten runs: result subtype `success`; Claude Code 2.1.281,
+      the version item 14 names; history depth 1; no `notes.txt`;
+      `memory_paths.auto` in the init event names only the arm's own
+      folder; no memory file recorded.
+  19. Item 12, arm D. Observable 6 was met in 3 of 5 runs (d-1, d-2, d-3)
+      and not met in d-4 and d-5. The prediction of at least 4 of 5 failed.
+      Observables 1 to 5 were met in 5 of 5: held.
+  20. Item 16, fresh arm C (c-6 to c-10). Observables 1 to 5 were met in
+      5 of 5 and observable 6 in 0 of 5: held. No departure from c-1 to c-5
+      on observables 1 to 6.
+  21. Observable 7, mean (range) over five runs, from `table.sh`. Arm D:
+      9.2 (8–11) `Read` calls before the first edit, 40.2k (38.2–42.1)
+      tokens at the first edit. c-6 to c-10: 9.6 (8–11) and 39.8k
+      (39.0–40.8).
+  22. The tables are in `RESULTS.md`, with post-hoc observations on these
+      ten runs, labelled as post hoc.
+
+- 2026-10-05, after items 17 to 22 were written. No run was added and no
+  score changes:
+  23. Operator's statement, not derived from `demo/runs/`: the main
+      repository's auto-memory folder was renamed to `memory.aside` by hand
+      before d-1, with no Claude Code session open in this repository; a
+      directory listing showed `memory.aside` and no `memory` folder before
+      d-1 and again after c-10; the folder was renamed back after c-10.
+      Facts checked afterwards that agree with it: `run.sh` aborts if that
+      folder is non-empty (line 12); the folder's change time is 17:09:07
+      CDT on 2026-10-05, after c-10 finished (16:13:49 CDT); its
+      `MEMORY.md` was last modified at 14:46:38 CDT, before d-1 started
+      (15:46:52 CDT); no `memory.aside` exists now; none of the ten logs
+      contains the memory file's name, `MEMORY.md`, the main repository's
+      name, or any of five phrases taken from the memory's text.
+  24. `runs/d-5/postrun-slides.pdf` was added to the d-5 record by the
+      operator after the run and after commit `3501c90`: the file's time
+      is 17:22:45 CDT, the commit's 17:11:41 CDT. It has 27 pages and a PDF
+      creation date of 16:12:26 CDT, 17 seconds after d-5's `finished.txt`,
+      and was byte-identical to `~/Sandbox/nec07-demo-d/output/slides.pdf`
+      when checked at 17:24 CDT. SHA-256
+      `f38aa2b2c627a538110ce3472148b090470775dac120cebc4435c8ff343ad0a5`.
+      No other record file changed: `git status` reports no tracked file
+      under `runs/` as modified or deleted, and no other file under `runs/`
+      has a modification time after the commit. What the deck shows is in
+      `RESULTS.md`.
