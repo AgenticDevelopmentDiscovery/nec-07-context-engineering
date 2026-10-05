@@ -127,3 +127,34 @@ more runs are added to every arm, once. No other additions.
      `grep` over it that returned the line (`runs/a-*/log.jsonl`). The table
      above is left as registered. The prediction that observable 5 would
      separate A from B was made on that entry.
+
+- 2026-10-05, before any arm-D run. A fourth arm is pre-registered here; no
+  run has been made and no existing score changes:
+  9. Arm D is identical to arm C, except that its `CLAUDE.md` is
+     `demo/index-d.CLAUDE.md`: `demo/index.CLAUDE.md` plus one added line
+     among the conventions, "Put nothing between a section's `#` heading and
+     its first `##` (no comment, no text); pandoc turns it into an extra
+     slide." The line is the third bullet under Conventions, after the
+     `--slide-level=2` one, and is wrapped like its neighbours. Nothing else
+     in the file differs.
+  10. Same prompt (`demo/prompt.txt`), same model (`claude-fable-5-1`), five
+      headless runs, recorded as `runs/d-1` to `runs/d-5`. Same isolation as
+      arms A to C under items 1, 5 and 7: an independent single-commit copy
+      of `b9f2176`, `~/Sandbox/nec07-demo-d`, with no shared `.git` and no
+      history, and auto memory moved aside so that every run starts with
+      none.
+  11. Scored on the same seven observables, with no change to their
+      definitions. In arm D observable 6 is stated in `CLAUDE.md`; the table
+      above is left as registered.
+  12. Prediction, fixed before any run: observable 6 is met in at least 4 of
+      5 arm-D runs; observables 1 to 5 are met in 5 of 5.
+  13. The four existing sections at `b9f2176` all break the rule: each has
+      an HTML comment between its `#` heading and its first `##`. Arm D
+      therefore tests one written rule against four contrary examples.
+  14. The Claude Code version is recorded at run time. If it differs from
+      2.1.281, five fresh arm-C runs are also made the same day, recorded as
+      `runs/c-6` to `runs/c-10`, and D is compared to those instead of to
+      `runs/c-1` to `runs/c-5`.
+  15. Run order: if fresh arm-C runs are made under item 14, they are
+      interleaved with arm D (d-1, c-6, d-2, c-7, and so on). Otherwise d-1
+      to d-5 are run in sequence.
