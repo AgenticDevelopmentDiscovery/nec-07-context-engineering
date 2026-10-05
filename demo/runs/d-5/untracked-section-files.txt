@@ -1,0 +1,143 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool on realistic cases, end to end, so the reader can check the
+mental model from § Content against runs they can follow in full — including
+one where the simple story fails.
+
+## Claims
+
+> Here these are what each example demonstrates that § Content could not, one
+> line per example. If an example has no line here, it is decoration.
+
+- (claim — what the complete example shows)
+- (claim — what the breaking example shows)
+
+## Decisions
+
+> Which cases were chosen and what they were chosen over. An example earns its
+> place by carrying a lesson, not by being impressive; record the lesson here.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> Cases a reader might expect and will not get, with one clause of reason.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the mechanics on cases chosen to be small. This section
+     shows the same tool on cases chosen to be real — each one should carry a
+     lesson the walkthroughs could not, or it does not belong here. -->
+
+## A complete worked example
+
+> One end-to-end case, start to finish, with the actual input and the actual
+> output. Where § Content showed a step at a time, this shows the whole thing
+> at once, so the reader sees how the parts compose.
+>
+> Choose a case a reader could plausibly meet on their own. The point is not to
+> impress; it is to let the reader check their mental model against a run they
+> can follow in full.
+
+Replace this paragraph.
+
+## An example that breaks the simple story
+
+> A case where the obvious approach fails or does something surprising, and
+> what the tool does instead. Say up front what makes it different from the
+> complete example.
+>
+> This is where the reader learns the bounds from the inside. A tutorial that
+> only shows successes leaves the reader to discover the edges alone.
+
+Replace this paragraph.
+
+## What the examples have in common
+
+> The pattern the cases share, stated once. If a reader remembered only this
+> slide, what would they carry to a case you never showed them?
+>
+> Keep it to what the examples actually demonstrated. Anything here that none
+> of them showed belongs back in § Content, or nowhere.
+
+Replace this paragraph.
+
+=== sections/05-conclusion.concepts.md
+# Conclusion — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Say what the reader can now do, point at what comes next, and name what is still
+open.
+
+## Claims
+
+- (claim)
+
+## Decisions
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+> Overlaps with § Open edges in the prose — but this list is for the team, and
+> that section is for the reader. Not everything here is ready to ship there.
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/05-conclusion.prose.md
+# Conclusion
+
+<!-- Every `##` becomes one slide. One idea each. -->
+
+## What you can do now
+
+> The recap, stated as capability rather than as summary. Not "we covered X" —
+> rather, what the reader can now do that they could not before.
+>
+> Keep it to what the tutorial actually delivered. This paragraph and
+> § What this tutorial covers must agree exactly; the panel will check.
+
+Replace this paragraph.
+
+## Where to go next
+
+> The next thing to learn, and why it is the next one. Name the specific
+> resource, tool, or topic and say what it adds.
+>
+> Order matters more than length. Three pointers in a sensible sequence beat a
+> list of ten a reader has to triage themselves.
+
+Replace this paragraph.
+
+## Open edges
+
+> What is still unsettled — where the tool is changing, where practice has not
+> converged, where you would not yet give firm advice.
+>
+> End on the opening you leave, not on a restatement. A tutorial that admits its
+> edges is more trustworthy than one that implies the topic is finished.
+
+Replace this paragraph.
+

@@ -1,0 +1,6 @@
+ M CLAUDE.md
+R  sections/04-conclusion.concepts.md -> sections/05-conclusion.concepts.md
+R  sections/04-conclusion.prose.md -> sections/05-conclusion.prose.md
+ M topic.md
+?? sections/04-examples.concepts.md
+?? sections/04-examples.prose.md

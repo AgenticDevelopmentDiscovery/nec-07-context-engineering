@@ -1,0 +1,142 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool at work in settings the reader will actually meet, so the
+capability taught in § Content transfers to cases this tutorial never showed.
+
+## Claims
+
+> Here these are what each example proves: the situation it stands for, and what
+> the reader could not have predicted from § Content alone. One line per example.
+
+- (claim)
+
+## Decisions
+
+> Which cases you chose and what you rejected. Every example here must earn its
+> place against § Using it in § Content — if it teaches nothing new, it is a
+> repeat, not an example.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the mechanics on the smallest real case. This section
+     shows the tool at work in settings the reader will actually meet. Add
+     one `##` per example — and cut any example that only repeats a point
+     § Content already made. -->
+
+## A representative case
+
+> The example most readers will recognise as their own situation. Start from the
+> problem as it presents itself — the symptom, the task, the request — and only
+> then reach for the tool, so the reader sees the moment of choosing it, not just
+> the use.
+>
+> Show the actual inputs and outputs. The reader should be able to reproduce
+> this one.
+
+Replace this paragraph.
+
+## A case at the edge
+
+> An example near the limits named in § When to reach for it. Say which bound it
+> approaches and what changes as it gets close — what still works, what starts
+> to strain, what you would do differently.
+>
+> This is where the reader learns judgement rather than procedure. Pick a case
+> you have actually seen, not one constructed to make the point.
+
+Replace this paragraph.
+
+## What the examples have in common
+
+> The pattern the cases share, now that the reader has seen more than one. Name
+> the step that was the same each time and the step that depended on the
+> situation.
+>
+> Keep it to one paragraph. If it needs more, the pattern belongs in § How it
+> works and the examples need re-choosing.
+
+Replace this paragraph.
+
+=== sections/05-conclusion.concepts.md
+# Conclusion — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Say what the reader can now do, point at what comes next, and name what is still
+open.
+
+## Claims
+
+- (claim)
+
+## Decisions
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+> Overlaps with § Open edges in the prose — but this list is for the team, and
+> that section is for the reader. Not everything here is ready to ship there.
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/05-conclusion.prose.md
+# Conclusion
+
+<!-- Every `##` becomes one slide. One idea each. -->
+
+## What you can do now
+
+> The recap, stated as capability rather than as summary. Not "we covered X" —
+> rather, what the reader can now do that they could not before.
+>
+> Keep it to what the tutorial actually delivered. This paragraph and
+> § What this tutorial covers must agree exactly; the panel will check.
+
+Replace this paragraph.
+
+## Where to go next
+
+> The next thing to learn, and why it is the next one. Name the specific
+> resource, tool, or topic and say what it adds.
+>
+> Order matters more than length. Three pointers in a sensible sequence beat a
+> list of ten a reader has to triage themselves.
+
+Replace this paragraph.
+
+## Open edges
+
+> What is still unsettled — where the tool is changing, where practice has not
+> converged, where you would not yet give firm advice.
+>
+> End on the opening you leave, not on a restatement. A tutorial that admits its
+> edges is more trustworthy than one that implies the topic is finished.
+
+Replace this paragraph.
+

@@ -1,0 +1,151 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool on cases chosen because they occur, not because they explain —
+so the reader can recognise their own situation and transfer the mental model
+from § Content to a case the tutorial never walked through.
+
+## Claims
+
+> What the reader should be able to do after this section, one capability per
+> line. These should extend § Content's claims to unfamiliar cases, not restate
+> them.
+
+- (claim)
+
+## Decisions
+
+> Which examples you chose and what each one was chosen over. An example earns
+> its place by being recognisable to the declared audience and by exercising
+> something § Content could only assert. Record both.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+> Usually: an example you are not sure the audience will recognise, or one that
+> might belong in § Content instead.
+
+- (question)
+
+## Not doing
+
+> Examples deliberately left out — too specialised for the audience, or
+> duplicating one already here — so a reviewer does not report them as gaps.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+## A worked example, end to end
+
+<!-- Every `##` becomes one slide. One idea each. Nothing goes between the
+     section's `#` and its first `##` — pandoc would make it an extra slide.
+     § Content taught the tool on cases chosen to explain it. This section shows
+     it on cases chosen because they occur — the reader should recognise at
+     least one as their own situation. Add or drop `##` units freely; each
+     example is one slide. -->
+
+> One complete, realistic case from first step to finished result, with the
+> actual commands, code, or configuration shown rather than described. The
+> reader should be able to reproduce it.
+>
+> Choose the case a reader is most likely to meet first. It should exercise the
+> mental model from § Content § How it works without introducing anything new;
+> this is where the reader checks that they understood it.
+
+Replace this paragraph.
+
+## The same problem, a different shape
+
+> A second case that looks unlike the first on the surface but reduces to the
+> same mechanics. Say explicitly what maps onto what.
+>
+> This is the unit that teaches transfer. A reader who sees two surface forms of
+> one pattern can recognise a third on their own; one who has seen only one form
+> will think the tool is for that form.
+
+Replace this paragraph.
+
+## A case where it was the wrong choice
+
+> A realistic situation where reaching for the tool made things worse, and what
+> should have been used instead. Show the attempt, the symptom, and the better
+> route.
+>
+> This closes the loop on § Motivation § When to reach for it: the bounds stated
+> there, shown here as a reader would actually encounter them.
+
+Replace this paragraph.
+
+=== sections/05-conclusion.concepts.md
+# Conclusion — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Say what the reader can now do, point at what comes next, and name what is still
+open.
+
+## Claims
+
+- (claim)
+
+## Decisions
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+> Overlaps with § Open edges in the prose — but this list is for the team, and
+> that section is for the reader. Not everything here is ready to ship there.
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/05-conclusion.prose.md
+# Conclusion
+
+<!-- Every `##` becomes one slide. One idea each. -->
+
+## What you can do now
+
+> The recap, stated as capability rather than as summary. Not "we covered X" —
+> rather, what the reader can now do that they could not before.
+>
+> Keep it to what the tutorial actually delivered. This paragraph and
+> § What this tutorial covers must agree exactly; the panel will check.
+
+Replace this paragraph.
+
+## Where to go next
+
+> The next thing to learn, and why it is the next one. Name the specific
+> resource, tool, or topic and say what it adds.
+>
+> Order matters more than length. Three pointers in a sensible sequence beat a
+> list of ten a reader has to triage themselves.
+
+Replace this paragraph.
+
+## Open edges
+
+> What is still unsettled — where the tool is changing, where practice has not
+> converged, where you would not yet give firm advice.
+>
+> End on the opening you leave, not on a restatement. A tutorial that admits its
+> edges is more trustworthy than one that implies the topic is finished.
+
+Replace this paragraph.
+

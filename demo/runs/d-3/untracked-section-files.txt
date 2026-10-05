@@ -1,0 +1,90 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool in the settings the reader will actually meet, so they can map
+their own situation onto one of them — after § Content has taught the mechanics
+and before § Conclusion restates what they can now do.
+
+## Claims
+
+> What each example is meant to demonstrate, one line per example. An example
+> with no claim here is decoration and the reviewers will say so.
+
+- (claim — example one shows that ...)
+- (claim — example two shows that ...)
+- (claim — example three shows that ...)
+
+## Decisions
+
+> Which examples you chose and what you rejected. Record the rejected ones: a
+> reviewer will propose them, and the reason they lost is the answer.
+
+- (decision — this example, chosen over ...)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> Examples deliberately left out, so they are not reported as gaps.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+## Example one: the common case
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the mechanics on the smallest real case. This section
+     shows the tool in settings the reader will actually meet, so they can map
+     their own situation onto one of them. Each `##` is one example; add more
+     headings rather than packing two examples into one. -->
+
+> The situation most readers will recognise as their own. Name the setting in
+> one sentence, show what was done, and show what happened — the actual output,
+> not a description of it.
+>
+> This example should need nothing beyond § Content. If it does, the gap belongs
+> in § Content, not here.
+
+Replace this paragraph.
+
+## Example two: where the basic approach breaks
+
+> A situation the common case does not cover, chosen because the obvious move
+> fails in it. Show the failure first, then the adjustment, then why the
+> adjustment works.
+>
+> Say what this example exposes that the first one hid. If you cannot, it is a
+> repeat of the first and should be cut.
+
+Replace this paragraph.
+
+## Example three: in an agentic workflow
+
+> The tool in the setting this course is about: an agent using it, or being
+> given it, as part of a larger task. Show the agent's turn, what the tool
+> returned, and what the agent did with it.
+>
+> Keep the surrounding workflow to the minimum needed to see the point. The
+> reader is here for the tool, not for the harness around it.
+
+Replace this paragraph.
+
+## What the examples have in common
+
+> The pattern the three cases share, stated once. This is what the reader
+> carries to a case you did not show.
+>
+> One paragraph. If it needs more, the examples were not chosen to make one
+> point.
+
+Replace this paragraph.
+

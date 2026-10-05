@@ -1,0 +1,148 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+SHOW the topic working whole: complete, runnable examples the reader can
+reproduce and compare against their own case, after § Content has taught the
+pieces.
+
+## Claims
+
+> Here these are what each example is meant to demonstrate, one line per
+> example. If an example demonstrates nothing a reader could name, it is
+> decoration.
+
+- (claim — what example N shows that § Content could not)
+
+## Decisions
+
+> Which examples were chosen and which were rejected, and why each is a
+> separate `##` rather than folded into § Content. The choice of example is the
+> teaching.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> Walkthroughs that teach a mechanism step by step belong in § Content, not
+> here. Name anything you moved or declined to duplicate.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+## A complete, minimal example
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the mechanics in pieces. This section shows the whole
+     thing at once: each `##` is one self-contained example the reader can run,
+     read end to end, and compare against their own case. Add a `##` per
+     example; do not stack two examples under one heading. -->
+
+> The smallest example that is still real, shown whole: the setup, the
+> invocation, and the result, with nothing elided. The reader should be able to
+> reproduce it exactly and get what you show.
+>
+> This differs from § Using it: the basic case. There, the point was to teach a
+> mechanism one step at a time. Here, the point is to let the reader see every
+> piece in place at once, so they can check their mental model against a
+> finished artifact.
+
+Replace this paragraph.
+
+## An example from practice
+
+> A case taken from real use, with the mess left in: the constraint that forced
+> the design, the choice that was not obvious, the output that needed a second
+> look. Say where it came from.
+>
+> A reader who recognises their own situation here will trust the rest of the
+> tutorial. Prefer one honest case to three tidy ones.
+
+Replace this paragraph.
+
+## A counter-example
+
+> A case where the tool was the wrong choice, or where it was used and made
+> things worse. Show what it looked like and what should have been done instead.
+>
+> This is the companion to § When to reach for it. That section stated the
+> bounds; this one shows what crossing them costs. Keep it short — the bound is
+> already argued, this just makes it concrete.
+
+Replace this paragraph.
+
+=== sections/05-conclusion.concepts.md
+# Conclusion — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Say what the reader can now do, point at what comes next, and name what is still
+open.
+
+## Claims
+
+- (claim)
+
+## Decisions
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+> Overlaps with § Open edges in the prose — but this list is for the team, and
+> that section is for the reader. Not everything here is ready to ship there.
+
+- (question)
+
+## Not doing
+
+- (excluded, and why)
+
+=== sections/05-conclusion.prose.md
+# Conclusion
+
+<!-- Every `##` becomes one slide. One idea each. -->
+
+## What you can do now
+
+> The recap, stated as capability rather than as summary. Not "we covered X" —
+> rather, what the reader can now do that they could not before.
+>
+> Keep it to what the tutorial actually delivered. This paragraph and
+> § What this tutorial covers must agree exactly; the panel will check.
+
+Replace this paragraph.
+
+## Where to go next
+
+> The next thing to learn, and why it is the next one. Name the specific
+> resource, tool, or topic and say what it adds.
+>
+> Order matters more than length. Three pointers in a sensible sequence beat a
+> list of ten a reader has to triage themselves.
+
+Replace this paragraph.
+
+## Open edges
+
+> What is still unsettled — where the tool is changing, where practice has not
+> converged, where you would not yet give firm advice.
+>
+> End on the opening you leave, not on a restatement. A tutorial that admits its
+> edges is more trustworthy than one that implies the topic is finished.
+
+Replace this paragraph.
+

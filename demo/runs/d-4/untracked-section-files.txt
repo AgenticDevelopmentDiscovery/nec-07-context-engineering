@@ -1,0 +1,91 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool on cases chosen because they occur, not because they explain —
+so the reader leaves with a stock of recognised situations, not only a
+procedure.
+
+## Claims
+
+> What the reader should recognise after this section, one line each. A claim
+> here is a situation the reader can now identify and handle, not a topic
+> covered.
+
+- (claim)
+
+## Decisions
+
+> Which cases were chosen and what each one is there to expose. Say what it was
+> chosen over. An example that duplicates a case already worked in § Content is
+> the first thing a reviewer will cut.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> Examples you considered and rejected, so a reviewer does not report them as
+> missing.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the tool on cases chosen to explain it. This section shows
+     it on cases chosen because they occur — each one a situation the reader
+     will recognise, worked end to end. Add or drop `##` units freely; the
+     number of examples is less important than each one earning its slide. -->
+
+## A realistic workflow, end to end
+
+> The tool used the way it is actually used: in sequence, with the surrounding
+> context, from the starting state to the result. § Content showed the parts in
+> isolation; this shows them joined.
+>
+> Pick the case most readers will meet first. Show the real inputs and the real
+> output, and say where the mental model from § How it works predicted what
+> happened.
+
+Replace this paragraph.
+
+## A case that looks the same but is not
+
+> An example chosen because it resembles the basic case and behaves differently.
+> Say what makes it different and how the reader would notice before it bites.
+>
+> This is where the limits from § When to reach for it become concrete. A
+> reader who has seen one boundary can find the others.
+
+Replace this paragraph.
+
+## A case where it is the wrong tool
+
+> A situation where reaching for the tool is the mistake. Show what goes wrong,
+> and what to use instead.
+>
+> A negative example is the cheapest way to make the bounds credible. Keep it
+> short — the point is the recognition, not the alternative.
+
+Replace this paragraph.
+
+## What the examples have in common
+
+> The pattern across the cases, stated once. What did the reader do each time
+> that made it work, and what question should they ask of the next case they
+> meet?
+>
+> One paragraph. If it needs more, the examples are not yet chosen to make one
+> point.
+
+Replace this paragraph.
+

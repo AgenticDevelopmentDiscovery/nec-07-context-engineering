@@ -1,0 +1,79 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool on cases the reader will actually meet — including one where it
+does not fit — so the mental model from § Content survives contact with real
+work.
+
+## Claims
+
+> Here these are what each example demonstrates, one line each. Each should
+> point back at a claim in `03-content.concepts.md` or `02-motivation.concepts.md`
+> that it makes concrete; an example that supports no earlier claim is decoration.
+
+- (claim)
+
+## Decisions
+
+> Which examples made the cut and which were rejected. Say what each chosen case
+> exposes that the walkthroughs in § Content could not, and why the rejected
+> ones overlapped with them.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> Examples a reader might expect and will not get — the famous one everybody
+> cites, the one that needs infrastructure the audience does not have.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the tool on cases chosen to explain it. This section shows
+     it on cases chosen because they are the ones a reader will actually meet.
+     Each example is one `##` unit; add or remove units freely. -->
+
+## A representative case
+
+> The example a reader is most likely to recognise from their own work. Show the
+> real input, the real invocation, and the real result — then say in one or two
+> sentences which part of § Content § How it works it exercises.
+>
+> This is not a third walkthrough. The mechanics were taught already; here the
+> reader sees them applied without narration and checks their own prediction.
+
+Replace this paragraph.
+
+## A case where it is the wrong tool
+
+> An example chosen because the technique does *not* fit, so the reader sees the
+> bound from § Motivation § When to reach for it in practice rather than in a
+> rule. Show what happens when you try anyway, then what to use instead.
+>
+> An honest negative example does more for trust than two more positive ones.
+
+Replace this paragraph.
+
+## A case from agentic practice
+
+> The example that ties the tool to agentic development specifically: an agent
+> loop, a tool definition, a multi-step task where the technique changes the
+> outcome. If the reader keeps one example, it should be this one.
+>
+> Keep the full transcript or code in the document; put only the decisive turn on
+> the slide.
+
+Replace this paragraph.
+

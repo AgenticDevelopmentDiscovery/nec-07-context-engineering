@@ -1,0 +1,93 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool on cases chosen for being real rather than for teaching — so the
+reader sees it work, fail, and reach its limits on problems like their own
+before being told what they can now do.
+
+## Claims
+
+> Here these are what each example demonstrates, one line each: the capability
+> it shows in use, the failure it makes visible, or the bound it tests. If an
+> example demonstrates nothing listed here, the reviewers will ask why it ships.
+
+- (claim)
+
+## Decisions
+
+> Which cases you chose and what you rejected. Why these are the ones a reader
+> will recognise, and why each earns a slide that § Content could not have
+> carried. Record the example you cut and why — it is the one a reviewer will
+> propose.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> Cases deliberately left out — too advanced for the declared audience, too
+> specific to one setting, or already covered by § Content's walkthroughs.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the mechanics on cases chosen for teaching. This section
+     shows the tool in cases chosen for being real — the kind the reader will
+     actually meet. Each `##` is one example; add or drop them freely, but keep
+     every one to a single slide. -->
+
+## Example: a realistic case
+
+> One end-to-end use, as it would occur in practice. Say what the situation was,
+> show what was done — actual commands, code, or configuration — and show what
+> came out. The reader should be able to reproduce it.
+>
+> Choose it to be recognisable, not impressive. The reader needs to see their own
+> problem in it; a case so sophisticated that it could only be yours teaches them
+> that the tool is for someone else.
+
+Replace this paragraph.
+
+## Example: when it goes wrong
+
+> A case that fails, or nearly does — and how you could tell. Show the symptom
+> as the reader would see it, then the diagnosis, then the recovery.
+>
+> § Content § Pitfalls named the mistakes; this is one of them happening. Seeing
+> a failure unfold once is worth more than a list of ten warnings, because the
+> reader learns what the failure *looks like* before it is explained.
+
+Replace this paragraph.
+
+## Example: at the edge of scope
+
+> A case that sits where § Motivation § When to reach for it drew the line —
+> where the tool still works but another one might serve better, or where it
+> stops being the right choice. Say which side of the line it falls on and why.
+>
+> This is where the bounds you asserted earlier become something the reader can
+> judge for themselves, on a case they could meet.
+
+Replace this paragraph.
+
+## What the examples have in common
+
+> One paragraph that steps back: the pattern that runs through every case above,
+> stated so the reader can carry it to a case this tutorial never showed.
+>
+> If you cannot find one, the examples were chosen for variety rather than for
+> teaching. Pick again.
+
+Replace this paragraph.
+

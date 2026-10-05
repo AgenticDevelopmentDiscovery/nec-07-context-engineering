@@ -1,0 +1,78 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool in settings the reader will actually meet, so what § Content
+taught on small cases is seen to transfer — and seen where it does not.
+
+## Claims
+
+> Here these are transfer claims: what the reader can now do in a realistic
+> setting that the basic case alone did not show. One capability per line.
+
+- (claim)
+
+## Decisions
+
+> Which examples you chose and what you rejected. Each example should earn its
+> slide by exposing something § Content could not; name what that is.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> Examples deliberately left out, and why — so a reviewer does not report them
+> as gaps.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the mechanics on cases chosen to be small. This section
+     shows the tool in settings the reader will actually meet, so they can see
+     what transfers and what does not. Add a `##` per example; do not merge two
+     examples into one slide to save space. -->
+
+## A realistic case, end to end
+
+> The tool in a situation the reader will recognise from their own work, carried
+> from starting state to finished state without skipping steps. Show the actual
+> input and the actual output, not a description of them.
+>
+> This is where § Content's basic case grows up. Say explicitly what is the same
+> as the basic case and what is new because the setting is real.
+
+Replace this paragraph.
+
+## A case where it fails
+
+> An example where the tool gives a wrong, surprising, or useless result, and why.
+> Walk the reader into the failure before you explain it, so they feel the gap
+> that § Pitfalls described abstractly.
+>
+> Pick a failure the reader would plausibly produce themselves. A contrived
+> failure teaches nothing a reader could not guess.
+
+Replace this paragraph.
+
+## Adapting it to your own setting
+
+> The example as a template: which parts of the worked case are fixed and which
+> the reader changes for their own situation. Point to the exact lines or
+> settings that vary.
+>
+> A reader who finishes this unit should be able to start their own case without
+> re-reading § Content. If they cannot, the earlier examples hid a dependency.
+
+Replace this paragraph.
+

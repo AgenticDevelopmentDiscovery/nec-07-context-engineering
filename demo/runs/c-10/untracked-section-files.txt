@@ -1,0 +1,92 @@
+=== sections/04-examples.concepts.md
+# Examples — spine
+
+> Note form only; never rendered. See `01-context.concepts.md` for what each
+> heading is for.
+
+## Purpose
+
+Show the tool on cases the reader will meet, each chosen to exercise something
+§ Content's walkthrough could not — so the reader has seen it used, not only
+explained.
+
+## Claims
+
+> What the reader should be able to recognise or do after seeing these cases,
+> one per line. Each example should earn at least one claim here; one that
+> earns none is a repeat of § Content.
+
+- (claim)
+
+## Decisions
+
+> Which cases were chosen and what each was chosen over. The ordering is a
+> decision too: everyday first, model-testing second, boundary last — say if
+> this subject needs a different order.
+
+- (decision — and what it was chosen over)
+
+## Open questions
+
+- (question)
+
+## Not doing
+
+> Cases deliberately left out — too exotic, already shown in § Content, or
+> belonging to the adjacent topic § Where to go next points at.
+
+- (excluded, and why)
+
+=== sections/04-examples.prose.md
+# Examples
+
+<!-- Every `##` becomes one slide. One idea each.
+     § Content taught the tool on the smallest real case. This section shows
+     it on cases the reader will actually meet, each chosen to exercise
+     something the walkthrough could not. Add `##` units freely — one example
+     per heading — and drop any that only repeats what § Content showed. -->
+
+## Example 1: the everyday case
+
+> The case the reader is most likely to meet first in their own work. Show the
+> full input and the full output — the real commands, code, or configuration,
+> not a description of them — so a reader can reproduce it and compare.
+>
+> Open by saying what this example is for in one sentence. Close by naming the
+> one thing it demonstrated that § Using it: the basic case could not.
+
+Replace this paragraph.
+
+## Example 2: where the model is tested
+
+> A case where the mental model from § How it works has to do real work — a
+> reader who only memorised the steps should get this one wrong. Say what they
+> would predict, what actually happens, and why.
+>
+> This is the example that proves the model was worth teaching. If no such case
+> exists, the model is probably simpler than § Content made it sound.
+
+Replace this paragraph.
+
+## Example 3: at the boundary
+
+> A case near the limits stated in § When to reach for it: one that just
+> barely fits, or one that looks like it fits and does not. Show how the
+> reader tells which side of the line they are on before they commit.
+>
+> Prefer a case you have actually hit. A reader who recognises the situation
+> will trust the rest of the section.
+
+Replace this paragraph.
+
+## What the examples have in common
+
+> The pattern across the cases, stated once. What did the reader do the same
+> way every time, and what changed with the situation? This is the paragraph
+> that turns three examples into a method.
+>
+> Keep it short. If it needs more than a paragraph, the examples were not
+> chosen to make a single point.
+
+Replace this paragraph.
+
