@@ -158,3 +158,16 @@ more runs are added to every arm, once. No other additions.
   15. Run order: if fresh arm-C runs are made under item 14, they are
       interleaved with arm D (d-1, c-6, d-2, c-7, and so on). Otherwise d-1
       to d-5 are run in sequence.
+  16. Before any arm-D run: ~/.claude/settings.json and ~/.claude/plugins/
+      were modified on 2026-10-05, and their state on 2026-09-28 is not
+      recorded (effortLevel: high for claude-fable-5-1 and the agentreps
+      marketplace are present now, unknown then). Five fresh arm-C runs, c-6
+      to c-10, are therefore made regardless of the CLI version, interleaved
+      with arm D as in item 15 (d-1, c-6, d-2, c-7, and so on), and D is
+      compared to those. The prediction in item 12 is unchanged. Prediction
+      for c-6 to c-10: observables 1 to 5 met in 5 of 5 and observable 6 in
+      0 of 5, as in c-1 to c-5; any departure is reported as evidence that
+      conditions changed. No setting is changed between d-1 and c-10. The
+      arm-D repository was built on 2026-10-05 by git archive of b9f2176
+      plus demo/index-d.CLAUDE.md, one commit; its CLAUDE.md is blob
+      5f5c3d3.

@@ -6,7 +6,7 @@ cd ~/Sandbox/nec-07-context-engineering/demo/runs
 python3 - <<'EOF'
 import json, os, re, glob
 print(f"{'run':6} {'o1':3} {'o2':3} {'o3':3} {'o4':3} {'o5':3} {'o6':3} {'reads':5} {'calls':5} {'tok@edit':9} {'turns':5} {'secs':5}")
-for d in sorted(p for p in glob.glob('[abc]-*') if os.path.isdir(p)):
+for d in sorted(p for p in glob.glob('[abcd]-*') if os.path.isdir(p)):
     ls = open(f'{d}/sections-ls.txt').read()
     o1 = '04-examples.prose.md' in ls and '04-examples.concepts.md' in ls
     o3 = '05-conclusion.prose.md' in ls and '04-examples.prose.md' in ls
