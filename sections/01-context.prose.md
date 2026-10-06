@@ -45,9 +45,11 @@ given file, whether to front-load it or load it on demand, and know which
 mechanisms do which.
 
 The route: a readable budget, a demo on this repository, the index, layers,
-on-demand loading, pitfalls.
+on-demand loading, pitfalls. Against the rubric's shape — what it is, why it
+matters, key ideas, demo, connections, further reading — § Context is what it
+is, § Motivation why it matters, § Content the key ideas and the demo, and
+§ Conclusion the connections and the further reading.
 
 Out of scope: prompt wording (Tutorial 06), compaction internals (08),
-retrieval (09), persistent memory (16), provenance labelling, window sizes and
-pricing.
+retrieval (09), persistent memory (16), window sizes and pricing.
 :::

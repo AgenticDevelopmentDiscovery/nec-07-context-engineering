@@ -65,7 +65,6 @@ answers to the question of what goes in the window.
 - Embeddings and RAG — Tutorial 09; retrieval is context engineering at scale,
   named here but not taught
 - Persistent agent memory — Tutorial 16
-- Provenance labelling — no capability above depends on it
 - Model-specific window sizes and pricing — change too often to be tutorial
   content; the tutorial reports token counts, not percentages
 

@@ -117,6 +117,11 @@
   too long, or in conflict, is loaded and still a context problem.
 - Absence of evidence from agentic coding: in the notes here, on the slide
   under § Open edges.
+- Course notes Figure 4.1 (2026-10-06, notes only): presents lost in the
+  middle as content that "buried in the middle of a long context is
+  underused"; our Position bullet refines it with the 2024 benchmark.
+  `[CITE: coursenotes2026, Figure 4.1 — quotation supplied by the
+  presenter]` `[CITE: tian2025]`
 - On the slide (60 words), four bullets of at most 16 words each, citation
   keys not counted, hedges kept: "a 2025 vendor report", "a 2023 study",
   "most models more robust". Too little: no pointer; the worked case in the

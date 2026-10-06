@@ -48,6 +48,15 @@ demo runs the logs list 28 skills at launch; one of them, `/round`, is this
 repository's. The harness controls System tools and System prompt. The full
 readout, with the total in its header and Memory files listed per file, is
 `demo/runs/context-at-launch-full.png`.
+
+The course notes' Remark 4.7 names this kind of cost for MCP servers:
+"Loading every attached server's tool definitions into the window up front
+spends the attention budget before any work begins" [@coursenotes2026,
+Remark 4.7]. In our readout the same kind of cost appears in the System
+tools row, the harness's own tool definitions, and in the MCP tools row. The
+mitigation the Remark gives is progressive disclosure, which is what skill
+descriptions at launch with the body on use do [@coursenotes2026, Remark
+4.7].
 :::
 
 ## The demo: does a project CLAUDE.md change what the agent does?
@@ -62,6 +71,11 @@ readout, with the total in its header and Memory files listed per file, is
   the index: 33 lines, reported in the table under § What changed, and what
   did not. D, added later: C's index plus one line stating the control rule,
   reported under § The follow-up.
+- **An ablation.** The course notes describe the method: "Remove one element
+  of the context ... and measure whether performance on a held-out task set
+  changes. If removing it makes no difference, it is not contributing"
+  [@coursenotes2026, § 4.5]. Arms A to C are this, with the file as the
+  element; arm D is the reverse, adding one line.
 :::
 
 ![One prompt, three windows: the three arms of 2026-09-28, copies of this template at commit `b9f2176` differing only in `CLAUDE.md`. Arm D is under § The follow-up.](figures/three-windows.svg){height=36%}
@@ -82,6 +96,8 @@ readout, with the total in its header and Memory files listed per file, is
 - **Observable 7.** Files read before the first edit, and tokens consumed at
   it.
 - **Runs.** Five per arm, headless; Claude Code 2.1.281, `claude-fable-5-1`.
+  Five, not one, because identical contexts "guarantee identical
+  distributions, not identical outputs" [@coursenotes2026, Principle 4.1].
   Arms A to C ran on 2026-09-28. Arm D was pre-registered, with its
   prediction, and run on 2026-10-05, interleaved with five fresh arm-C runs
   (`demo/PROTOCOL.md`, items 9 to 16).
@@ -126,6 +142,13 @@ change no scored behaviour are cost on any window.
 - **Post hoc, not pre-registered.** One B run of five cited `CLAUDE.md` for a
   choice. Four A runs of five named the README, the `justfile` and the
   existing sections as their source.
+- **Provenance, post hoc.** The agent's final messages name where a
+  convention came from: the README, the `justfile` and the existing sections
+  in arm A; `CLAUDE.md` in b-1 and in d-1 to d-3; a saved memory in the dry
+  run. d-4 shows such a statement can be wrong: its final message says the
+  comment was kept below the first `##`, and its recorded file has it between
+  the `#` and the first `##` (§ Pitfalls). Provenance is a claim to check,
+  not a label to trust.
 :::
 
 ## The follow-up: a rule only the file states
@@ -196,8 +219,11 @@ critique round at a time. Toolchain and setup: README.md.
 ::: notes
 - In an index, detail stays in files read on demand. The course notes state
   the same rule as "reference, not inclusion" [@coursenotes2026, § 4.3.3].
-- By analogy, an index is a *sufficient statistic*: enough to decide what to
-  read next.
+- The index is what the course notes call a catalog, "a single file mapping
+  each identifier to a one-line description", which the agent reads first
+  [@coursenotes2026, § 4.4.5].
+- By analogy, an index is a *sufficient statistic*: sufficient only for
+  deciding what to read next, not for the contents.
 - The documentation's advice is a target of "under 200 lines"
   [@claudecode-memory]; this template ships a 240-line manual.
 - The file arrives "as a user message after the system prompt", so its
@@ -231,6 +257,18 @@ conflict; do not predict the winner.
   says "commit after every change". This project's file says "Do not commit
   unless asked". Both load, and neither overrides the other. The project rule
   is the team's, so remove the line from the user file.
+- **Against the brief.** The tutorial brief says layering "lets you control
+  precedence" and puts the "highest-precedence and most-stable on top". For
+  `CLAUDE.md` files the documentation gives a load order and no precedence
+  [@claudecode-memory], so this tutorial refines the brief: place by
+  stability and audience, and remove conflicts rather than rank them.
+- **In the instruction stack.** The course notes treat the project's
+  instruction files as the realisation of the first layer of the instruction
+  stack, the system prompt — the others being task description, injected
+  context and conversation history [@coursenotes2026, § 4.3.1].
+  Mechanically, the documentation says the content arrives "as a user
+  message after the system prompt" [@claudecode-memory]. So the files play
+  that layer's role without holding its position.
 :::
 
 ## On demand: reachable is not loaded
@@ -253,7 +291,8 @@ conflict; do not predict the winner.
   its skills, commands and subagents are [@claudecode-permissions], so it can
   still spend budget at launch.
 - **Here.** The `/round` skill's description loads at launch; its body loads
-  only on use.
+  only on use: the progressive disclosure of the course notes' Remark 4.7
+  [@coursenotes2026, Remark 4.7].
 - **Where each is written.** An import is `@path/to/file` inside a
   `CLAUDE.md`. A path-scoped rule is a file in `.claude/rules/` with a
   `paths` field; it loads when the agent works with matching files. A
@@ -280,7 +319,9 @@ Every fix changes what is loaded, or when.
 ::: notes
 - **Ignored rule.** The file is too long, or the rule conflicts with another:
   cut or resolve. If the rule must hold, enforce it with a hook or a
-  permission setting [@claudecode-memory]. Check: run `/context` and read the
+  permission setting [@claudecode-memory]. Hooks also inject context: "they
+  do not ask the model to remember something, they put it in front of the
+  model" [@coursenotes2026, § 4.4.1]. Check: run `/context` and read the
   list under Memory files; a file missing there was never seen
   [@claudecode-memory]. Then read the file the agent wrote, not its summary.
   Our own case, post hoc: in arm D the rule was in `CLAUDE.md`, so in the

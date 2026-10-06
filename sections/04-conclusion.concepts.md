@@ -79,6 +79,24 @@
   about 0.083, post hoc, no significance claim (`demo/RESULTS.md` § Arm D:
   post-hoc observations). Removed: "It says nothing about conventions that
   live only in `CLAUDE.md`" — arm D tested one.
+- Course-connections pass (2026-10-06), notes only, slide unchanged:
+  - One task, not a held-out task set: the ablation's limit. `[CITE:
+    coursenotes2026, § 4.5]`
+  - **Connections** block: Spine 2, prompting → context → an environment the
+    agent searches, which the brief calls this tutorial's centre `[CITE:
+    coursenotes2026, §§ 2.3.2 (Spine 2 defined as context engineering in
+    three levels), 4.2 and 4.4.5 — supplied by the presenter]`; C1 and
+    the capstone, moved here from loose bullets, wording kept, the capstone
+    with one added sentence: Figure 10.2 has Spine 2 driving the mutation
+    node of the evolutionary loop `[CITE: coursenotes2026, Figure 10.2 —
+    supplied by the presenter]`; C3,
+    retrieval and grounding, T09 automating the just-in-time context § On
+    demand handles by hand.
+  - **Further reading** block, five entries, all keys already in
+    `references.bib`: `rajasekaran2025`, `claudecode-memory`,
+    `claudecode-context`, `hong2025`, `liu2024` (with `tian2025` in its
+    line). One line each on what to read it for. Narrative citations
+    (`@key`), rendered author-year by citeproc.
 - On the slide (67 words): five bullets of at most 14 words, keys kept. The
   demo bullet reads "one prompt, one model, five runs per arm, one rule
   tested; silent on correctness" since 2026-10-06; "self-describing

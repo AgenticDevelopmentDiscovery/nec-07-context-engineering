@@ -123,6 +123,16 @@ slides (eight until 2026-10-06; § The follow-up added, see its Decisions).
     is not in `references.bib`.
 - Notes: the harness controls System tools and System prompt.
 - Notes: pointer to the full readout.
+- Notes (2026-10-06): System tools row = the cost of course notes Remark
+  4.7, "Loading every attached server's tool definitions into the window up
+  front spends the attention budget before any work begins"; its mitigation,
+  progressive disclosure, is what skill descriptions at launch with the body
+  on use do. `[CITE: coursenotes2026, Remark 4.7 — supplied by the
+  presenter]` Reworded the same day: the Remark names this kind of cost for
+  MCP servers; in our readout the same kind appears in the System tools row
+  (the harness's own tool definitions) and the MCP tools row. Not "is" the
+  cost. The MCP tools row is now named in the notes, without its figure
+  (671).
 
 ### Decisions
 
@@ -186,6 +196,15 @@ slides (eight until 2026-10-06; § The follow-up added, see its Decisions).
   (`demo/PROTOCOL.md`, items 9 to 17). In this unit: the Arms, Control and
   Runs notes bullets name it and point to § The follow-up. Not on the slide:
   the slide and the figure describe the three arms of 2026-09-28 unchanged.
+- Course connections (2026-10-06), notes only. An ablation: course notes
+  § 4.5, "Remove one element of the context ... and measure whether
+  performance on a held-out task set changes. If removing it makes no
+  difference, it is not contributing"; arms A to C with the file as the
+  element, arm D the reverse. `[CITE: coursenotes2026, § 4.5 — supplied by
+  the presenter]` One task, not a held-out set: said under § Open edges.
+  Five runs per arm because identical contexts "guarantee identical
+  distributions, not identical outputs", under the Runs bullet. `[CITE:
+  coursenotes2026, Principle 4.1]`
 - Control bullet in the notes now says where observable 6 is stated:
   nowhere in arms A to C, in `CLAUDE.md` in arm D (`demo/PROTOCOL.md`, item
   11). The slide's "a control (6), stated nowhere" is about the three arms
@@ -404,6 +423,13 @@ slides (eight until 2026-10-06; § The follow-up added, see its Decisions).
   choice (b-1); 4 of 5 A runs named the README, the `justfile` and the
   existing sections (a-1 to a-4). Counted from `demo/runs/*/log.jsonl`, and
   recorded in `demo/RESULTS.md` § Post-hoc observations.
+- Notes, provenance, post hoc (2026-10-06): the final messages name a
+  source — README, `justfile`, existing sections (arm A); `CLAUDE.md` (b-1;
+  d-1 to d-3, `demo/RESULTS.md` § Arm D); a saved memory (the dry run,
+  `demo/runs/dryrun-b.jsonl`). d-4's statement about its own file is wrong
+  against the record, so provenance is a claim to check. Provenance
+  labelling was out of scope; this bullet reports observations, and
+  prescribes only the check.
 
 ### Decisions
 
@@ -560,7 +586,11 @@ slides (eight until 2026-10-06; § The follow-up added, see its Decisions).
   instruction, verified by the presenter against their copy, not by the
   agent]` The slide is unchanged.
 - Notes, by analogy, one sentence: an index is a sufficient statistic, enough
-  to decide what to read next.
+  to decide what to read next. Qualified (2026-10-06): sufficient only for
+  deciding what to read next, not for the contents.
+- Notes (2026-10-06): the index is the course notes' catalog, "a single file
+  mapping each identifier to a one-line description", read first. `[CITE:
+  coursenotes2026, § 4.4.5 — supplied by the presenter]`
 - Notes, vendor guidance: "target under 200 lines per CLAUDE.md file".
   `[DOCS: memory page]` This repository's `CLAUDE.md` as shipped at
   `b9f2176`: 240 lines, 1,854 words. A manual by design.
@@ -625,6 +655,18 @@ slides (eight until 2026-10-06; § The follow-up added, see its Decisions).
   commit unless asked". An illustration, labelled as one; not run. "If two
   files give different guidance for the same behavior, Claude may pick one
   arbitrarily." `[DOCS: memory page]`
+- Notes, against the brief (2026-10-06): the brief says layering "lets you
+  control precedence" and puts the "highest-precedence and most-stable on
+  top"; for `CLAUDE.md` files the docs give a load order and no precedence,
+  so the tutorial refines the brief. `[DOCS: memory page]` Brief quoted as
+  supplied by the presenter; no key.
+- Notes, instruction stack (2026-10-06, reworded the same day): the course
+  notes treat the project's instruction files as the realisation of the
+  stack's first layer, the system prompt (then task description, injected
+  context, conversation history) `[CITE: coursenotes2026, § 4.3.1 —
+  supplied by the presenter]`; mechanically the content arrives "as a user
+  message after the system prompt" `[DOCS: memory page]`. Reconciled as:
+  the files play that layer's role without holding its position.
 - Figure, `figures/layers.svg`, 1600 × 440, title inside "Four layers, one
   load order". A stack of four boxes, managed policy / user / project /
   local; an arrow down the stack, "loaded in this order, concatenated"; a
@@ -662,8 +704,10 @@ slides (eight until 2026-10-06; § The follow-up added, see its Decisions).
 
 ### Not doing
 
-- Provenance labelling. Out of scope in `topic.md`; no capability depends on
-  it.
+- Provenance labelling as a mechanism. Out of scope in `topic.md`; no
+  capability depends on it. Since 2026-10-06 the demo's provenance
+  statements are reported, post hoc, under § What changed; that is
+  observation, not labelling.
 - `settings.json` precedence beyond the one contrast.
 - Managed policy deployment.
 
@@ -695,7 +739,9 @@ slides (eight until 2026-10-06; § The follow-up added, see its Decisions).
 - Rule: front-load what every task needs and is short and stable. Defer what is
   long, volatile, or needed by some tasks only.
 - Local example: `/round`. Description in the window from launch; `SKILL.md`
-  body only on invocation. `[DOCS: context-window page]`
+  body only on invocation. `[DOCS: context-window page]` Named as the
+  progressive disclosure of course notes Remark 4.7 (2026-10-06). `[CITE:
+  coursenotes2026, Remark 4.7]`
 - On the slide: the figure and the Rule bullet. Front-loaded, On demand,
   Both and Here are in the notes block, wording and citation keys unchanged
   (`@claudecode-memory`, `@claudecode-context`, `@claudecode-workflows`,
@@ -806,6 +852,10 @@ slides (eight until 2026-10-06; § The follow-up added, see its Decisions).
   - Not claimed: why d-4 and d-5 did not follow it. The row's causes (file
     too long, rule in conflict) are the memory page's; arm D's file is the
     33-line index plus one bullet. Not interpreted.
+- Notes, row 1 fix (2026-10-06): hooks also inject context, "they do not
+  ask the model to remember something, they put it in front of the model".
+  `[CITE: coursenotes2026, § 4.4.1 — supplied by the presenter]` One
+  sentence after the hook-or-permission fix.
 - The check added to row 1 (2026-10-06): read the file, not the summary.
   Cell: "`/context`: loaded? Read the file, not the summary". Notes: "Then
   read the file the agent wrote, not its summary." "The file" in the cell is

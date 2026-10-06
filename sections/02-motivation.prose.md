@@ -54,5 +54,9 @@ writing about how to build on language models [@yan2025; @willison2025].
   this, with biases from the spacing of relevant information remaining; it
   tested Gemini-1.5-Flash, Claude-3-Haiku and GPT-4o-mini, with six
   open-source models, and found some of those still affected [@tian2025].
+- The course notes' Figure 4.1 presents lost-in-the-middle as content that
+  "buried in the middle of a long context is underused" [@coursenotes2026,
+  Figure 4.1]; our Position bullet refines it with the 2024 benchmark
+  [@tian2025].
 - None of these effects is tested in agentic coding in any source we found.
 :::

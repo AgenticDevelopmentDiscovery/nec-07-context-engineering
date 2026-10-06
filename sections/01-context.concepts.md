@@ -20,6 +20,16 @@
   on the presenter's instruction for two passages, Principle 4.1 and
   "reference, not inclusion" (§ 4.3.3). Not read by the agent; the presenter
   verifies both against their copy.
+  - Course-connections pass (2026-10-06): seven more passages, all in
+    `::: notes`, each quoted as the presenter supplied it and not read by
+    the agent: § 4.5 (ablation), Principle 4.1 again (identical
+    distributions), § 4.3.1 (instruction stack), § 4.4.5 (catalog; Spine 2
+    with §§ 2.3.2 and 4.2), Remark 4.7 (tool definitions, progressive
+    disclosure), § 4.4.1 (hooks inject context), Figure 4.1 (lost in the
+    middle), Figure 10.2 (Spine 2 at the mutation node). Two
+    quotations from the tutorial brief ("lets you control precedence",
+    "highest-precedence and most-stable on top") are attributed to the brief
+    in words; it has no key.
 
 **Slide budget, all four prose files (2026-09-30).** Every content slide holds
 one visual at most and at most 70 words of slide text. Counted: words of the
@@ -162,7 +172,13 @@ as an index is no longer reported.
   changes.
 - Out of scope, each with its home: wording T06; compaction internals T08;
   embeddings and RAG T09; persistent memory T16.
-- Also out: provenance labelling; window sizes and pricing.
+- Also out: window sizes and pricing. Provenance labelling removed from the
+  list (2026-10-06): the demo observed provenance statements, post hoc, and
+  § What changed has a notes bullet on them. Removed from `topic.md` § Scope
+  the same day.
+- Rubric mapping, one sentence in the notes after the route (2026-10-06):
+  what it is → § Context; why it matters → § Motivation; key ideas and demo
+  → § Content; connections and further reading → § Conclusion.
 - Demo substrate named: this repository.
 
 ### Decisions
