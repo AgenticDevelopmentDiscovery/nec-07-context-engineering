@@ -40,26 +40,30 @@ demand.
   [@coursenotes2026, § 4.5].
 - The demo runs used Claude Code 2.1.281; the figure was captured on 29
   September 2026.
-- **Connections.**
-  - Spine 2, the progression from prompting to context to an environment the
-    agent searches [@coursenotes2026, §§ 2.3.2, 4.2 and 4.4.5], which the
-    brief calls this tutorial's centre: the window is the middle step, and
-    the repository the agent reads is the environment.
-  - C1, the reproducible repository: a committed `CLAUDE.md` and folder
-    layout are context infrastructure, written once, loaded every session.
-  - The capstone: constraints and prior expressions are context that steers
-    the search space; the same question of what to load, and when. The
-    course notes' Figure 10.2 has Spine 2 driving the mutation node of the
-    evolutionary loop [@coursenotes2026, Figure 10.2].
-  - C3, retrieval and grounding: Tutorial 09 automates the just-in-time
-    context that § On demand handles by hand.
-- **Further reading.**
-  - @rajasekaran2025 — the vendor's framing: context as a finite resource,
-    and "just in time" loading.
-  - @claudecode-memory — what loads at launch, the load order, the absence of
-    precedence, and what survives compaction.
-  - @claudecode-context — `/context`, what fills the window, and compaction.
-  - @hong2025 — the length effect across 18 models; a vendor report.
-  - @liu2024 — the position effect, on models of 2023; read with @tian2025
-    for the 2024 picture.
+
+### Connections
+
+- Spine 2, the progression from prompting to context to an environment the
+  agent searches [@coursenotes2026, §§ 2.3.2, 4.2 and 4.4.5], which the
+  brief calls this tutorial's centre: the window is the middle step, and
+  the repository the agent reads is the environment.
+- C1, the reproducible repository: a committed `CLAUDE.md` and folder
+  layout are context infrastructure, written once, loaded every session.
+- The capstone: constraints and prior expressions are context that steers
+  the search space; the same question of what to load, and when. The
+  course notes' Figure 10.2 has Spine 2 driving the mutation node of the
+  evolutionary loop [@coursenotes2026, Figure 10.2].
+- C3, retrieval and grounding: Tutorial 09 automates the just-in-time
+  context that § On demand handles by hand.
+
+### Further reading
+
+- @rajasekaran2025 — the vendor's framing: context as a finite resource,
+  and "just in time" loading.
+- @claudecode-memory — what loads at launch, the load order, the absence of
+  precedence, and what survives compaction.
+- @claudecode-context — `/context`, what fills the window, and compaction.
+- @hong2025 — the length effect across 18 models; a vendor report.
+- @liu2024 — the position effect, on models of 2023; read with @tian2025
+  for the 2024 picture.
 :::

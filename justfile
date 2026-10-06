@@ -33,7 +33,7 @@ doc:
     mkdir -p {{outdir}}
     {{pandoc}} sections/*.prose.md {{common}} \
         --pdf-engine={{engine}} \
-        --toc --toc-depth=2 --number-sections \
+        --toc --toc-depth=3 --number-sections \
         -V documentclass=article -V fontsize=11pt -V geometry:margin=1in \
         -V header-includes='\usepackage{float}\floatplacement{figure}{H}' \
         -o {{outdir}}/document.pdf
@@ -67,7 +67,7 @@ slides:
 site: doc slides
     mkdir -p {{site}}
     {{pandoc}} sections/*.prose.md {{common}} \
-        --standalone --toc --toc-depth=2 \
+        --standalone --toc --toc-depth=3 \
         --template=site/template.html \
         --css=style.css \
         -o {{site}}/index.html

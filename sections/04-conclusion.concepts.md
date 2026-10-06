@@ -97,6 +97,23 @@
     `claudecode-context`, `hong2025`, `liu2024` (with `tian2025` in its
     line). One line each on what to read it for. Narrative citations
     (`@key`), rendered author-year by citeproc.
+  - Both blocks are `###` headings inside the notes block, after the Open
+    edges bullets, each followed by its list at the top level (2026-10-06,
+    later). Document: 4.2.1 Connections and 4.2.2 Further reading, both on
+    p. 12, numbered. Site: `<h3>` headings. Slides: pandoc turns a heading
+    below slide level into a Beamer block inside the speaker note; slide
+    text unchanged, 15 content slides. Rejected: a bold lead-in line, the
+    fallback, not needed since the headings built cleanly.
+  - `--toc-depth` raised from 2 to 3 in the `justfile`'s `doc` and `site`
+    recipes, nowhere else (2026-10-06, later). Document: the table of
+    contents now lists 4.2.1 and 4.2.2, the only level-3 headings, so the
+    only new entries; 13 pages, unchanged. Site: the sidebar does not list
+    them. Pandoc's HTML table of contents omits headings inside any Div, and
+    the two sit inside the `::: notes` Div; checked with a three-heading
+    test file, in and out of a Div. LaTeX builds its own contents from
+    `\subsubsection`, so the document is unaffected by the Div. Not changed:
+    the template, or the headings' place inside the notes, since a `###`
+    outside the notes would render as a block on the slide.
 - On the slide (67 words): five bullets of at most 14 words, keys kept. The
   demo bullet reads "one prompt, one model, five runs per arm, one rule
   tested; silent on correctness" since 2026-10-06; "self-describing
