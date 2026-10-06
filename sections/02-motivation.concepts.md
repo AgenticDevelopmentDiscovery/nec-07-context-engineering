@@ -85,6 +85,11 @@
     the repository, followed in 0/15 runs (same table; `demo/runs/`). In the
     notes, not on the slide: the slide keeps the generic description and a
     pointer to § The demo.
+  - Follow-up (2026-10-06), two sentences in the same notes bullet: arm D
+    put the rule in the window as one line of `CLAUDE.md`; 3 of 5 runs
+    followed it against 0 of 5 fresh arm-C runs the same day; predicted at
+    least 4 of 5 (`demo/RESULTS.md` § Arm D; `demo/PROTOCOL.md` item 12).
+    Pointer to § The follow-up. Slide unchanged.
 - Too much: performance degrades as input grows. Dated by study.
   - 2025, 18 models, "even on simple tasks": Hong et al. only. Names GPT-4.1,
     Claude 4, Gemini 2.5, Qwen3. `[CITE: Hong, Troynikov, Huber, "Context
@@ -136,6 +141,8 @@
 - "When to reach for it" folded in as the diagnostic question. Rejected: a
   separate slide. If this unit overflows, the bound moves to § Open edges.
 - The too-little failure is shown from a real session, per the template.
+- The follow-up stays in the notes (2026-10-06). The slide's "Too little"
+  bullet is the generic description; the numbers belong to § The follow-up.
 - Each source cited only for what it tested. Liu et al. not cited for current
   models or for agents.
 

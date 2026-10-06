@@ -38,7 +38,10 @@ writing about how to build on language models [@yan2025; @willison2025].
   amendments 1 and 4). Every run read those four sections and wrote the same
   comment into its own: 0 of 15 followed the rule. Reading the window would
   have shown no loaded file that stated the rule, and four files read that
-  modelled the opposite (§ The demo).
+  modelled the opposite (§ The demo). The follow-up put the rule in the
+  window as one line of `CLAUDE.md`, arm D: 3 of 5 runs followed it, against
+  0 of 5 fresh runs without the line; we had predicted at least 4 of 5
+  (§ The follow-up).
 - **The sources, and what each tested.** All four are retrieval-style
   benchmarks. The 2025 vendor report, on 18 models, found degradation "even
   on simple tasks"; it names GPT-4.1, Claude 4, Gemini 2.5 and Qwen3 among

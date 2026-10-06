@@ -13,9 +13,10 @@
 - Same four capabilities as § What this tutorial covers, word for word: the
   four short lines. The full sentences are in that unit's notes.
 - Each maps to the unit that delivered it: read the window → § What
-  `/context` shows at launch; index and test → § The demo, § What changed, § CLAUDE.md
-  as an index; place an instruction → § Layers; front-load or on demand → § On
-  demand. The mapping is in this unit's notes, off the slide.
+  `/context` shows at launch; index and test → § The demo, § What changed,
+  § The follow-up, § CLAUDE.md as an index; place an instruction → § Layers;
+  front-load or on demand → § On demand. The mapping is in this unit's
+  notes, off the slide.
 - A capability without a unit is removed from both lists.
 - Closing line kept: diagnosis is the four applied. Then, at the presenter's
   instruction: "Principle 4.1 (Course Notes 2026) says the same. Look first
@@ -40,7 +41,9 @@
   uses the same lines.
 - Test capability claimed only as far as the demo went. Arm C was run, five
   runs, so the index-against-manual half is claimed (`demo/RESULTS.md`
-  § Observable 7).
+  § Observable 7). Arm D was run, five runs against five fresh arm-C runs,
+  so "test what changed" now also covers a rule only the file states
+  (`demo/RESULTS.md` § Arm D).
 
 ### Open questions
 
@@ -63,13 +66,25 @@
 - Tool behaviour is as of the documentation on its access dates, 28 and 29
   September 2026. `[DOCS]` The pages are living and carry no version.
 - 2.1.281 is the version of the demo runs only (`demo/RESULTS.md`). The
-  figure has a date, 29 September 2026; the panel shows no version.
+  figure has a date, 29 September 2026; the panel shows no version. Still
+  true of all twenty-five runs: d-1 to d-5 and c-6 to c-10 recorded 2.1.281
+  (`demo/PROTOCOL.md` item 18).
 - Edges map to later tutorials: compaction T08, retrieval T09, persistent
   memory T16.
-- On the slide (66 words): five bullets of at most 14 words, keys kept. In
-  the notes: "every run met observables 1 to 5"; "conventions that live only
-  in `CLAUDE.md`"; the run version, 2.1.281, and the capture date; the
-  course connections (C1, capstone), unchanged.
+- The demo's limits, as of 2026-10-06, in the notes: every run met
+  observables 1 to 5 and built, on a repository that describes itself; the
+  follow-up on a rule only `CLAUDE.md` states is five runs per arm, one
+  rule, one arrangement of four contrary examples (`demo/PROTOCOL.md` items
+  10 and 13); 3 of 5 against 0 of 5 gives a one-sided Fisher exact p of
+  about 0.083, post hoc, no significance claim (`demo/RESULTS.md` § Arm D:
+  post-hoc observations). Removed: "It says nothing about conventions that
+  live only in `CLAUDE.md`" — arm D tested one.
+- On the slide (67 words): five bullets of at most 14 words, keys kept. The
+  demo bullet reads "one prompt, one model, five runs per arm, one rule
+  tested; silent on correctness" since 2026-10-06; "self-describing
+  repository, every run built" moved to the notes. In the notes: the limits
+  bullet above; the run version, 2.1.281, and the capture date; the course
+  connections (C1, capstone), unchanged.
 
 ### Decisions
 
@@ -83,6 +98,10 @@
 - Confounds disclosed: one prompt on one template; Bash not gated by
   `--allowedTools`; `/round` skill description in every arm; index written by
   the presenter before any run (`demo/RESULTS.md` § Threats to validity).
+- Limits for the follow-up (2026-10-06) stated as counts, not as "silent on
+  X": the runs per arm, the one rule, the one arrangement, and the p with
+  its label. Rejected: keeping "says nothing about conventions that live
+  only in `CLAUDE.md`" with a qualifier.
 
 ### Open questions
 

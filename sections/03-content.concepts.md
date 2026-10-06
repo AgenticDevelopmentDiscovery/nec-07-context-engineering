@@ -4,8 +4,9 @@
 > one slide. Tags and the writing constraint are defined in
 > `01-context.concepts.md`.
 
-**Purpose.** HOW. Readable budget, the `/context` reading, the demo, the index,
-layers, on-demand loading, pitfalls. Eight slides.
+**Purpose.** HOW. Readable budget, the `/context` reading, the demo, its
+results, the follow-up, the index, layers, on-demand loading, pitfalls. Nine
+slides (eight until 2026-10-06; § The follow-up added, see its Decisions).
 
 ## The window is a budget you can read
 
@@ -176,8 +177,19 @@ layers, on-demand loading, pitfalls. Eight slides.
   between arms" (`demo/PROTOCOL.md` § Predictions). Prose: "expected not to
   differ between arms". Not "expected to fail": the protocol did not predict
   the direction.
-- Five runs per arm, fifteen in all. Counts reported, not one transcript
-  (`demo/RESULTS.md`; per-run records in `demo/runs/`).
+- Five runs per arm, fifteen in all on 2026-09-28. Counts reported, not one
+  transcript (`demo/RESULTS.md`; per-run records in `demo/runs/`).
+- Arm D (2026-10-06 pass): arm C's index plus one bullet stating the control
+  rule, `demo/index-d.CLAUDE.md`; nothing else differs. Pre-registered with
+  its prediction before any run; five runs on 2026-10-05, interleaved with
+  five fresh arm-C runs, c-6 to c-10, so twenty-five runs in all
+  (`demo/PROTOCOL.md`, items 9 to 17). In this unit: the Arms, Control and
+  Runs notes bullets name it and point to § The follow-up. Not on the slide:
+  the slide and the figure describe the three arms of 2026-09-28 unchanged.
+- Control bullet in the notes now says where observable 6 is stated:
+  nowhere in arms A to C, in `CLAUDE.md` in arm D (`demo/PROTOCOL.md`, item
+  11). The slide's "a control (6), stated nowhere" is about the three arms
+  it shows.
 - On the slide: the figure, then Task and Observables. Question, Substrate
   and Arms are in the notes block above the figure, wording unchanged.
 - Figure, `figures/three-windows.svg`, 1600 × 380, title inside "One prompt,
@@ -273,6 +285,15 @@ layers, on-demand loading, pitfalls. Eight slides.
 - Loaded in every arm: user-level `CLAUDE.md` absent; auto memory stripped;
   `/round` skill description kept and disclosed (`demo/PROTOCOL.md`
   Amendments 1 and 7; `demo/RESULTS.md` § Threats to validity).
+- Figure not redrawn for arm D (2026-10-06, presenter's decision). It shows
+  the three arms of 2026-09-28; arm D has its own slide, § The follow-up,
+  where its table is. Rejected: a fourth arm box, which would shrink four
+  boxes to fit the width and put a second date on the figure. The caption
+  made true instead: "One prompt, three windows: the three arms of
+  2026-09-28, copies of this template at commit `b9f2176` differing only in
+  `CLAUDE.md`. Arm D is under § The follow-up." Two lines on the slide, as
+  before; height 36% unchanged; no overfull box in the TeX log. Slide: 69
+  words (57 before; the caption grew from 15 to 27, "§" counted).
 
 ### Open questions
 
@@ -280,11 +301,14 @@ layers, on-demand loading, pitfalls. Eight slides.
   counts?
 - Symbolic-regression repository, if released before the talk. Same protocol;
   observables rewritten.
+- Resolved (2026-10-06): the figure keeps the three arms; the caption says
+  so and points to § The follow-up. Decision above.
 
 ### Not doing
 
 - Comparing models.
-- Significance testing. Counts only.
+- Significance testing as evidence. Counts only; the one Fisher exact p,
+  under § The follow-up, is post hoc and makes no significance claim.
 
 ## What changed, and what did not
 
@@ -333,10 +357,17 @@ layers, on-demand loading, pitfalls. Eight slides.
   the paragraph's last sentence, and no longer in the notes: on a
   repository that describes itself, the file changed the cost of reaching
   the answer, not the answer. Slide: 68 words. Frame holds.
+  - Superseded (2026-10-06): the sentence is removed. It read one way, and
+    arm D read the other way where only the file stated the rule. The
+    two-sided reading is on the next slide, § The follow-up, after the table
+    it rests on. The paragraph here ends at "cost on any window". Slide: 50
+    words.
 - Notes, behaviour: null. Control 0 of 5 in every arm; the protocol predicted
   no difference. "The rule was in no arm's window" is an explanation made
   after the runs, and labelled so. Prediction that 2 and 5 separate A from B:
   failed (§ Predictions against outcomes).
+  - Added (2026-10-06): "arm D, under § The follow-up, puts it there" — the
+    rule in the window. Pointer only; the result is on the next slide.
 - Notes, why: conventions behind observables 1–4 are also in `README.md`, the
   `justfile` or the existing section pairs; for 2 the second source is the
   existing sidecars (§ Threats to validity).
@@ -387,6 +418,8 @@ layers, on-demand loading, pitfalls. Eight slides.
   reported, none dropped.
 - Limits stated in § Open edges, not here: one prompt, one model, a
   self-describing repository, every run met observables 1 to 5 and built.
+  Since 2026-10-06 also: five runs per arm, one rule, one arrangement of
+  four contrary examples, p about 0.083 with no significance claim.
 
 ### Open questions
 
@@ -395,6 +428,104 @@ layers, on-demand loading, pitfalls. Eight slides.
 ### Not doing
 
 - Showing the best run.
+
+## The follow-up: a rule only the file states
+
+### Claims
+
+- All from `demo/RESULTS.md` § Arm D and `demo/PROTOCOL.md` items 9 to 24.
+  No number or claim from elsewhere.
+- Arm D = arm C's index plus one bullet under its conventions: "Put nothing
+  between a section's `#` heading and its first `##` (no comment, no text);
+  pandoc turns it into an extra slide." `demo/index-d.CLAUDE.md`; nothing
+  else differs (item 9). Pre-registered with its prediction (item 12). Five
+  runs, 2026-10-05, interleaved d-1, c-6, d-2, c-7, … c-10 (items 15 to 17).
+- The four existing sections at `b9f2176` all break the rule, each with a
+  comment between `#` and first `##`: one written rule against four contrary
+  examples (item 13). In the notes.
+- Why fresh arm-C runs: `~/.claude/settings.json` and `~/.claude/plugins/`
+  modified on 2026-10-05, state on 2026-09-28 not recorded; D compared with
+  c-6 to c-10, not c-1 to c-5 (item 16). Same version, 2.1.281, same model
+  (item 18). Notes say "a user-level settings file and plugin directory",
+  not the paths.
+- Table, counts of five (§ Arm D: pre-registered observables): D 1–5 at 5/5
+  each, so "All of 1–5" 5 of 5; observable 6, 3 of 5 (d-1, d-2, d-3). Fresh
+  C 1–5 at 5/5; 6 at 0/5. Column headed "Observable 6", not "Control": in
+  arm D it is stated in `CLAUDE.md` (item 11).
+- Table, mean (range) over five (§ Arm D: observable 7): D reads 9.2 (8–11),
+  tokens 40.2k (38.2–42.1); fresh C reads 9.6 (8–11), tokens 39.8k
+  (39.0–40.8). Same definitions as the table before. No claim about the
+  D–C difference: `demo/RESULTS.md` makes none.
+- Predictions against outcomes (§ Arm D: predictions against outcomes): D
+  observable 6 in at least 4 of 5, **failed**, 3 of 5; D 1–5 in 5 of 5,
+  held; fresh C 1–5 in 5 of 5 and 6 in 0 of 5, held. On the slide, plain:
+  "We predicted at least 4 of 5 for arm D; it failed: 3 of 5."
+- Two-sided reading, on the slide, at the presenter's wording: where the
+  repository already states a convention, the file changed cost, not
+  behaviour; where only the file states it, behaviour changed in 3 of 5 runs
+  against 0 of 5. The first half is the A/B/C result; the second is this
+  table. Replaces the one-sided closing sentence of § What changed.
+- Post hoc, labelled (§ Arm D: post-hoc observations): one-sided Fisher
+  exact p = 10/120, about 0.083, no significance claim; d-1 to d-3 kept the
+  comment below the first `##` and their final messages cite the `CLAUDE.md`
+  rule; edit sequence: d-1 wrote it there from the start, d-2 and d-3 wrote
+  it between and moved it in a later edit, d-4 and d-5 wrote it between and
+  did not edit the file again. In the notes. The d-4 and d-5 final messages
+  against their files are under § Pitfalls, not repeated here.
+- Not in the prose: `num_turns` ranges (c-1 to c-5 31–38, c-6 to c-10
+  22–29), and the concepts files' two-line blockquote between `#` and first
+  `##` in all ten runs, unscored. Both post hoc in `demo/RESULTS.md`.
+- Not in the prose: the d-5 deck is `demo/runs/d-5/postrun-slides.pdf`,
+  added after the run (item 24). § Pitfalls says "the deck built after the
+  run"; the pointer is the RESULTS section cited there.
+- On the slide (70 words, table cells excluded, caption counted): one lead
+  line, the table with a one-line caption carrying the date, and one
+  paragraph of three sentences.
+
+### Decisions
+
+- Own slide, not a second table on § What changed (2026-10-06). That slide
+  holds one table and 50 words; a second table breaks the one-visual budget
+  and the two tables plus the two-sided reading do not fit one frame.
+- Hold at fifteen content slides, the cap in `CLAUDE.md` § House
+  conventions, and not over it (2026-10-06, presenter's decision). The
+  convention says a new `##` is paid for by merging or cutting another; this
+  one is not, because the follow-up is the only slide where `CLAUDE.md`
+  changes behaviour, and the one cheap merge, § The window is a budget you
+  can read with § What `/context` shows at launch, would reverse that unit's
+  recorded "figure on its own slide" decision. `CLAUDE.md` § House
+  conventions and `topic.md` § Shape record 15 built, split 2, 2, 9, 2.
+- Heading "The follow-up: a rule only the file states", short reference
+  "§ The follow-up". Rejected: "What changed when only the file stated the
+  rule", whose short form collides with "§ What changed".
+- Row labels "D, index + rule" and "C, index, fresh": the lead line defines
+  D, the caption defines fresh. Headers identical to the table before so the
+  two read as one.
+- Table widths by dashes 16 : 11 : 13 : 18 : 19. Measured in a scratch deck
+  with five width sets: at 15 : 11 : 13 : 18 : 19 "D, index + rule" wraps;
+  at 16 : 12 : 13 : 18 : 19 "Observable 6" and "Reads to first edit" wrap;
+  at 10 : 10 : 12 : 13 : 14, the first draft, both headers and both labels
+  wrapped and the frame was 38.9pt over. With the chosen set every header
+  and label is one line and the TeX log reports no overfull box for the
+  frame.
+- Lead cut to one line and the interleaving moved into the caption: the
+  two-line lead left the frame 9.9pt over with the wrapped cells; measured.
+- "it failed: 3 of 5", not "the prediction failed: 3 of 5": the slide was 71
+  words with the longer form, over the 70-word budget by one.
+- The date is on the slide once, in the caption. The notes carry both dates.
+
+### Open questions
+
+- Resolved (2026-10-06): hold at the cap. Decision above.
+- "Where only the file states it": the four existing sections state the
+  opposite by example. Is "states" the right word for a rule contradicted by
+  examples? The reading is at the presenter's wording.
+
+### Not doing
+
+- Interpreting 3 of 5: why two runs did not follow the rule. Only what the
+  records show, under § Pitfalls.
+- A fifth arm.
 
 ## CLAUDE.md as an index, not a manual
 
@@ -655,10 +786,36 @@ layers, on-demand loading, pitfalls. Eight slides.
   removed `CLAUDE.md` recovered from git history
   (`demo/runs/superseded-a-1-history-leak`); auto memory from another
   directory acted on (`demo/runs/dryrun-b.memory-loaded.md`).
+- Ignored rule, our own evidence (2026-10-06), post hoc, in the notes and
+  on the slide's caption ("rows 1 and 3: our demo, post hoc"): in arm D the
+  rule was in `CLAUDE.md`, so in the window from launch `[DOCS: memory
+  page]`; d-4 and d-5 did not follow it (`demo/RESULTS.md` § Arm D). d-4's
+  final message: "Kept the leading HTML comment below the first `##`
+  heading, not between the `#` and the first `##`"; its recorded file has
+  the comment between them. d-5's final message: "The deck is 27 slides,
+  with no extra slide between the Examples heading and its first `##`"; its
+  recorded file has the comment between them and the deck built after the
+  run has an extra frame titled "Examples" on page 19
+  (`demo/runs/d-5/postrun-slides.pdf`, added to the record after the run,
+  `demo/PROTOCOL.md` item 24). Prose paraphrases the two messages; the
+  quotations are in `demo/RESULTS.md` § Arm D: post-hoc observations.
+  - "In the window from launch" is the memory page's claim about the
+    project-root file, not a reading of d-4's or d-5's window; the logs do
+    not record the window. The notes say "in `CLAUDE.md`, so in the window
+    from launch" with the memory key.
+  - Not claimed: why d-4 and d-5 did not follow it. The row's causes (file
+    too long, rule in conflict) are the memory page's; arm D's file is the
+    33-line index plus one bullet. Not interpreted.
+- The check added to row 1 (2026-10-06): read the file, not the summary.
+  Cell: "`/context`: loaded? Read the file, not the summary". Notes: "Then
+  read the file the agent wrote, not its summary." "The file" in the cell is
+  the agent's output; the memory-files check keeps its full form in the
+  notes.
 - Notes, one check per pitfall, before the fix.
   - Ignored rule: `/context`, the list under Memory files. "If a `CLAUDE.md`
     file is missing there, Claude can't see it." `[DOCS: memory page,
-    "Claude isn't following my CLAUDE.md"]`
+    "Claude isn't following my CLAUDE.md"]` Then the file against the
+    summary, above.
   - Lost instruction: look for it in the files `/memory` lists. "If an
     instruction disappeared after compaction, it was given only in
     conversation", or is in a nested file or path-scoped rule not yet
@@ -698,7 +855,14 @@ layers, on-demand loading, pitfalls. Eight slides.
 - This unit delivers the diagnosis named in `metadata.yaml` `audience`.
 - Three kept: ignored rule (documented), chat instruction lost (documented),
   removed but reachable (observed in the demo, post hoc). Marked as such in
-  the prose.
+  the prose. Since 2026-10-06 the first also has our own evidence, post hoc,
+  and the caption says so: "rows 1 and 3: our demo, post hoc".
+- Row 1 check cell (2026-10-06): "`/context`: loaded? Read the file, not the
+  summary" is two lines in the cell. With "Then" before "read" it was three
+  lines and the frame 0.93pt over in the TeX log; without, no overfull box.
+  The caption, three words longer, is still two lines. Rejected: a fourth
+  row for the summary-against-file check, which costs a row the frame does
+  not have.
 - Table column widths 9 : 12 : 12 (the dash counts under the header). At
   7 : 5 : 3 the Fix cells wrapped to three lines and the closing line fell
   off the frame (rendered p. 16, first build of 2026-09-30). With the widths

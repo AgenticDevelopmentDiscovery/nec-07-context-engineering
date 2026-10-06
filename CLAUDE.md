@@ -230,8 +230,8 @@ hole.
   makes a slide of whatever does. `section-titles: false` is set in
   `metadata.yaml`; Metropolis still adds its own section page, so one divider
   per section is expected and a second one means content in that position.
-- **Slide budget: 13 content slides planned, 14 built, 15 the cap**, for a
-  10-minute talk. The split is 2, 2, 8, 2 across the four sections. A new `##`
+- **Slide budget: 13 content slides planned, 15 built, 15 the cap**, for a
+  10-minute talk. The split is 2, 2, 9, 2 across the four sections. A new `##`
   is paid for by merging or cutting another.
 - **`::: notes` blocks carry teaching detail.** They print in the document and
   the site and stay off the slides: pandoc renders a `notes` div as a Beamer

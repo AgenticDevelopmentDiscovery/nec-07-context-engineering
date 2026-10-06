@@ -72,20 +72,22 @@ answers to the question of what goes in the window.
 ## Shape
 
 - Default four-section arc kept, rebalanced: 01-context 2 units, 02-motivation
-  2, 03-content 8, 04-conclusion 2, for 14 content slides in a 10-minute talk
+  2, 03-content 9, 04-conclusion 2, for 15 content slides in a 10-minute talk
   (15 max). Origin history and "when to reach for it" fold into motivation
   rather than taking slides of their own.
 - `03-content`: the window as a readable budget → what `/context` shows at
   launch → the demo (does a project `CLAUDE.md` change what the agent does?)
-  → what changed and what did not → `CLAUDE.md` as index → layers →
-  on-demand loading → pitfalls.
-- The demo runs on three independent single-commit copies of the template
+  → what changed and what did not → the follow-up (a rule only the file
+  states) → `CLAUDE.md` as index → layers → on-demand loading → pitfalls.
+- The demo runs on four independent single-commit copies of the template
   commit `b9f2176`, differing only in the project `CLAUDE.md`: absent, the
-  shipped manual, or a 33-line index. Five runs per arm, and observables
-  fixed before any run. The arm with the 33-line index is the one that tests
-  the index-versus-manual claim. Results are presented as a recorded diff with
-  counts; a short live rerun of one arm is optional. A null result is reported
-  as a null result.
+  shipped manual, a 33-line index, or that index plus one line stating the
+  control rule. Five runs per arm, and observables fixed before any run: 25
+  scored runs, fifteen on 2026-09-28 (arms A to C) and ten on 2026-10-05
+  (arm D, interleaved with five fresh arm-C runs). The arm with the 33-line
+  index is the one that tests the index-versus-manual claim. Results are
+  presented as a recorded diff with counts; a short live rerun of one arm is
+  optional. A null result is reported as a null result.
 - The formal framing (an index as a sufficient statistic for the repository)
   gets one sentence under § CLAUDE.md as an index, not a manual. It does not
   get a slide of its own.

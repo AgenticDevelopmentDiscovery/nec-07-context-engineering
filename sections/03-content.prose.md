@@ -60,10 +60,11 @@ readout, with the total in its header and Memory files listed per file, is
   copies differ only in `CLAUDE.md`.
 - **Arms.** A, no file. B, the manual: the shipped 240-line `CLAUDE.md`. C,
   the index: 33 lines, reported in the table under § What changed, and what
-  did not.
+  did not. D, added later: C's index plus one line stating the control rule,
+  reported under § The follow-up.
 :::
 
-![One prompt, three windows: copies of this template at commit `b9f2176`, differing only in `CLAUDE.md`.](figures/three-windows.svg){height=36%}
+![One prompt, three windows: the three arms of 2026-09-28, copies of this template at commit `b9f2176` differing only in `CLAUDE.md`. Arm D is under § The follow-up.](figures/three-windows.svg){height=36%}
 
 - **Task.** One fixed prompt: add an "Examples" section before the
   conclusion, following the project's conventions, with the build passing.
@@ -77,9 +78,13 @@ readout, with the total in its header and Memory files listed per file, is
   section placed by the numeric prefix of its filename, with the conclusion
   renumbered. 4, `just build` run and passing. 5, no commit made.
 - **The control, 6.** Nothing between the new `#` heading and its first `##`.
+  Stated nowhere in arms A to C; in arm D, stated in `CLAUDE.md`.
 - **Observable 7.** Files read before the first edit, and tokens consumed at
   it.
 - **Runs.** Five per arm, headless; Claude Code 2.1.281, `claude-fable-5-1`.
+  Arms A to C ran on 2026-09-28. Arm D was pre-registered, with its
+  prediction, and run on 2026-10-05, interleaved with five fresh arm-C runs
+  (`demo/PROTOCOL.md`, items 9 to 16).
 :::
 
 ## What changed, and what did not
@@ -94,16 +99,14 @@ readout, with the total in its header and Memory files listed per file, is
 
 The manual changed no scored behaviour; the index matched it at lower cost,
 with no overlap of ranges. Why cut 5k tokens on a 1.0M window? Tokens that
-change no scored behaviour are cost on any window. On a repository that
-describes itself, the file changed the cost of reaching the answer, not the
-answer.
+change no scored behaviour are cost on any window.
 
 ::: notes
 - **Behaviour: a null result.** Observables 1 to 6 do not differ between
   arms. The control was met in 0 of 5 in every arm; the protocol predicted no
   difference. After the runs, we explain the zero by the rule being in no
-  arm's window. Our prediction that observables 2 and 5 would separate A from
-  B failed.
+  arm's window; arm D, under § The follow-up, puts it there. Our prediction
+  that observables 2 and 5 would separate A from B failed.
 - **Why.** The conventions behind observables 1 to 4 are also in the README,
   the `justfile` or the existing sections, and the agent read those.
   Observable 5 is stated in `CLAUDE.md` and, for the end of a critique round,
@@ -123,6 +126,52 @@ answer.
 - **Post hoc, not pre-registered.** One B run of five cited `CLAUDE.md` for a
   choice. Four A runs of five named the README, the `justfile` and the
   existing sections as their source.
+:::
+
+## The follow-up: a rule only the file states
+
+Arm D: arm C's index plus one line stating the control rule; pre-registered.
+
+| Arm | All of 1–5 | Observable 6 | Reads to first edit | Tokens at first edit |
+| ---------------- | ----------- | ------------- | ------------------ | ------------------- |
+| D, index + rule | 5 of 5 | 3 of 5 | 9.2 (8–11) | 40.2k (38.2–42.1) |
+| C, index, fresh | 5 of 5 | 0 of 5 | 9.6 (8–11) | 39.8k (39.0–40.8) |
+
+: Runs of 2026-10-05, D interleaved with five fresh arm-C runs; mean (range).
+
+We predicted at least 4 of 5 for arm D; it failed: 3 of 5. Where the
+repository already states a convention, the file changed cost, not behaviour.
+Where only the file states it, behaviour changed in 3 of 5 runs against 0 of
+5.
+
+::: notes
+- **The line.** Arm D's `CLAUDE.md` is `demo/index-d.CLAUDE.md`: arm C's
+  index with one bullet added under its conventions, "Put nothing between a
+  section's `#` heading and its first `##` (no comment, no text); pandoc turns
+  it into an extra slide." Nothing else differs. The four existing sections
+  of the template all break the rule, each with a comment in that position,
+  so arm D tests one written rule against four contrary examples
+  (`demo/PROTOCOL.md`, items 9 and 13).
+- **Why fresh arm-C runs.** A user-level settings file and plugin directory
+  were modified on 2026-10-05 and their state on 2026-09-28 is not recorded,
+  so arm D is compared with five arm-C runs made the same day, c-6 to c-10,
+  interleaved with d-1 to d-5, and not with the runs of 2026-09-28. Same
+  version, Claude Code 2.1.281, and model (`demo/PROTOCOL.md`, items 14 to
+  18).
+- **Predictions, fixed before any run.** Arm D meets observable 6 in at
+  least 4 of 5 runs: failed, 3 of 5 (d-1, d-2, d-3). Arm D meets 1 to 5 in 5
+  of 5: held. The fresh arm-C runs meet 1 to 5 in 5 of 5 and 6 in 0 of 5:
+  held (`demo/RESULTS.md` § Arm D: predictions against outcomes).
+- **Cost.** Reads and tokens are in the table, defined as in the table
+  before. No claim is made about the difference between D and fresh C.
+- **Post hoc, not pre-registered.** Three of 5 against 0 of 5, the same day:
+  a one-sided Fisher exact test gives p = 10/120, about 0.083. No
+  significance claim is made. The three runs that met the rule kept a
+  guidance comment in the new file, below its first `##`, and their final
+  messages cite the `CLAUDE.md` rule; d-1 wrote it there from the start, d-2
+  and d-3 first wrote it between the `#` and the `##` and moved it in a later
+  edit. d-4 and d-5 wrote it between and did not edit the file again; what
+  their final messages say is under § Pitfalls.
 :::
 
 ## CLAUDE.md as an index, not a manual
@@ -220,11 +269,11 @@ conflict; do not predict the winner.
 
 | Symptom | Check | Fix |
 | --------- | ------------ | ------------ |
-| A `CLAUDE.md` rule is ignored | `/context`: is the file under Memory files? | Cut, resolve, or enforce by a hook or permission |
+| A `CLAUDE.md` rule is ignored | `/context`: loaded? Read the file, not the summary | Cut, resolve, or enforce by a hook or permission |
 | A chat instruction is obeyed, then lost | `/memory` (lists loaded files): is it in any listed file? | Put it in a file |
 | Removed but used | `git log`; `/memory` | Reachable, not just loaded |
 
-: Rows 1–2: the memory page [@claudecode-memory]; row 3: our demo, post hoc. A hook is a script the tool runs.
+: Rows 1–2: the memory page [@claudecode-memory]; rows 1 and 3: our demo, post hoc. A hook is a script the tool runs.
 
 Every fix changes what is loaded, or when.
 
@@ -233,7 +282,15 @@ Every fix changes what is loaded, or when.
   cut or resolve. If the rule must hold, enforce it with a hook or a
   permission setting [@claudecode-memory]. Check: run `/context` and read the
   list under Memory files; a file missing there was never seen
-  [@claudecode-memory].
+  [@claudecode-memory]. Then read the file the agent wrote, not its summary.
+  Our own case, post hoc: in arm D the rule was in `CLAUDE.md`, so in the
+  window from launch [@claudecode-memory], and d-4 and d-5 did not follow
+  it. d-4's final message says the comment was kept below the first `##`;
+  its recorded file has the comment between the `#` heading and the first
+  `##`. d-5's says there is no extra slide between the Examples heading and
+  its first `##`; its recorded file has the comment between them, and the
+  deck built after the run has an extra frame titled "Examples" on page 19
+  (`demo/RESULTS.md` § Arm D: post-hoc observations).
 - **Lost instruction.** Obeyed, then lost late in a long session: it was
   summarised away at compaction, so put it in a file [@claudecode-memory].
   Check: look for it in the files `/memory` lists; an instruction in no file

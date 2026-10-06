@@ -13,15 +13,16 @@ absent that should [@coursenotes2026, Principle 4.1].
 
 ::: notes
 Delivered in: 1, § What `/context` shows at launch; 2, § The demo, § What
-changed, § CLAUDE.md as an index; 3, § Layers; 4, § On demand.
+changed, § The follow-up, § CLAUDE.md as an index; 3, § Layers; 4, § On
+demand.
 :::
 
 ## Open edges, and where they lead
 
 - The evidence on length and position: retrieval-style benchmarks; agentic
   coding untested in our sources.
-- Our demo: one prompt, one model, self-describing repository, every run
-  built; silent on correctness.
+- Our demo: one prompt, one model, five runs per arm, one rule tested;
+  silent on correctness.
 - Conflicting instruction files have no documented winner: Claude "may pick
   one arbitrarily" [@claudecode-memory].
 - Tool behaviour: as documented on 28–29 September 2026; it changes by
@@ -30,8 +31,11 @@ changed, § CLAUDE.md as an index; 3, § Layers; 4, § On demand.
   persistent memory (16).
 
 ::: notes
-- Every run of the demo also met observables 1 to 5. It says nothing about
-  conventions that live only in `CLAUDE.md`.
+- Every run of the demo met observables 1 to 5 and built, on a repository
+  that describes itself. The follow-up on a rule only `CLAUDE.md` states is
+  five runs per arm, one rule, and one arrangement of four contrary examples;
+  3 of 5 against 0 of 5 gives a one-sided Fisher exact p of about 0.083, post
+  hoc, and no significance claim is made.
 - The demo runs used Claude Code 2.1.281; the figure was captured on 29
   September 2026.
 - A committed `CLAUDE.md` and folder layout are context infrastructure:

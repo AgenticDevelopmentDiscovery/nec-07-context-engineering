@@ -42,6 +42,18 @@ Metropolis's title layout, not the subtitle's length. The rendered title
 text was removed from all five SVG figures and each canvas shortened to
 match; the `<title>` element in each file is metadata, not drawn, and stays.
 
+**Arm D pass (2026-10-06).** One `##` added, § The follow-up in
+`03-content`, for the arm-D result: fifteen content slides, held at the cap
+in `CLAUDE.md` § House conventions by decision (its Decisions say why; the
+convention's and `topic.md`'s counts updated to 15 built, 2, 2, 9, 2).
+Slides changed: § The demo (caption: the three arms of 2026-09-28, arm D
+under § The follow-up), § What changed (closing sentence removed), § The
+follow-up (new), § Pitfalls (row 1 check and caption), § Open edges (demo
+bullet). Notes changed, slides not: § The demo, § How a window fails,
+§ What you can do now. After the pass the slides TeX log reports one
+overfull frame, the title page, 44.7pt, as before; the 0.1pt on § CLAUDE.md
+as an index is no longer reported.
+
 **Writing constraint, all four prose files.**
 
 - Nothing between the `#` heading and the first `##`. Pandoc makes a slide of
