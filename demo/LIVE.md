@@ -1,73 +1,100 @@
-# Live demo — 3 minutes (commands verified 2026-09-30, Claude Code 2.1.281)
+# Live demo — five short switches, LIVE A to LIVE E
 
-Two terminal tabs: **T1** at `~/Sandbox/nec-07-context-engineering`, **T2** for the live run.
-Paste each command exactly; nothing is typed.
+Two terminal tabs: **T1** at `~/Sandbox/nec-07-context-engineering`, **T2** for
+the live run. Paste each command exactly; nothing is typed. Each step is named
+in the speaker notes of the slide it follows. These commands were written on
+2026-10-06 and must be dry-run once before the talk.
+
+| Step | After slide | Where | Shows |
+| --- | --- | --- | --- |
+| A | 5 | Claude Code panel | The window at launch |
+| B | 7 | T1 | The three copies |
+| C | 8 | T1 | Why arm A matched |
+| D1–D4 | 9 | T1, T2, T1, T1 | The rule; start the live run; what d-4 said and wrote |
+| E1–E2 | 14 | T2 | What the live run said and wrote |
 
 ## 0. Before the talk (T2) — reset the live copy
 
 ```
-cd ~ && rm -rf ~/Sandbox/nec07-live-c && git clone ~/Sandbox/nec07-demo-c ~/Sandbox/nec07-live-c && cd ~/Sandbox/nec07-live-c
+cd ~ && rm -rf ~/Sandbox/nec07-live-d ~/.claude/projects/-Users-abhishek-jai-Sandbox-nec07-live-d/memory && git clone ~/Sandbox/nec07-demo-d ~/Sandbox/nec07-live-d && cd ~/Sandbox/nec07-live-d
 ```
 
-Also: T1 at the repository (`cd ~/Sandbox/nec-07-context-engineering`), both tabs cleared (Cmd+K), Claude Code panel visible.
-
-## 1. Start the live run (T2) — first thing, then leave the tab alone
+Then check the clone is clean and has the rule:
 
 ```
-cd ~/Sandbox/nec07-live-c && claude -p "$(cat ~/Sandbox/nec-07-context-engineering/demo/prompt.txt)" --model claude-fable-5-1 --output-format stream-json --verbose --max-turns 25 --allowedTools "Read" "Edit" "Write" "Glob" "Grep" "Bash(just *)" "Bash(ls *)" "Bash(git status)" "Bash(git add *)" "Bash(git commit *)" > /tmp/nec07-live-c.jsonl
+git -C ~/Sandbox/nec07-live-d status --short; git -C ~/Sandbox/nec07-live-d rev-list --count HEAD; grep -c "Put nothing between" ~/Sandbox/nec07-live-d/CLAUDE.md
 ```
 
-Silent while it runs; the prompt returns when done. Rehearsal: started 07:07, finished 07:08. Recorded arm C: 110–156 s.
+Expected: no status lines, then `1`, then `1`.
 
-## 2. Budget, live (Claude Code panel)
+Also: T1 at the repository (`cd ~/Sandbox/nec-07-context-engineering`), both
+tabs cleared (Cmd+K), Claude Code panel open on a fresh session, PowerPoint in
+presenter view.
 
-New session, then:
+## A. Read the window (Claude Code panel) — after slide 5
 
 ```
 /context
 ```
 
-Point at: the header total; System tools (the harness's, not ours); Memory files (this `CLAUDE.md` plus the auto-memory index, listed per file at the bottom); Skills (28 descriptions, one of them `/round`). Rehearsal: 33.7k, with System prompt 5.7k where it was 4.5k the day before — moved overnight, nothing of ours changed.
+Point at: the header total, System tools, Memory files, the file list.
 
-## 3. Three windows (T1)
-
-```
-for d in a b c; do r=~/Sandbox/nec07-demo-$d; printf "%s: " "$d"; git -C "$r" cat-file -e HEAD:CLAUDE.md 2>/dev/null && git -C "$r" show HEAD:CLAUDE.md | awk 'END{print NR" lines"}' || echo "no CLAUDE.md"; done
-```
+## B. The three copies (T1) — after slide 7
 
 ```
-a: no CLAUDE.md
-b: 240 lines
-c: 33 lines
+for d in a b c; do r=~/Sandbox/nec07-demo-$d; printf "%s: " "$d"; git -C "$r" cat-file -e HEAD:CLAUDE.md 2>/dev/null && git -C "$r" show HEAD:CLAUDE.md | awk 'END{print NR " lines"}' || echo "no CLAUDE.md"; done
 ```
 
-## 4. The null result in the agent's words (T1)
+Expected: `a: no CLAUDE.md`, `b: 240 lines`, `c: 33 lines`.
 
-Arm A, run a-1, final message — scroll to "Things to know":
-
-```
-jq -r 'select(.type=="result") | .result' demo/runs/a-1/log.jsonl
-```
-
-> **Missing `CLAUDE.md`:** The README points to `CLAUDE.md` as "the method", but that file is not in the repository. I followed the conventions from the README, `justfile` and the existing sections instead.
-
-Dry run — the one run that followed the unwritten rule, because a saved memory put it in the window:
+## C. Why arm A matched (T1) — after slide 8
 
 ```
-jq -r 'select(.type=="result") | .result' demo/runs/dryrun-b.jsonl | grep -i "saved memory"
+jq -r 'select(.type=="result") | .result' demo/runs/a-1/log.jsonl | grep -i "missing"
 ```
 
-> 5. **Left out the HTML comment under the `#` heading.** A saved memory … says nothing should sit between the `#` heading and the first `##` … The build confirms it: the four existing sections each produce an empty frame from their comment, and Examples does not.
+## D. The follow-up — after slide 9
 
-## 5. Read the live run (T2) — last, or in Q&A
+D1 (T1) — the one line arm D adds:
 
 ```
-ls -l /tmp/nec07-live-c.jsonl
-jq -r 'select(.type=="result") | .result' /tmp/nec07-live-c.jsonl
+git -C ~/Sandbox/nec07-demo-d show HEAD:CLAUDE.md | grep -A1 "Put nothing"
 ```
 
-Expect: both files created, three or four ## units (run-to-run variation is real), conclusion renumbered `04-` → `05-`, `just build` passed, nothing committed.
+D2 (T2) — start the live arm-D run, then leave T2 alone:
 
-## 6. Fallback
+```
+cd ~/Sandbox/nec07-live-d && claude -p "$(cat ~/Sandbox/nec-07-context-engineering/demo/prompt.txt)" --model claude-fable-5-1 --output-format stream-json --verbose --max-turns 25 --allowedTools "Read" "Edit" "Write" "Glob" "Grep" "Bash(just *)" "Bash(ls *)" "Bash(git status)" "Bash(git add *)" "Bash(git commit *)" > /tmp/nec07-live-d.jsonl
+```
 
-If anything fails: `~/Desktop/demo-backup.mov`. Drag the scrubber past the wait in step 1.
+D3 (T1) — what run d-4 said:
+
+```
+jq -r 'select(.type=="result") | .result' demo/runs/d-4/log.jsonl | grep "Kept the leading"
+```
+
+D4 (T1) — what run d-4 wrote:
+
+```
+sed -n '40,49p' demo/runs/d-4/untracked-section-files.txt
+```
+
+## E. The live run — after slide 14 (T2)
+
+E1 — finished? and what it said (prints `success` first if the run is done):
+
+```
+jq -r 'select(.type=="result") | .subtype, .result' /tmp/nec07-live-d.jsonl | grep -i -E '^success|comment|between|extra'
+```
+
+E2 — what it wrote:
+
+```
+sed -n '1,9p' ~/Sandbox/nec07-live-d/sections/04-examples.prose.md
+```
+
+Read what follows `# Examples`: a `##` line means the rule was followed; a
+`<!--` comment means it was not. Compare with E1.
+
+If E1 prints nothing, the run has not finished: go back to the slides and
+run step E after the last slide, before questions.
